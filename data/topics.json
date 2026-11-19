@@ -1,0 +1,347 @@
+{
+  "_about": "Units and topics for each subject, keyed by subject id. A leading * marks a topic you will reuse in graduate AI work. Edit to match your real syllabus, then restart the server.",
+
+  "calc1": [
+    ["Functions and limits", ["Functions and their graphs", "Limits and one-sided limits", "Continuity", "Limits at infinity and asymptotes"]],
+    ["Derivatives", ["Definition of the derivative", "Differentiation rules", "*Chain rule", "Implicit differentiation", "Derivatives of exponential, log and trig functions"]],
+    ["Applications of derivatives", ["Related rates", "Extrema and critical points", "*Optimization problems", "Curve sketching", "L'Hôpital's rule"]],
+    ["Integrals", ["Antiderivatives", "Riemann sums and the definite integral", "Fundamental Theorem of Calculus", "Integration by substitution"]],
+    ["Applications of integrals", ["Area between curves", "Volumes of revolution", "Average value of a function"]]
+  ],
+  "calc2": [
+    ["Integration techniques", ["Integration by parts", "Trigonometric integrals and substitution", "Partial fractions", "Improper integrals", "Numerical integration"]],
+    ["Sequences and series", ["Sequences and convergence", "Convergence tests", "Power series", "*Taylor and Maclaurin series"]],
+    ["Parametric and polar curves", ["Parametric equations", "Polar coordinates", "Arc length and surface area"]],
+    ["Functions of several variables", ["Functions of several variables", "*Partial derivatives", "*Gradient and directional derivatives", "Double integrals"]]
+  ],
+  "de": [
+    ["First-order equations", ["Separable equations", "Linear first-order equations", "Exact equations", "Modelling with differential equations"]],
+    ["Second-order linear equations", ["Homogeneous equations with constant coefficients", "Undetermined coefficients", "Variation of parameters", "Oscillations and resonance"]],
+    ["Systems of equations", ["Linear systems and eigenvalues", "Phase portraits", "Stability of equilibria"]],
+    ["Series methods", ["Power series solutions", "*Fourier series", "Convergence of Fourier series"]],
+    ["Laplace transform", ["Laplace transform and its inverse", "Solving initial value problems", "Step and impulse functions"]]
+  ],
+  "linalg": [
+    ["Linear systems", ["Systems of linear equations", "Gaussian elimination and row echelon form", "Matrix operations", "*Matrix multiplication", "Inverse matrices"]],
+    ["Vector spaces", ["Vectors and linear combinations", "Span and linear independence", "Basis and dimension", "Column space and null space", "Rank"]],
+    ["Linear transformations", ["Linear maps as matrices", "*Change of basis", "Determinants"]],
+    ["Orthogonality", ["*Dot product and norms", "Orthogonal projections", "Gram-Schmidt and QR", "*Least squares"]],
+    ["Eigenvalues", ["*Eigenvalues and eigenvectors", "Diagonalization", "Symmetric matrices and the spectral theorem", "Positive definite matrices"]],
+    ["Matrix decompositions", ["LU decomposition", "*Singular value decomposition (SVD)", "*Principal component analysis (PCA)"]]
+  ],
+  "mvc": [
+    ["Vectors and geometry", ["Vectors in 3D", "Dot and cross products", "Lines and planes"]],
+    ["Partial derivatives", ["*Partial derivatives", "*Gradient", "*Multivariable chain rule", "Second derivative test", "*Lagrange multipliers"]],
+    ["Multiple integrals", ["Double integrals", "Triple integrals", "Change of variables and Jacobians"]],
+    ["Vector calculus", ["Line integrals", "Green's theorem", "Divergence and curl", "Stokes' theorem"]]
+  ],
+  "opt": [
+    ["Matrix factorizations", ["*SVD and low-rank approximation", "Eigenvalues of symmetric matrices", "Vector and matrix norms"]],
+    ["Least squares", ["*Least squares and the normal equations", "*Regularization (ridge regression)", "Pseudoinverse"]],
+    ["Optimization", ["Convex sets and functions", "*Gradient descent", "*Stochastic gradient descent", "*Momentum and Adam", "Constrained optimization"]],
+    ["Learning from data", ["*Backpropagation as the chain rule", "Structure of neural networks", "*Dimensionality reduction with PCA"]]
+  ],
+  "discrete": [
+    ["Logic and proofs", ["Propositional logic", "Predicates and quantifiers", "Proof techniques", "Mathematical induction"]],
+    ["Sets, functions and relations", ["Sets and set operations", "Functions", "Equivalence relations and partial orders", "Cardinality"]],
+    ["Counting", ["Sum and product rules", "Permutations and combinations", "Pigeonhole principle", "Inclusion-exclusion", "Recurrence relations"]],
+    ["Number theory", ["Divisibility and modular arithmetic", "GCD and Euclid's algorithm", "Primes", "RSA basics"]],
+    ["Graphs and trees", ["Graph terminology", "Paths, cycles and connectivity", "*Trees", "Graph coloring", "Euler and Hamilton paths"]],
+    ["Boolean algebra", ["Boolean functions", "Logic gates", "Karnaugh maps"]]
+  ],
+  "prob": [
+    ["Probability foundations", ["Sample spaces and events", "Axioms of probability", "*Conditional probability", "*Bayes' rule", "Independence"]],
+    ["Random variables", ["Discrete random variables", "Continuous random variables", "*Expectation and variance", "Joint distributions", "Covariance and correlation"]],
+    ["Common distributions", ["Bernoulli and binomial", "Poisson", "*Normal (Gaussian) distribution", "Exponential and uniform"]],
+    ["Limit theorems", ["Law of large numbers", "*Central limit theorem"]],
+    ["Statistical inference", ["Sampling distributions", "*Maximum likelihood estimation", "Confidence intervals", "Hypothesis testing", "*Linear regression"]]
+  ],
+  "toc": [
+    ["Automata and regular languages", ["Deterministic finite automata", "Nondeterministic finite automata", "Regular expressions", "Pumping lemma for regular languages"]],
+    ["Context-free languages", ["Context-free grammars", "Pushdown automata", "Pumping lemma for context-free languages"]],
+    ["Computability", ["Turing machines", "Church-Turing thesis", "Decidability", "The halting problem", "Reductions"]],
+    ["Complexity", ["Time complexity and the class P", "NP and NP-completeness", "Cook-Levin theorem", "Space complexity"]]
+  ],
+  "daa": [
+    ["Analysis", ["Asymptotic analysis", "Recurrences and the master theorem", "Amortized analysis"]],
+    ["Design paradigms", ["Divide and conquer", "Greedy algorithms", "*Dynamic programming"]],
+    ["Graph algorithms", ["Minimum spanning trees", "Shortest paths (Dijkstra, Bellman-Ford)", "Network flow"]],
+    ["Advanced topics", ["Randomized algorithms", "Linear programming", "NP-completeness and reductions", "Approximation algorithms"]]
+  ],
+
+  "ai": [
+    ["Foundations", ["What AI is and its history", "Intelligent agents and environments"]],
+    ["Search", ["Uninformed search (BFS, DFS, uniform cost)", "*Heuristic search and A*", "Local search and hill climbing", "Adversarial search and minimax", "Alpha-beta pruning"]],
+    ["Constraint satisfaction", ["Formulating CSPs", "Backtracking and forward checking", "Arc consistency"]],
+    ["Knowledge and reasoning", ["Propositional and first-order logic", "Inference and resolution", "Planning"]],
+    ["Uncertainty", ["*Bayesian networks", "*Markov decision processes", "*Reinforcement learning basics"]],
+    ["Learning", ["Decision trees", "*Introduction to neural networks"]]
+  ],
+  "ml": [
+    ["Foundations", ["Supervised vs unsupervised learning", "Training, validation and test sets", "*Bias-variance trade-off", "*Overfitting and regularization"]],
+    ["Regression", ["*Linear regression", "Polynomial regression", "*Gradient descent"]],
+    ["Classification", ["*Logistic regression", "k-nearest neighbours", "Naive Bayes", "Support vector machines", "Decision trees and random forests", "Gradient boosting"]],
+    ["Evaluation", ["Accuracy, precision, recall and F1", "ROC curves and AUC", "*Cross-validation"]],
+    ["Unsupervised learning", ["k-means clustering", "Hierarchical clustering", "*PCA"]],
+    ["Data mining", ["Association rules (Apriori)", "Anomaly detection", "Feature engineering"]]
+  ],
+  "dl": [
+    ["Neural network basics", ["Perceptrons and multilayer networks", "*Activation functions", "*Backpropagation", "*Loss functions"]],
+    ["Training", ["*Optimizers (SGD, Adam)", "Weight initialization", "Batch normalization", "*Dropout and regularization", "Hyperparameter tuning"]],
+    ["Convolutional networks", ["*Convolution and pooling", "CNN architectures (LeNet to ResNet)", "Transfer learning"]],
+    ["Sequence models", ["Recurrent networks and LSTMs", "*Attention", "*Transformers"]],
+    ["Practice", ["PyTorch fundamentals", "Training on GPUs", "Experiment tracking"]]
+  ],
+  "genai": [
+    ["Foundations", ["Generative vs discriminative models", "Autoencoders", "*Variational autoencoders"]],
+    ["Generative adversarial networks", ["GAN training", "Mode collapse and stability", "Conditional GANs"]],
+    ["Diffusion models", ["*Denoising diffusion", "Text-to-image generation"]],
+    ["Large language models", ["*Tokenization and embeddings", "*Transformer language models", "Pretraining and fine-tuning", "*Prompt engineering", "RLHF and alignment"]],
+    ["Applications", ["*Retrieval-augmented generation (RAG)", "Evaluating generative models", "Ethics, bias and safety"]]
+  ],
+  "gfx": [
+    ["Math for graphics", ["*Vectors and matrices for graphics", "*Homogeneous coordinates and transforms", "Quaternions and rotations"]],
+    ["Rendering pipeline", ["Rasterization", "Cameras and projection", "Clipping and depth buffering"]],
+    ["Shading", ["Lighting models (Phong)", "Textures and mapping", "Shaders (GLSL)"]],
+    ["Ray tracing", ["Ray-object intersection", "Reflections and shadows", "Global illumination basics"]],
+    ["Animation", ["Keyframes and interpolation", "Skeletal animation", "Physics-based animation"]]
+  ],
+  "cv": [
+    ["Image formation", ["Cameras and projection", "Image representation and color"]],
+    ["Image processing", ["*Filtering and convolution", "Edge detection", "Feature detection (Harris, SIFT)"]],
+    ["Geometry", ["Camera calibration", "Stereo and depth", "Optical flow"]],
+    ["Recognition", ["*CNNs for image classification", "*Object detection (YOLO, R-CNN)", "*Semantic segmentation"]],
+    ["Modern vision", ["Vision transformers", "Self-supervised learning", "Generative models for images"]]
+  ],
+
+  "sci": [
+    ["Numerical foundations", ["Floating-point arithmetic", "Errors and conditioning"]],
+    ["Linear systems", ["Direct solvers (LU)", "Iterative solvers", "*Matrix computations with NumPy"]],
+    ["Nonlinear equations and optimization", ["Bisection and Newton's method", "Optimization basics"]],
+    ["Interpolation and integration", ["Polynomial interpolation", "Splines", "Numerical integration"]],
+    ["Differential equations", ["Euler and Runge-Kutta methods", "Simulation"]],
+    ["Tools", ["*Python, NumPy and Matplotlib", "*Vectorization"]]
+  ],
+  "ds": [
+    ["Working with data", ["*pandas DataFrames", "Data cleaning and missing values", "Joining and reshaping data"]],
+    ["Exploration", ["*Exploratory data analysis", "Visualization", "Descriptive statistics"]],
+    ["Modelling", ["*Feature engineering", "Fitting models with scikit-learn", "Evaluating models"]],
+    ["Statistics in practice", ["A/B testing", "Correlation vs causation"]],
+    ["Workflow", ["Jupyter notebooks", "Communicating results", "Data ethics and privacy"]]
+  ],
+  "db": [
+    ["Relational model", ["Relations, keys and constraints", "Relational algebra"]],
+    ["SQL", ["SELECT, filtering and sorting", "Joins", "Aggregation and GROUP BY", "Subqueries", "Views"]],
+    ["Database design", ["Entity-relationship modelling", "Functional dependencies", "Normalization (1NF to BCNF)"]],
+    ["Internals", ["Indexes and B-trees", "Query processing and optimization"]],
+    ["Transactions", ["ACID properties", "Concurrency control", "Recovery"]]
+  ],
+  "dblab": [
+    ["Setup", ["Installing a database server", "Creating schemas and tables"]],
+    ["SQL practice", ["Data definition (DDL)", "Data manipulation (DML)", "Complex queries and joins"]],
+    ["Programming with databases", ["Stored procedures and triggers", "Connecting from application code"]],
+    ["Lab project", ["Designing a database for an application", "Testing with sample data"]]
+  ],
+  "dbadmin": [
+    ["Advanced design", ["Physical design", "Denormalization trade-offs", "Partitioning"]],
+    ["Administration", ["Users, roles and permissions", "Backup and restore", "Monitoring"]],
+    ["Performance", ["Index tuning", "Reading query plans (EXPLAIN)", "Caching"]],
+    ["Scale and reliability", ["Replication", "High availability", "NoSQL databases"]]
+  ],
+
+  "cintro": [
+    ["Getting started", ["Compiling and running C programs", "Variables and data types", "Input and output (printf, scanf)"]],
+    ["Control flow", ["Operators and expressions", "Conditionals", "Loops"]],
+    ["Functions", ["Defining and calling functions", "Scope and lifetime"]],
+    ["Arrays and strings", ["Arrays", "Strings as character arrays"]],
+    ["Debugging", ["Reading compiler errors", "Debugging with gdb"]]
+  ],
+  "clang": [
+    ["Pointers", ["Pointers and addresses", "Pointer arithmetic", "Pointers and arrays", "Function pointers"]],
+    ["Memory", ["Stack vs heap", "Dynamic memory (malloc, free)", "Memory leaks and Valgrind"]],
+    ["Structured data", ["Structs and unions", "Linked structures", "typedef and enums"]],
+    ["Files and I/O", ["File input and output", "Command-line arguments"]],
+    ["Building programs", ["Header files and multiple source files", "Makefiles", "The preprocessor"]]
+  ],
+  "dsa": [
+    ["Analysis", ["Big-O notation", "Analysing loops and recursion"]],
+    ["Linear structures", ["Arrays and dynamic arrays", "Linked lists", "Stacks and queues"]],
+    ["Trees", ["Binary trees and traversals", "Binary search trees", "Balanced trees (AVL, red-black)", "*Heaps and priority queues"]],
+    ["Hashing", ["*Hash tables", "Collision resolution"]],
+    ["Sorting and searching", ["Binary search", "Merge sort and quicksort", "Heap sort and the sorting lower bound", "Counting and radix sort"]],
+    ["Graphs", ["Graph representations", "*BFS and DFS", "Topological sort", "Shortest paths (Dijkstra)", "Minimum spanning trees"]],
+    ["Algorithm design", ["Recursion and divide and conquer", "Greedy algorithms", "*Dynamic programming"]]
+  ],
+  "compilers": [
+    ["Language concepts", ["Syntax and semantics", "Programming paradigms", "Type systems"]],
+    ["Front end", ["Lexical analysis", "Parsing (LL and LR)", "Abstract syntax trees"]],
+    ["Semantic analysis", ["Symbol tables and scope", "Type checking"]],
+    ["Back end", ["Intermediate representations", "Code generation", "Register allocation"]],
+    ["Optimization and runtime", ["Data-flow analysis", "Common optimizations", "Garbage collection"]]
+  ],
+  "python": [
+    ["Basics", ["Variables, types and expressions", "Conditionals and loops", "Functions"]],
+    ["Data structures", ["Lists and tuples", "Dictionaries and sets", "*List comprehensions"]],
+    ["Program design", ["Modules and packages", "Exceptions", "*Classes and objects"]],
+    ["Algorithms in Python", ["Recursion", "Searching and sorting", "Complexity"]],
+    ["Scientific Python", ["*NumPy arrays", "Plotting with Matplotlib", "Virtual environments and pip"]]
+  ],
+  "oop": [
+    ["Foundations", ["Classes and objects", "Encapsulation", "Constructors and destructors"]],
+    ["Inheritance and polymorphism", ["Inheritance", "Method overriding", "Polymorphism and dynamic dispatch", "Abstract classes and interfaces"]],
+    ["Language features", ["Exceptions", "Generics and templates", "Collections"]],
+    ["Design", ["SOLID principles", "Design patterns", "UML class diagrams"]],
+    ["Practice", ["Unit testing", "Refactoring"]]
+  ],
+  "swc": [
+    ["Code quality", ["Specifications", "Testing and test-first programming", "Code review"]],
+    ["Design", ["Abstract data types", "Immutability", "Interfaces and subtyping", "Equality"]],
+    ["Correctness", ["Systematic debugging", "Assertions and defensive programming"]],
+    ["Concurrency", ["Threads and shared memory", "Locks and synchronization", "Message passing"]],
+    ["Larger programs", ["Version control with Git", "Grammars and parsers"]]
+  ],
+
+  "ict": [
+    ["Computing basics", ["Computer hardware components", "Number systems (binary, hex)", "Data representation"]],
+    ["Software", ["Operating systems overview", "Application software"]],
+    ["Networks and the internet", ["How the internet works", "The web and email", "Cloud computing"]],
+    ["Technology and society", ["Information security basics", "Ethics and digital citizenship"]]
+  ],
+  "arch": [
+    ["Digital logic", ["Logic gates and Boolean algebra", "Combinational circuits", "Sequential circuits and flip-flops"]],
+    ["Data representation", ["Integers and two's complement", "Floating point (IEEE 754)"]],
+    ["Instruction set architecture", ["Instruction formats", "Assembly language (RISC-V or MIPS)", "Procedure calls and the stack"]],
+    ["Processor design", ["Datapath and control", "Pipelining", "Hazards and forwarding"]],
+    ["Memory hierarchy", ["Caches", "Virtual memory", "I/O and buses"]],
+    ["Performance", ["Performance metrics", "Parallelism and multicore"]]
+  ],
+  "archlab": [
+    ["Logic labs", ["Building combinational circuits", "Simulation with an HDL (Verilog or VHDL)"]],
+    ["Processor labs", ["ALU design", "Register file", "Single-cycle processor"]],
+    ["Assembly labs", ["Writing assembly programs", "Using a simulator"]],
+    ["Memory labs", ["Cache simulation"]]
+  ],
+  "os": [
+    ["Fundamentals", ["OS structure and system calls", "Processes", "Threads"]],
+    ["Scheduling", ["CPU scheduling algorithms", "Multicore scheduling"]],
+    ["Synchronization", ["Race conditions and critical sections", "Locks, semaphores and monitors", "Deadlocks"]],
+    ["Memory management", ["Address spaces", "Paging", "Virtual memory and page replacement"]],
+    ["Storage", ["File systems", "Disk scheduling", "I/O systems"]],
+    ["Protection", ["Protection and security", "Virtualization and containers"]]
+  ],
+  "net": [
+    ["Foundations", ["Network models (OSI, TCP/IP)", "Delay, loss and throughput"]],
+    ["Application layer", ["HTTP and the web", "DNS", "Socket programming"]],
+    ["Transport layer", ["UDP", "TCP and reliable delivery", "Congestion control"]],
+    ["Network layer", ["IP addressing and subnetting", "Routing algorithms", "NAT and IPv6"]],
+    ["Link layer", ["Ethernet and switching", "Wireless networks"]],
+    ["Network security", ["TLS", "Firewalls"]]
+  ],
+  "sec": [
+    ["Foundations", ["Security goals (confidentiality, integrity, availability)", "Threat modelling"]],
+    ["Cryptography", ["Symmetric encryption", "Public-key cryptography", "Hash functions and MACs", "Digital signatures and certificates"]],
+    ["System security", ["Authentication and passwords", "Access control", "Buffer overflows and memory safety", "Malware"]],
+    ["Network and web security", ["Network attacks", "Web vulnerabilities (XSS, SQL injection)", "Secure protocols"]],
+    ["Practice", ["Security testing", "Privacy and law"]]
+  ],
+  "chain": [
+    ["Cryptographic building blocks", ["Cryptographic hashing", "Digital signatures", "Merkle trees"]],
+    ["How blockchains work", ["Blocks and chains", "Consensus (proof of work, proof of stake)", "Bitcoin transactions"]],
+    ["Smart contracts", ["Ethereum", "Solidity basics", "Decentralized applications"]],
+    ["Issues and applications", ["Scalability", "Security attacks", "Applications beyond currency"]]
+  ],
+  "csys": [
+    ["Systems design", ["Complexity and modularity", "Naming and layering", "Client/server organization"]],
+    ["Operating systems view", ["Virtualization", "Performance"]],
+    ["Networking", ["Network layers", "The end-to-end argument"]],
+    ["Reliability", ["Fault tolerance", "Atomicity and logging", "Replication and consistency"]],
+    ["Distributed systems", ["Distributed transactions", "Consensus", "Security"]]
+  ],
+
+  "se": [
+    ["Process", ["Software life cycle", "Waterfall and other models", "Agile and Scrum"]],
+    ["Requirements", ["Eliciting requirements", "User stories and use cases"]],
+    ["Design", ["Architecture styles", "Modelling with UML"]],
+    ["Quality", ["Levels of testing", "Code review", "Version control with Git"]],
+    ["Teams", ["Teamwork and communication", "Professional ethics"]]
+  ],
+  "sad": [
+    ["Analysis", ["The systems analyst's role", "Feasibility studies", "Requirements gathering techniques"]],
+    ["Modelling", ["Data flow diagrams", "Use case modelling", "Entity-relationship diagrams", "Sequence and activity diagrams"]],
+    ["Design", ["System architecture design", "User interface design", "Database design"]],
+    ["Implementation", ["Prototyping", "Implementation and changeover"]]
+  ],
+  "sdm": [
+    ["Planning", ["Project scope", "Estimation techniques", "Scheduling (Gantt charts, critical path)"]],
+    ["Control", ["Risk management", "Configuration management", "Quality assurance"]],
+    ["Agile management", ["Scrum roles and ceremonies", "Kanban", "Velocity and metrics"]],
+    ["People", ["Team organization", "Working with stakeholders"]]
+  ],
+  "proj1": [
+    ["Planning", ["Choosing a project idea", "Writing a project proposal"]],
+    ["Building", ["Setting up the codebase", "Implementing core features", "Using Git"]],
+    ["Delivery", ["Testing", "Writing the report", "Presentation"]]
+  ],
+  "proj2": [
+    ["Planning", ["Requirements document", "System design"]],
+    ["Building", ["Database and back end", "Front end", "Automated tests"]],
+    ["Delivery", ["Deployment", "Report and demo"]]
+  ],
+  "proj3": [
+    ["Research", ["Literature review", "Problem statement"]],
+    ["Building", ["Implementation", "Experiments and evaluation"]],
+    ["Delivery", ["Research-style report", "Final presentation"]]
+  ],
+  "web": [
+    ["Front end", ["HTML", "CSS and layout", "JavaScript", "The DOM and events"]],
+    ["Front-end frameworks", ["Components (React or Vue)", "State management"]],
+    ["Back end", ["HTTP and REST APIs", "Server frameworks", "Authentication"]],
+    ["Data and services", ["Databases for web apps", "JSON web services", "Cloud deployment"]],
+    ["Quality", ["Web security", "Performance", "Accessibility"]]
+  ],
+
+  "phys1": [
+    ["Kinematics", ["Motion in one dimension", "Vectors and motion in two dimensions"]],
+    ["Dynamics", ["Newton's laws", "Friction and circular motion"]],
+    ["Energy and momentum", ["Work and kinetic energy", "Conservation of energy", "Momentum and collisions"]],
+    ["Rotation", ["Rotational kinematics", "Torque and angular momentum"]],
+    ["Oscillations and waves", ["Simple harmonic motion", "Waves"]]
+  ],
+  "elec": [
+    ["Circuit basics", ["Voltage, current and resistance", "Ohm's and Kirchhoff's laws", "Series and parallel circuits", "Thevenin and Norton equivalents"]],
+    ["AC circuits", ["Capacitors and inductors", "RC and RL circuits", "AC analysis"]],
+    ["Semiconductors", ["Diodes", "Transistors (BJT, MOSFET)", "Amplifiers"]],
+    ["Mixed-signal electronics", ["Logic families", "Operational amplifiers", "Analog-to-digital conversion"]]
+  ],
+  "eleclab": [
+    ["Instruments", ["Multimeter", "Oscilloscope", "Function generator"]],
+    ["Experiments", ["Verifying Ohm's and Kirchhoff's laws", "RC circuits", "Diode and transistor circuits", "Logic circuits"]],
+    ["Reporting", ["Lab reports and error analysis"]]
+  ],
+  "dsp": [
+    ["Signals and systems", ["Continuous and discrete signals", "Linear time-invariant systems", "*Convolution"]],
+    ["Fourier analysis", ["Fourier series", "*Fourier transform", "Discrete Fourier transform and FFT"]],
+    ["Sampling", ["Sampling theorem", "Aliasing", "Quantization"]],
+    ["Filters", ["z-transform", "FIR and IIR filters", "Filter design"]],
+    ["Applications", ["Audio processing", "Image processing basics"]]
+  ],
+  "comm": [
+    ["Fundamentals", ["Communication system model", "Signals and spectra"]],
+    ["Analog modulation", ["Amplitude modulation", "Frequency and phase modulation"]],
+    ["Digital communication", ["Pulse code modulation", "Digital modulation (ASK, FSK, PSK, QAM)", "Noise and bit error rate"]],
+    ["Information theory", ["*Entropy and information", "Channel capacity", "Error-correcting codes"]],
+    ["Systems", ["Multiplexing", "Wireless and mobile systems"]]
+  ],
+  "embedded": [
+    ["Microcontrollers", ["Microcontroller architecture", "GPIO", "Development tools"]],
+    ["Embedded programming", ["Embedded C", "Interrupts", "Timers and PWM"]],
+    ["Interfaces", ["Serial communication (UART, SPI, I2C)", "ADCs and sensors"]],
+    ["Systems", ["Real-time operating systems", "Power management", "Debugging hardware"]]
+  ],
+  "iot": [
+    ["Architecture", ["IoT architecture layers", "Devices and sensors"]],
+    ["Communication", ["IoT protocols (MQTT, CoAP)", "Wireless technologies (Wi-Fi, BLE, LoRa)"]],
+    ["Data and cloud", ["IoT cloud platforms", "Edge processing"]],
+    ["Security and applications", ["IoT security", "Smart home and industrial applications"]]
+  ]
+}

@@ -1,0 +1,220 @@
+{
+  "_about": "Openly published past exams from top universities, per subject. 'units' are 1-based positions in that subject's units in topics.json, or \"all\". kind: quiz | midterm | final | practice. A final is the end-of-subject exam. Links were found through web search in November 2026; unit coverage is estimated from each course's usual order and the exam's topics.",
+  "exams": {
+    "calc1": [
+      {"title": "Exam 1: Differentiation", "school": "MIT", "course": "18.01 Single Variable Calculus (Fall 2006)", "kind": "midterm", "units": [1, 2], "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/pages/exams/", "note": "Exam and practice exam, with solutions"},
+      {"title": "Exam 2: Applications of differentiation", "school": "MIT", "course": "18.01 Single Variable Calculus (Fall 2006)", "kind": "midterm", "units": [3], "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/pages/exams/", "note": "Exam and practice exam, with solutions"},
+      {"title": "Exam 3: Integration and its applications", "school": "MIT", "course": "18.01 Single Variable Calculus (Fall 2006)", "kind": "midterm", "units": [4, 5], "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/exam3sol/", "note": "Solutions"},
+      {"title": "Final exam", "school": "MIT", "course": "18.01SC Single Variable Calculus (Fall 2010)", "kind": "final", "units": "all", "url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/pages/final-exam/", "note": "Exam and solutions"}
+    ],
+    "calc2": [
+      {"title": "Exam 4: Techniques of integration", "school": "MIT", "course": "18.01 Single Variable Calculus (Fall 2006)", "kind": "midterm", "units": [1], "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/pages/exams/", "note": "Exam and practice exam, with solutions"},
+      {"title": "Practice exam 2: Partial derivatives", "school": "MIT", "course": "18.02SC Multivariable Calculus (Fall 2010)", "kind": "practice", "units": [4], "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/pages/2.-partial-derivatives/exam-2/practice-exam/", "note": "With solutions"},
+      {"title": "Final exam: series, polar coordinates and the whole course", "school": "MIT", "course": "18.01 Single Variable Calculus (Fall 2006)", "kind": "final", "units": [1, 2, 3], "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/prfinalsol/", "note": "Practice final solutions"}
+    ],
+    "de": [
+      {"title": "Exam 1: First-order equations", "school": "MIT", "course": "18.03SC Differential Equations (Fall 2011)", "kind": "midterm", "units": [1], "url": "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/pages/unit-i-first-order-differential-equations/exam-1/", "note": "Exam, practice exam and solutions"},
+      {"title": "Exam 3: Fourier series and Laplace transform", "school": "MIT", "course": "18.03SC Differential Equations (Fall 2011)", "kind": "midterm", "units": [4, 5], "url": "https://live.ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/pages/unit-iii-fourier-series-and-laplace-transform/exam-3/", "note": "Exam, practice exam and solutions"},
+      {"title": "Practice exams 1 to 3 and practice final", "school": "MIT", "course": "18.03 Differential Equations (Spring 2010)", "kind": "practice", "units": "all", "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/pages/exams/", "note": "With solutions"},
+      {"title": "Final exam", "school": "MIT", "course": "18.03SC Differential Equations (Fall 2011)", "kind": "final", "units": "all", "url": "https://ocw.mit.edu/courses/18-03sc-differential-equations-fall-2011/pages/final-exam/", "note": "Final, practice final and solutions"}
+    ],
+    "linalg": [
+      {"title": "Exam 1: Elimination and the four subspaces", "school": "MIT", "course": "18.06 Linear Algebra (Spring 2010, Gilbert Strang)", "kind": "midterm", "units": [1, 2], "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/mit18_06s10_exam1_s10_sol/", "note": "Solutions"},
+      {"title": "Exam 2: Orthogonality, projections and determinants", "school": "MIT", "course": "18.06 Linear Algebra (Spring 2010, Gilbert Strang)", "kind": "midterm", "units": [3, 4], "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/pages/exams/", "note": "Exam and solutions"},
+      {"title": "Exam 3: Eigenvalues and the SVD", "school": "MIT", "course": "18.06 Linear Algebra (Spring 2010, Gilbert Strang)", "kind": "midterm", "units": [5, 6], "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/pages/exams/", "note": "Exam and solutions"},
+      {"title": "Exam 1: Ax = b and the four subspaces", "school": "MIT", "course": "18.06SC Linear Algebra (Fall 2011)", "kind": "practice", "units": [1, 2], "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/pages/ax-b-and-the-four-subspaces/exam-1/", "note": "Exam and solutions"},
+      {"title": "Exam 2: Least squares, determinants and eigenvalues", "school": "MIT", "course": "18.06SC Linear Algebra (Fall 2011)", "kind": "practice", "units": [3, 4, 5], "url": "https://live.ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/pages/least-squares-determinants-and-eigenvalues/exam-2/", "note": "Exam and solutions"},
+      {"title": "Final exam", "school": "MIT", "course": "18.06 Linear Algebra (Spring 2010, Gilbert Strang)", "kind": "final", "units": "all", "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/mit18_06s10_final_answers/", "note": "Exam with solutions"}
+    ],
+    "mvc": [
+      {"title": "Exam 1: Vectors and matrices", "school": "MIT", "course": "18.02SC Multivariable Calculus (Fall 2010)", "kind": "midterm", "units": [1], "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/resources/mit18_02sc_exam1/"},
+      {"title": "Practice exam 2: Partial derivatives", "school": "MIT", "course": "18.02SC Multivariable Calculus (Fall 2010)", "kind": "practice", "units": [2], "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/pages/2.-partial-derivatives/exam-2/practice-exam/", "note": "With solutions"},
+      {"title": "Exam 3: Double integrals and line integrals in the plane", "school": "MIT", "course": "18.02SC Multivariable Calculus (Fall 2010)", "kind": "midterm", "units": [3, 4], "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/pages/3.-double-integrals-and-line-integrals-in-the-plane/exam-3/exam/"},
+      {"title": "Practice exams 1A to 4B", "school": "MIT", "course": "18.02 Multivariable Calculus (Fall 2007)", "kind": "practice", "units": "all", "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/pages/exams/", "note": "With solutions"},
+      {"title": "Final exam", "school": "MIT", "course": "18.02SC Multivariable Calculus (Fall 2010)", "kind": "final", "units": "all", "url": "https://ocw.mit.edu/courses/18-02sc-multivariable-calculus-fall-2010/resources/mit18_02sc_finalexam/"}
+    ],
+    "opt": [
+      {"title": "Midterm 2019: conditioning, least squares and the SVD", "school": "MIT", "course": "18.335J Introduction to Numerical Methods (graduate)", "kind": "midterm", "units": [1, 2], "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/resources/mit18_335js19_exam19sol/", "note": "Solutions"},
+      {"title": "Exam 2 practice: neural networks, MLE and optimization", "school": "Carnegie Mellon", "course": "10-301/601 Introduction to Machine Learning (Spring 2025)", "kind": "practice", "units": [3, 4], "url": "https://www.cs.cmu.edu/~mgormley/courses/10601-s25/handout/exam2_practice_solutions.pdf", "note": "Solutions"}
+    ],
+    "discrete": [
+      {"title": "Midterm", "school": "MIT", "course": "6.042J Mathematics for Computer Science (Fall 2010)", "kind": "midterm", "units": [1, 2, 4, 5], "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/pages/exams/", "note": "With practice problems"},
+      {"title": "Final exams from 2004, 2006, 2008 and 2010", "school": "MIT", "course": "6.042J Mathematics for Computer Science (Fall 2010)", "kind": "final", "units": "all", "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/pages/exams/", "note": "Solutions for most"},
+      {"title": "Final exam (Fall 2014)", "school": "UC Berkeley", "course": "CS 70 Discrete Mathematics and Probability Theory", "kind": "final", "units": [1, 3, 4, 5], "url": "https://hkn.eecs.berkeley.edu/examfiles/cs70_fa14_f.pdf", "solutions_url": "https://hkn.eecs.berkeley.edu/examfiles/cs70_fa14_f_sol.pdf"}
+    ],
+    "prob": [
+      {"title": "Exam 1: Probability", "school": "MIT", "course": "18.05 Introduction to Probability and Statistics (Spring 2022)", "kind": "midterm", "units": [1, 2, 3], "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_exam01_pdf/", "note": "Practice sets and solutions on the exams page"},
+      {"title": "Exam 2: Statistics", "school": "MIT", "course": "18.05 Introduction to Probability and Statistics (Spring 2022)", "kind": "midterm", "units": [4, 5], "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/pages/exams/", "note": "Exam, practice and solutions"},
+      {"title": "Midterm 2: Probability (Spring 2016)", "school": "UC Berkeley", "course": "CS 70 Discrete Mathematics and Probability Theory", "kind": "practice", "units": [1, 2, 3, 4], "url": "https://hkn.eecs.berkeley.edu/examfiles/cs70_sp16_mt2_sol.pdf", "note": "Solutions"},
+      {"title": "Final exam", "school": "MIT", "course": "18.05 Introduction to Probability and Statistics (Spring 2022)", "kind": "final", "units": "all", "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_exam_final_pdf/", "note": "Solutions on the exams page"}
+    ],
+    "toc": [
+      {"title": "Sample midterm", "school": "MIT", "course": "18.404J Theory of Computation (Michael Sipser)", "kind": "midterm", "units": [1, 2, 3], "url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/mit18_404f20_mid01/"},
+      {"title": "Sample final exam", "school": "MIT", "course": "18.404J Theory of Computation (Michael Sipser)", "kind": "final", "units": "all", "url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/sample-final-exam/", "solutions_url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/sample-final-exam-solutions/"}
+    ],
+    "daa": [
+      {"title": "Quiz 1: Analysis and divide and conquer", "school": "MIT", "course": "6.046J Design and Analysis of Algorithms (Spring 2015)", "kind": "midterm", "units": [1, 2], "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/pages/exams/", "note": "With solutions"},
+      {"title": "Quiz 2: Graphs, flows and approximation", "school": "MIT", "course": "6.046J Design and Analysis of Algorithms (Spring 2015)", "kind": "midterm", "units": [3, 4], "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/pages/exams/", "note": "With solutions"},
+      {"title": "Practice finals (2011 and 2012)", "school": "MIT", "course": "6.046J Design and Analysis of Algorithms (Spring 2012)", "kind": "practice", "units": "all", "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2012/pages/exams/", "note": "With solutions"},
+      {"title": "Final exam", "school": "MIT", "course": "6.046J Design and Analysis of Algorithms (Spring 2015)", "kind": "final", "units": "all", "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/pages/exams/", "note": "With solutions"}
+    ],
+
+    "ai": [
+      {"title": "Quiz 1: Rules, search and games (2010)", "school": "MIT", "course": "6.034 Artificial Intelligence (Patrick Winston)", "kind": "quiz", "units": [2, 4], "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/mit6_034f10_quiz1_2010/"},
+      {"title": "Quiz 2: Constraints and learning", "school": "MIT", "course": "6.034 Artificial Intelligence (Patrick Winston)", "kind": "quiz", "units": [3, 6], "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/pages/exams/"},
+      {"title": "Quiz 4: Probabilistic inference", "school": "MIT", "course": "6.034 Artificial Intelligence (Patrick Winston)", "kind": "quiz", "units": [5], "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/pages/exams/"},
+      {"title": "Past midterms and finals", "school": "UC Berkeley", "course": "CS 188 Introduction to Artificial Intelligence", "kind": "practice", "units": "all", "url": "https://ai.berkeley.edu/exams.html", "note": "Each with and without solutions"},
+      {"title": "Final exam (Fall 2010)", "school": "MIT", "course": "6.034 Artificial Intelligence (Patrick Winston)", "kind": "final", "units": "all", "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/pages/exams/"},
+      {"title": "Final exam (Fall 2022)", "school": "UC Berkeley", "course": "CS 188 Introduction to Artificial Intelligence", "kind": "final", "units": "all", "url": "https://inst.eecs.berkeley.edu/~cs188/fa22/assets/exam/cs188-fa22-final-solutions.pdf", "note": "Solutions"}
+    ],
+    "ml": [
+      {"title": "Midterm 1 (Fall 2025)", "school": "MIT", "course": "6.390 Introduction to Machine Learning", "kind": "midterm", "units": [1, 2, 3], "url": "https://introml.mit.edu/_static/fall25/midterm1/midterm1-fall2025-solutions.pdf", "note": "Solutions"},
+      {"title": "Midterm (Spring 2016)", "school": "UC Berkeley", "course": "CS 189 Introduction to Machine Learning (Jonathan Shewchuk)", "kind": "midterm", "units": [1, 2, 3], "url": "https://people.eecs.berkeley.edu/%7Ejrs/189/exam/mids16.pdf"},
+      {"title": "Exam 1 practice problems", "school": "Carnegie Mellon", "course": "10-301/601 Introduction to Machine Learning (Spring 2025)", "kind": "practice", "units": [1, 2, 3, 4], "url": "https://www.cs.cmu.edu/~mgormley/courses/10601-s25/handout/exam1_practice_solutions.pdf", "note": "Solutions"},
+      {"title": "Practice final", "school": "Carnegie Mellon", "course": "10-301/601 Introduction to Machine Learning (Henry Chai)", "kind": "final", "units": "all", "url": "https://www.cs.cmu.edu/~hchai2/courses/10601/lectures/Final_Practice.pdf", "solutions_url": "https://www.cs.cmu.edu/~hchai2/courses/10601/lectures/Final_Practice_Solns.pdf"},
+      {"title": "Final exam (Spring 2020)", "school": "UC Berkeley", "course": "CS 189 Introduction to Machine Learning (Jonathan Shewchuk)", "kind": "final", "units": "all", "url": "https://people.eecs.berkeley.edu/%7Ejrs/189/exam/finals20.pdf"}
+    ],
+    "dl": [
+      {"title": "Practice midterm 1", "school": "Stanford", "course": "CS 230 Deep Learning", "kind": "practice", "units": [1, 2], "url": "https://cs230.stanford.edu/section/6/Practice_1.pdf", "solutions_url": "https://cs230.stanford.edu/section/6/Practice_1_Sol.pdf"},
+      {"title": "Practice midterm 2", "school": "Stanford", "course": "CS 230 Deep Learning", "kind": "practice", "units": [2, 3], "url": "https://cs230.stanford.edu/section/6/Practice_2.pdf", "solutions_url": "https://cs230.stanford.edu/section/6/Practice_2_Sol.pdf"},
+      {"title": "Exam 3 practice: CNNs and RNNs", "school": "Carnegie Mellon", "course": "10-301/601 Introduction to Machine Learning (Spring 2025)", "kind": "practice", "units": [3, 4], "url": "https://www.cs.cmu.edu/~mgormley/courses/10601-s25/handout/exam3_practice_solutions.pdf", "note": "Solutions"},
+      {"title": "Midterm exam (Fall 2022), the course's main exam", "school": "Stanford", "course": "CS 230 Deep Learning", "kind": "final", "units": "all", "url": "https://cs230.stanford.edu/syllabus/fall_2022/CS230_Midterm_Fall_2022.pdf", "solutions_url": "https://cs230.stanford.edu/syllabus/fall_2022/CS230_Midterm_Solutions_Fall_2022.pdf"}
+    ],
+    "genai": [
+      {"title": "Midterm (2018): word vectors, backpropagation and RNNs", "school": "Stanford", "course": "CS 224N Natural Language Processing with Deep Learning", "kind": "midterm", "units": [4], "url": "https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1184/midterm/cs224n-midterm-2018-solution.pdf", "note": "Solutions"},
+      {"title": "Practice midterm 2", "school": "Stanford", "course": "CS 224N Natural Language Processing with Deep Learning", "kind": "practice", "units": [4], "url": "https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1184/practice_midterms/cs224n-practice-midterm-2.pdf", "solutions_url": "https://web.stanford.edu/class/archive/cs/cs224n/cs224n.1184/practice_midterms/cs224n-practice-midterm-2-sol.pdf"}
+    ],
+    "gfx": [
+      {"title": "Quiz 1 (2011): curves, transforms and particles", "school": "MIT", "course": "6.837 Computer Graphics", "kind": "midterm", "units": [1, 5], "url": "https://ocw.mit.edu/courses/6-837-computer-graphics-fall-2012/resources/mit6_837f12_2011_qz1/"},
+      {"title": "Ray tracing quiz (2003)", "school": "MIT", "course": "6.837 Computer Graphics", "kind": "quiz", "units": [4], "url": "https://ocw.mit.edu/courses/6-837-computer-graphics-fall-2012/bd1dc9cdb744de87238ef9d34735546c_MIT6_837F12_2003qz1_ray_tr.pdf"},
+      {"title": "Midterm (Spring 2008): color, shading and rotations", "school": "UC Berkeley", "course": "CS 184 Computer Graphics", "kind": "midterm", "units": [1, 3], "url": "https://hkn.eecs.berkeley.edu/examfiles/cs184_sp08_mt1.pdf"},
+      {"title": "Final exam (2011)", "school": "MIT", "course": "6.837 Computer Graphics", "kind": "final", "units": "all", "url": "https://ocw.mit.edu/courses/6-837-computer-graphics-fall-2012/resources/mit6_837f12_2011_final/", "note": "More quizzes and finals on the prior-year exams page"}
+    ],
+    "cv": [
+      {"title": "Exam 1 (take-home)", "school": "MIT", "course": "6.869 Advances in Computer Vision", "kind": "midterm", "units": [1, 2], "url": "https://courses.csail.mit.edu/6.869/exams/exam1.pdf"},
+      {"title": "Exam 2 (take-home)", "school": "MIT", "course": "6.869 Advances in Computer Vision", "kind": "midterm", "units": [2, 3], "url": "https://courses.csail.mit.edu/6.869/exams/exam2.pdf"},
+      {"title": "Midterm (Winter 2015): cameras and geometry", "school": "Stanford", "course": "CS 231A Computer Vision: From 3D Reconstruction to Recognition", "kind": "midterm", "units": [1, 3], "url": "https://cvgl.stanford.edu/teaching/cs231a_winter1415/HW/cs231a_midterm.pdf"},
+      {"title": "Final exam (Spring 2020): includes CNNs", "school": "UC Berkeley", "course": "CS 189 Introduction to Machine Learning", "kind": "practice", "units": [4], "url": "https://people.eecs.berkeley.edu/%7Ejrs/189/exam/finals20.pdf", "note": "Use the convolutional network questions"}
+    ],
+
+    "sci": [
+      {"title": "Midterm 2015: floating point, conditioning and linear systems", "school": "MIT", "course": "18.335J Introduction to Numerical Methods (graduate)", "kind": "midterm", "units": [1, 2, 3], "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/resources/mit18_335js19_exam15sol/", "note": "Solutions. A graduate course, so expect it to be hard"},
+      {"title": "Midterms and solutions from 2008 to 2019", "school": "MIT", "course": "18.335J Introduction to Numerical Methods (graduate)", "kind": "practice", "units": [1, 2, 3], "url": "https://ocw.mit.edu/courses/18-335j-introduction-to-numerical-methods-spring-2019/pages/resource-index/"}
+    ],
+    "ds": [
+      {"title": "Midterm (Spring 2024)", "school": "UC Berkeley", "course": "Data 100 Principles and Techniques of Data Science", "kind": "midterm", "units": [1, 2, 3], "url": "https://ds100.org/fa24/resources/assets/exams/sp24/ds100-sp24-midterm.pdf", "solutions_url": "https://ds100.org/su26/assets/exams/sp24/ds100-sp24-midterm-sol.pdf"},
+      {"title": "Final exam (Spring 2019)", "school": "UC Berkeley", "course": "Data 100 Principles and Techniques of Data Science", "kind": "final", "units": "all", "url": "https://ds100.org/fa24/resources/assets/exams/sp19/data100_sp19_final.pdf"},
+      {"title": "Final exam (Summer 2024)", "school": "UC Berkeley", "course": "Data 100 Principles and Techniques of Data Science", "kind": "final", "units": "all", "url": "https://ds100.org/fa25/resources/assets/exams/su24/su24_final_sol.pdf", "note": "Solutions"}
+    ],
+    "db": [
+      {"title": "Midterm 1 (Fall 2003)", "school": "UC Berkeley", "course": "CS 186 Introduction to Database Systems", "kind": "midterm", "units": [1, 2, 4], "url": "https://hkn.eecs.berkeley.edu/examfiles/cs186_fa03_mt1.pdf", "solutions_url": "https://hkn.eecs.berkeley.edu/examfiles/cs186_fa03_mt1_sol.pdf"},
+      {"title": "Midterms and finals", "school": "University of Washington", "course": "CSE 344 Introduction to Data Management", "kind": "practice", "units": [1, 2, 3, 5], "url": "https://courses.cs.washington.edu/courses/cse344/13au/content/Exams.html", "note": "With solutions"},
+      {"title": "Final exam (Spring 2018): SQL, algebra and recovery", "school": "UC Berkeley", "course": "CS 186/286 Introduction to Database Systems", "kind": "final", "units": "all", "url": "https://hkn.eecs.berkeley.edu/examfiles/cs186_sp18_f_sol.pdf", "note": "Solutions"}
+    ],
+    "dbadmin": [
+      {"title": "Final exam", "school": "Carnegie Mellon", "course": "15-415 Database Applications (Fall 2011)", "kind": "final", "units": [1, 3], "url": "https://www.andrew.cmu.edu/course/15-415-f11/applications/exams/finalexam.pdf"},
+      {"title": "Final exam (Spring 2018): query processing and recovery", "school": "UC Berkeley", "course": "CS 186/286 Introduction to Database Systems", "kind": "practice", "units": [2, 3], "url": "https://hkn.eecs.berkeley.edu/examfiles/cs186_sp18_f_sol.pdf", "note": "Solutions"}
+    ],
+
+    "cintro": [
+      {"title": "Midterm 1 (Summer 2020): use the C questions", "school": "UC Berkeley", "course": "CS 61C Great Ideas in Computer Architecture", "kind": "practice", "units": [1, 2, 3, 4], "url": "https://inst.eecs.berkeley.edu/%7Ecs61c/exams/pdfs/Su20_MT1_Blank.pdf", "note": "Harder than an intro course; skip questions on number representation and memory layout until later"}
+    ],
+    "clang": [
+      {"title": "Midterm 1 (Summer 2020): C and memory", "school": "UC Berkeley", "course": "CS 61C Great Ideas in Computer Architecture", "kind": "midterm", "units": [1, 2, 3], "url": "https://inst.eecs.berkeley.edu/%7Ecs61c/exams/pdfs/Su20_MT1_Blank.pdf"},
+      {"title": "Midterm (Spring 2021)", "school": "UC Berkeley", "course": "CS 61C Great Ideas in Computer Architecture", "kind": "midterm", "units": [1, 2, 3], "url": "https://inst.eecs.berkeley.edu/%7Ecs61c/exams/pdfs/Sp21_MT_Solutions.pdf", "note": "Solutions"},
+      {"title": "Past CS 61C exams by semester", "school": "UC Berkeley", "course": "CS 61C Great Ideas in Computer Architecture", "kind": "practice", "units": "all", "url": "https://hkn.eecs.berkeley.edu/exams/course/CS/61C"}
+    ],
+    "python": [
+      {"title": "Midterm 1 (Fall 2017)", "school": "UC Berkeley", "course": "CS 61A Structure and Interpretation of Computer Programs (Python)", "kind": "midterm", "units": [1, 2], "url": "https://hkn.eecs.berkeley.edu/examfiles/cs61a_fa17_mt1_sol.pdf", "note": "Solutions"},
+      {"title": "Midterm 2 (Fall 2017)", "school": "UC Berkeley", "course": "CS 61A Structure and Interpretation of Computer Programs (Python)", "kind": "midterm", "units": [3, 4], "url": "https://hkn.eecs.berkeley.edu/examfiles/cs61a_fa17_mt2_sol.pdf", "note": "Solutions"},
+      {"title": "Final exam (Fall 2016)", "school": "UC Berkeley", "course": "CS 61A Structure and Interpretation of Computer Programs (Python)", "kind": "final", "units": [1, 2, 3, 4], "url": "https://hkn.eecs.berkeley.edu/examfiles/cs61a_fa16_f_sol.pdf", "note": "Solutions"}
+    ],
+    "dsa": [
+      {"title": "Quiz 1: Data structures, sorting and hashing", "school": "MIT", "course": "6.006 Introduction to Algorithms (Spring 2020)", "kind": "midterm", "units": [1, 2, 3, 4, 5], "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/quizzes/", "note": "Quiz, review and solutions"},
+      {"title": "Quiz 2: Graphs and shortest paths", "school": "MIT", "course": "6.006 Introduction to Algorithms (Spring 2020)", "kind": "midterm", "units": [6], "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_q2_sol/", "note": "Solutions"},
+      {"title": "Quiz 3: Dynamic programming", "school": "MIT", "course": "6.006 Introduction to Algorithms (Spring 2020)", "kind": "midterm", "units": [7], "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/quizzes/", "note": "Quiz, review and solutions"},
+      {"title": "Past midterms and finals", "school": "UC Berkeley", "course": "CS 61B Data Structures", "kind": "practice", "units": "all", "url": "https://hkn.eecs.berkeley.edu/exams/course/cs/61b", "note": "Solutions for many"},
+      {"title": "Final exam", "school": "MIT", "course": "6.006 Introduction to Algorithms (Spring 2020)", "kind": "final", "units": "all", "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_final_sol/", "note": "Solutions"}
+    ],
+    "oop": [
+      {"title": "Midterm 1 (Fall 2003): Java and objects", "school": "UC Berkeley", "course": "CS 61B Data Structures", "kind": "midterm", "units": [1, 2, 3], "url": "https://hkn.eecs.berkeley.edu/examfiles/cs61b_fa03_mt1.pdf"},
+      {"title": "Past midterms and finals", "school": "UC Berkeley", "course": "CS 61B Data Structures (Java)", "kind": "practice", "units": [1, 2, 3], "url": "https://hkn.eecs.berkeley.edu/exams/course/cs/61b"},
+      {"title": "Quiz 2: design and abstraction", "school": "MIT", "course": "6.005 Software Construction (Spring 2016)", "kind": "final", "units": [2, 4, 5], "url": "https://ocw.mit.edu/courses/6-005-software-construction-spring-2016/pages/quizzes/", "note": "With solutions"}
+    ],
+    "compilers": [
+      {"title": "Practice quiz 1: Lexing, parsing and semantic analysis", "school": "MIT", "course": "6.035 Computer Language Engineering (Spring 2010)", "kind": "quiz", "units": [2, 3], "url": "https://ocw.mit.edu/courses/6-035-computer-language-engineering-spring-2010/pages/exams/", "note": "With solutions"},
+      {"title": "Practice quiz 2: Code generation", "school": "MIT", "course": "6.035 Computer Language Engineering (Spring 2010)", "kind": "quiz", "units": [4], "url": "https://ocw.mit.edu/courses/6-035-computer-language-engineering-spring-2010/pages/exams/", "note": "With solutions"},
+      {"title": "Quiz 3: Optimization", "school": "MIT", "course": "6.035 Computer Language Engineering (Spring 2010)", "kind": "quiz", "units": [5], "url": "https://ocw.mit.edu/courses/6-035-computer-language-engineering-spring-2010/pages/exams/"},
+      {"title": "Final exam (Spring 2008)", "school": "UC Berkeley", "course": "CS 164 Programming Languages and Compilers", "kind": "final", "units": "all", "url": "https://hkn.eecs.berkeley.edu/examfiles/cs164_sp08_f.pdf"}
+    ],
+    "swc": [
+      {"title": "Quiz 1: Specifications, ADTs and testing", "school": "MIT", "course": "6.005 Software Construction (Spring 2016)", "kind": "midterm", "units": [1, 2, 3], "url": "https://ocw.mit.edu/courses/6-005-software-construction-spring-2016/resources/mit6_005s16_quiz1/", "note": "Solutions on the quizzes page"},
+      {"title": "Quiz archive from earlier terms", "school": "MIT", "course": "6.005 Software Construction", "kind": "practice", "units": "all", "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/quizzes/archive/"},
+      {"title": "Quiz 2 (comprehensive)", "school": "MIT", "course": "6.005 Software Construction (Spring 2016)", "kind": "final", "units": "all", "url": "https://ocw.mit.edu/courses/6-005-software-construction-spring-2016/pages/quizzes/", "note": "With solutions"}
+    ],
+
+    "arch": [
+      {"title": "Quiz 1: Digital abstraction and combinational logic", "school": "MIT", "course": "6.004 Computation Structures (Spring 2009)", "kind": "quiz", "units": [1, 2], "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2009/resources/mit6_004s09_quiz01_sol/", "note": "Solutions"},
+      {"title": "Quizzes 2 to 4: Sequential logic, the Beta ISA and pipelining", "school": "MIT", "course": "6.004 Computation Structures (Spring 2009)", "kind": "quiz", "units": [1, 3, 4], "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2009/pages/exams/", "note": "Solutions for quizzes 2 and 3"},
+      {"title": "Quiz 5: Memory, virtual memory and parallelism", "school": "MIT", "course": "6.004 Computation Structures (Spring 2009)", "kind": "quiz", "units": [5, 6], "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2009/resources/mit6_004s09_quiz05/"},
+      {"title": "Past final exam questions (2019 and older)", "school": "UC Berkeley", "course": "CS 61C Great Ideas in Computer Architecture", "kind": "final", "units": "all", "url": "https://inst.eecs.berkeley.edu/%7Ecs61c/exams/forum-threads/su22_final_past_exam_questions_2019_older.pdf"}
+    ],
+    "os": [
+      {"title": "Midterm 1 (Spring 2016): processes, threads and synchronization", "school": "UC Berkeley", "course": "CS 162 Operating Systems", "kind": "midterm", "units": [1, 2, 3], "url": "https://hkn.eecs.berkeley.edu/examfiles/cs162_sp16_mt1_sol.pdf", "note": "Solutions"},
+      {"title": "Exam 1 (Fall 2010)", "school": "MIT", "course": "6.828 Operating System Engineering", "kind": "midterm", "units": [1, 3, 4], "url": "https://ocw.mit.edu/courses/6-828-operating-system-engineering-fall-2012/6da712e064f0ba32bd765d6dc915b36d_MIT6_828F12_q10_1.pdf"},
+      {"title": "Midterm 2 (Fall 2016): scheduling, memory and I/O", "school": "UC Berkeley", "course": "CS 162 Operating Systems", "kind": "midterm", "units": [2, 4, 5], "url": "https://hkn.eecs.berkeley.edu/examfiles/cs162_fa16_mt2_sol.pdf", "note": "Solutions"},
+      {"title": "Quizzes from 2002 onward", "school": "MIT", "course": "6.828 Operating System Engineering", "kind": "practice", "units": "all", "url": "https://ocw.mit.edu/courses/6-828-operating-system-engineering-fall-2012/pages/exams/", "note": "Solutions for many"},
+      {"title": "Exam 2 (Fall 2010), the course's final", "school": "MIT", "course": "6.828 Operating System Engineering", "kind": "final", "units": "all", "url": "https://ocw.mit.edu/courses/6-828-operating-system-engineering-fall-2012/c8ad06a012a0496a43c3041d96be90f1_MIT6_828F12_q10_2.pdf"}
+    ],
+    "net": [
+      {"title": "Final exam (Spring 2012)", "school": "Brown", "course": "CS 168 Computer Networks", "kind": "final", "units": "all", "url": "https://cs.brown.edu/courses/cs168/f19/content/final-s12.pdf"},
+      {"title": "Final exam (Fall 2007)", "school": "UC Berkeley", "course": "EE 122 Introduction to Communication Networks", "kind": "final", "units": "all", "url": "https://hkn.eecs.berkeley.edu/examfiles/ee122_fa07_f_sol.pdf", "note": "Solutions"}
+    ],
+    "sec": [
+      {"title": "Exam 1 (Fall 2014): memory safety and sandboxing", "school": "MIT", "course": "6.858 Computer Systems Security", "kind": "midterm", "units": [3], "url": "https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/resources/mit6_858f14_q14_1/"},
+      {"title": "Midterm 2 (Spring 2016): crypto and TLS", "school": "UC Berkeley", "course": "CS 161 Computer Security", "kind": "midterm", "units": [2, 4], "url": "https://hkn.eecs.berkeley.edu/examfiles/cs161_sp16_mt2.pdf"},
+      {"title": "Quizzes 2009 to 2014", "school": "MIT", "course": "6.858 Computer Systems Security", "kind": "practice", "units": "all", "url": "https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/pages/exams/", "note": "Solutions for most"},
+      {"title": "Final exam (Spring 2017)", "school": "UC Berkeley", "course": "CS 161 Computer Security", "kind": "final", "units": "all", "url": "https://hkn.eecs.berkeley.edu/examfiles/cs161_sp17_f.pdf"}
+    ],
+    "csys": [
+      {"title": "Quiz 2 (2012): replication and consensus", "school": "MIT", "course": "6.824 Distributed Systems", "kind": "quiz", "units": [4, 5], "url": "https://pdos.csail.mit.edu/6.824/quizzes/q2-12-ans.pdf", "note": "Solutions. 6.824 is the follow-on to 6.033, whose quizzes aren't public"},
+      {"title": "Exam 1 (2015)", "school": "MIT", "course": "6.824 Distributed Systems", "kind": "final", "units": [4, 5], "url": "https://pdos.csail.mit.edu/6.824/quizzes/q1-15-ans.pdf", "note": "Solutions"}
+    ],
+
+    "se": [
+      {"title": "Midterm (Fall 2004): process, UML and testing", "school": "UC Berkeley", "course": "CS 169 Software Engineering", "kind": "midterm", "units": [1, 3, 4], "url": "https://hkn.eecs.berkeley.edu/examfiles/cs169_fa04_mt1.pdf"},
+      {"title": "Past CS 169 midterms", "school": "UC Berkeley", "course": "CS 169 Software Engineering", "kind": "practice", "units": "all", "url": "https://hkn.eecs.berkeley.edu/exams/course/cs/169"},
+      {"title": "Quiz 1: Specifications and testing", "school": "MIT", "course": "6.005 Software Construction (Spring 2016)", "kind": "practice", "units": [4], "url": "https://ocw.mit.edu/courses/6-005-software-construction-spring-2016/resources/mit6_005s16_quiz1/"}
+    ],
+    "web": [
+      {"title": "Sample midterm (Spring 2023)", "school": "Stanford", "course": "CS 142 Web Applications", "kind": "midterm", "units": [1, 2], "url": "https://cs142.stanford.edu/downloads/SampleCS142MidtermExam-Spring2023.pdf", "solutions_url": "https://cs142.stanford.edu/downloads/SampleCS142MidtermExam-Spring2023Solutions.pdf"},
+      {"title": "Sample midterm (Winter 2022)", "school": "Stanford", "course": "CS 142 Web Applications", "kind": "midterm", "units": [1, 2], "url": "https://cs142.stanford.edu/downloads/SampleCS142MidtermExam-Winter2022.pdf", "solutions_url": "https://cs142.stanford.edu/downloads/SampleCS142MidtermExam-Winter2022Solutions.pdf"},
+      {"title": "Sample final (Spring 2022)", "school": "Stanford", "course": "CS 142 Web Applications", "kind": "final", "units": "all", "url": "https://cs142.stanford.edu/downloads/SampleCS142FinalExam-Spring2022.pdf"},
+      {"title": "Sample final (Spring 2019)", "school": "Stanford", "course": "CS 142 Web Applications", "kind": "final", "units": "all", "url": "https://cs142.stanford.edu/downloads/SampleCS142FinalExam-Spring2019.pdf"}
+    ],
+
+    "phys1": [
+      {"title": "Practice exams 1 to 3", "school": "MIT", "course": "8.01L Physics I: Classical Mechanics (Fall 2005)", "kind": "practice", "units": [1, 2, 3, 4], "url": "https://ocw.mit.edu/courses/8-01l-physics-i-classical-mechanics-fall-2005/pages/exams/", "note": "With solutions and formula sheets"},
+      {"title": "Practice final", "school": "MIT", "course": "8.01L Physics I: Classical Mechanics (Fall 2005)", "kind": "final", "units": "all", "url": "https://ocw.mit.edu/courses/8-01l-physics-i-classical-mechanics-fall-2005/resources/practice_final/"},
+      {"title": "Practice quizzes and final", "school": "MIT", "course": "8.01X Physics I with an Experimental Focus (Fall 2002)", "kind": "practice", "units": "all", "url": "https://ocw.mit.edu/courses/8-01x-physics-i-classical-mechanics-with-an-experimental-focus-fall-2002/pages/exams/"}
+    ],
+    "elec": [
+      {"title": "Quiz 1 (Spring 2007): resistive circuits and Thevenin equivalents", "school": "MIT", "course": "6.002 Circuits and Electronics", "kind": "midterm", "units": [1], "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/resources/quiz1_s07/"},
+      {"title": "Quiz 2 (Spring 2007): MOSFETs and transients", "school": "MIT", "course": "6.002 Circuits and Electronics", "kind": "midterm", "units": [2, 3], "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/c402cfea3b68444521e9f012d88b7006_quiz2_s07.pdf"},
+      {"title": "Final exams (Spring 2007 and Fall 2000)", "school": "MIT", "course": "6.002 Circuits and Electronics", "kind": "final", "units": "all", "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/pages/exams/", "note": "No solutions posted"}
+    ],
+    "dsp": [
+      {"title": "Final exam (Fall 2009)", "school": "MIT", "course": "6.003 Signals and Systems", "kind": "practice", "units": "all", "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/mit6_003f11_f09final/"},
+      {"title": "Final exam (Spring 2010)", "school": "MIT", "course": "6.003 Signals and Systems", "kind": "practice", "units": "all", "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/final-exam-solutions-spring-2010/", "note": "Solutions"},
+      {"title": "Final exam (Fall 2011)", "school": "MIT", "course": "6.003 Signals and Systems", "kind": "final", "units": "all", "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/final-exam-solutions-fall-2011/", "note": "Solutions"}
+    ],
+    "comm": [
+      {"title": "Quiz 1: Information, entropy and coding", "school": "MIT", "course": "6.02 Digital Communication Systems (Fall 2012)", "kind": "quiz", "units": [4], "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/pages/exams/"},
+      {"title": "Quiz 2: Signals, modulation and noise", "school": "MIT", "course": "6.02 Digital Communication Systems (Fall 2012)", "kind": "quiz", "units": [1, 2, 3], "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/pages/exams/"},
+      {"title": "Quiz 3: Packet networks", "school": "MIT", "course": "6.02 Digital Communication Systems (Fall 2012)", "kind": "quiz", "units": [5], "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/pages/exams/", "note": "6.02 has no final; the three quizzes cover the course"}
+    ],
+    "embedded": [
+      {"title": "Practice midterm 1", "school": "University of Michigan", "course": "EECS 373 Design of Microprocessor-Based Systems (Prabal Dutta)", "kind": "practice", "units": [1, 2, 3], "url": "https://www.eecs.berkeley.edu/~prabal/teaching/eecs373-f10/midterms/practice1.pdf"}
+    ]
+  }
+}

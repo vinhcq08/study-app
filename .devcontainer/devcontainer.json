@@ -1,0 +1,10 @@
+{
+  "name": "Study App",
+  "image": "mcr.microsoft.com/devcontainers/python:3.12",
+  "postCreateCommand": "pip install -r requirements.txt",
+  "postStartCommand": "nohup uvicorn app.main:app --host 0.0.0.0 --port 8000 > /tmp/study-app.log 2>&1 &",
+  "forwardPorts": [8000],
+  "portsAttributes": {
+    "8000": { "label": "Study App", "onAutoForward": "openBrowser" }
+  }
+}
