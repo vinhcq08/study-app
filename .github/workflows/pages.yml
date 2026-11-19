@@ -1,0 +1,51 @@
+name: Publish to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  PYODIDE_VERSION: "0.27.7"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Download Pyodide (only the files the app uses)
+        run: |
+          mkdir -p build
+          curl -sL "https://github.com/pyodide/pyodide/releases/download/${PYODIDE_VERSION}/pyodide-${PYODIDE_VERSION}.tar.bz2" \
+            | tar -xj -C build --wildcards \
+              'pyodide/pyodide.js' 'pyodide/pyodide.mjs' 'pyodide/pyodide.asm.js' 'pyodide/pyodide.asm.wasm' \
+              'pyodide/python_stdlib.zip' 'pyodide/pyodide-lock.json' 'pyodide/sqlite3-*' 'pyodide/pydantic*' \
+              'pyodide/typing_extensions-*' 'pyodide/annotated_types-*' 'pyodide/sniffio-*' 'pyodide/anyio-*' \
+              'pyodide/idna-*' 'pyodide/ssl-*' 'pyodide/openssl-*'
+      - name: Build the site
+        run: python scripts/build_pages.py --pyodide build/pyodide --out _site
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

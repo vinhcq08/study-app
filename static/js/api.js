@@ -1,6 +1,12 @@
 // Small wrapper around the backend's JSON API.
 
+import { BACKEND } from "./config.js";
+
 async function request(path, options = {}) {
+  if (BACKEND === "browser") {
+    const backend = await import("./browser-backend.js");
+    return backend.request(path, options);
+  }
   const res = await fetch(path, {
     headers: { "Content-Type": "application/json" },
     ...options,

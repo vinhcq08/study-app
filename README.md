@@ -48,6 +48,12 @@ Run the tests:
 pytest
 ```
 
+## Use it online (GitHub Pages)
+
+Every push to `main` publishes the app to **https://vinhcq08.github.io/study-app/** through the "Publish to GitHub Pages" workflow. That version needs no server: the same Python code runs inside your browser with [Pyodide](https://pyodide.org), and your progress is saved in that browser (IndexedDB) on that device. It doesn't sync between devices, and clearing the site's data in your browser erases it.
+
+To build the same site locally: `python scripts/build_pages.py --pyodide <folder with the Pyodide release files> --out _site`, then serve `_site` with any static file server.
+
 ## Run it on GitHub (Codespaces)
 
 On the repository page, choose **Code → Codespaces → Create codespace**. The app installs and starts by itself, and opens in a browser tab. Your progress is kept in that codespace until you delete it. Free GitHub accounts include a monthly allowance of Codespaces hours.
@@ -66,6 +72,8 @@ GitHub Pages can't run this app, because it needs its Python server and database
 | `data/curriculum.json` | The subjects, their tree position, prerequisites and MIT matches. Edit this to change the curriculum, then restart the server. |
 | `app/db.py` | SQLite schema for subjects and topics, loading the curriculum, and saving progress. Reloading never deletes your progress. |
 | `app/study_store.py` | Storage for exams, practice exams, study sessions, flashcards, resources and topic links. |
+| `app/browser.py` | Runs the same API inside the browser for the GitHub Pages version. |
+| `scripts/build_pages.py` | Builds the GitHub Pages site (pages + Python code + Pyodide). |
 | `app/today.py` | Builds the Today plan, streak, weekly minutes and subject levels. |
 | `app/dashboard.py` | Builds each subject dashboard and the cross-subject overview. |
 | `app/services.py` | Topic changes that touch several tables (mastery, review dates, activity log, starting the subject). |
