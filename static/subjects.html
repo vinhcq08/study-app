@@ -31,6 +31,13 @@
         <input type="search" id="search" placeholder="Find a subject" autocomplete="off"></label>
     </header>
 
+    <div class="s-tabs" role="tablist" aria-label="Views">
+      <button role="tab" id="tab-list-btn" data-tab="list" aria-controls="tab-list" aria-selected="true">Subjects</button>
+      <button role="tab" id="tab-plan-btn" data-tab="plan" aria-controls="tab-plan" aria-selected="false" tabindex="-1">Semester plan</button>
+      <button role="tab" id="tab-grades-btn" data-tab="grades" aria-controls="tab-grades" aria-selected="false" tabindex="-1">Grades</button>
+    </div>
+
+    <div class="tabpanel" id="tab-list" role="tabpanel" aria-labelledby="tab-list-btn">
     <section aria-labelledby="h-now">
       <h2 class="s-h" id="h-now">Taking now</h2>
       <div class="now-grid" id="now"></div>
@@ -50,6 +57,10 @@
       <h2 class="s-h" id="h-later">Later <small>by area</small></h2>
       <div id="later"></div>
     </section>
+    </div>
+
+    <div class="tabpanel" id="tab-plan" role="tabpanel" aria-labelledby="tab-plan-btn" hidden></div>
+    <div class="tabpanel" id="tab-grades" role="tabpanel" aria-labelledby="tab-grades-btn" hidden></div>
 
     <section class="card backup" aria-labelledby="h-backup">
       <div>

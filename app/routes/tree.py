@@ -6,7 +6,7 @@ from typing import Literal
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
-from .. import clock, dashboard, db, logic, study_store
+from .. import clock, dashboard, db, logic, planning, study_store
 
 router = APIRouter(prefix="/api")
 
@@ -76,3 +76,16 @@ def update_progress(subject_id: str, update: ProgressUpdate):
 def get_overview():
     with db.connect() as conn:
         return dashboard.build_overview(conn, clock.today())
+
+
+@router.get("/planning")
+def get_planning():
+    """The semester plan (with prerequisite warnings) and your grades."""
+    with db.connect() as conn:
+        lanes = db.fetch_lanes(conn)
+        subjects, relations = _load(conn)
+    states = logic.compute_states(subjects, relations)
+    for sid, s in subjects.items():
+        s["state"] = states[sid]
+    subject_list = list(subjects.values())
+    return {**planning.semester_plan(subject_list, relations), "grades": planning.grades(subject_list, lanes)}

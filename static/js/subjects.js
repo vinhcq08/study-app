@@ -1,6 +1,7 @@
 // Subjects: what you're taking now, what's ready to start, what's done, and the rest by area.
 // Also where you download and restore a backup of everything you've recorded.
-import { downloadBackup, fetchTree, restoreBackup } from "./api.js";
+import { downloadBackup, fetchPlanning, fetchTree, restoreBackup, saveProgress } from "./api.js";
+import { renderGrades, renderPlan } from "./planning.js";
 import { initNav } from "./nav.js";
 import { initTimer } from "./timer.js";
 import { esc, inDays, plural, toast } from "./util.js";
@@ -9,6 +10,9 @@ const $ = (id) => document.getElementById(id);
 const laneColor = (s) => `var(--${s.kind === "gap_filler" ? "gap" : s.lane_id})`;
 const link = (s, extra = "") => `subject.html?id=${encodeURIComponent(s.id)}${extra}`;
 let data = null;
+let planning = null;
+const TABS = ["list", "plan", "grades"];
+let tab = TABS.includes(location.hash.slice(1)) ? location.hash.slice(1) : "list";
 
 function nowCard(s, lanes) {
   const exam = s.next_exam;
@@ -74,14 +78,70 @@ function applySearch() {
   });
 }
 
+function renderTabs() {
+  for (const t of TABS) {
+    const btn = document.querySelector(`[data-tab="${t}"]`);
+    btn.setAttribute("aria-selected", String(t === tab));
+    btn.tabIndex = t === tab ? 0 : -1;
+    $(`tab-${t}`).hidden = t !== tab;
+  }
+  $("search").closest("label").hidden = tab !== "list";
+  if (tab === "plan" && planning) renderPlan($("tab-plan"), planning);
+  if (tab === "grades" && planning) renderGrades($("tab-grades"), planning.grades, data.subjects);
+}
+
 async function load() {
   try {
-    data = await fetchTree();
+    [data, planning] = await Promise.all([fetchTree(), fetchPlanning()]);
     render();
+    renderTabs();
   } catch (err) {
     $("counts").textContent = `Couldn't load your subjects: ${err.message}`;
   }
 }
+
+function showTab(next, focus = false) {
+  tab = next;
+  history.replaceState(null, "", next === "list" ? location.pathname : `#${next}`);
+  window.dispatchEvent(new HashChangeEvent("hashchange"));   // lets the published site's address bar follow
+  renderTabs();
+  if (focus) document.querySelector(`[data-tab="${next}"]`).focus();
+}
+
+window.addEventListener("hashchange", () => {
+  const next = TABS.includes(location.hash.slice(1)) ? location.hash.slice(1) : "list";
+  if (next !== tab) { tab = next; renderTabs(); }
+});
+
+document.querySelector(".s-tabs").addEventListener("click", (e) => {
+  const btn = e.target.closest("[data-tab]");
+  if (btn) showTab(btn.dataset.tab);
+});
+document.querySelector(".s-tabs").addEventListener("keydown", (e) => {
+  const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+  if (step) showTab(TABS[(TABS.indexOf(tab) + step + TABS.length) % TABS.length], true);
+});
+
+async function saveSubject(id, changes, message) {
+  const s = data.subjects.find((x) => x.id === id);
+  try {
+    await saveProgress(id, { status: s.status, semester: s.semester, grade: s.grade, ...changes });
+    await load();
+    toast(message);
+  } catch (err) {
+    toast(`Couldn't save: ${err.message}`, true);
+  }
+}
+
+document.addEventListener("change", (e) => {
+  const sem = e.target.closest("[data-semester]");
+  if (sem) {
+    const name = data.subjects.find((x) => x.id === sem.dataset.semester).short_name;
+    saveSubject(sem.dataset.semester, { semester: sem.value || null }, sem.value ? `${name} planned for ${sem.value}.` : `${name} is no longer planned.`);
+  }
+  const grade = e.target.closest("[data-grade]");
+  if (grade) saveSubject(grade.dataset.grade, { grade: grade.value.trim() || null }, "Grade saved.");
+});
 
 $("search").addEventListener("input", applySearch);
 
