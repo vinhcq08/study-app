@@ -26,10 +26,10 @@ fastapi.dependencies.utils.run_in_threadpool = _call_inline
 from fastapi import FastAPI  # noqa: E402  (after the patch above)
 
 from . import db  # noqa: E402
-from .routes import subjects, today, topics, tree  # noqa: E402
+from .routes import backup, subjects, today, topics, tree  # noqa: E402
 
 api = FastAPI(title="Study App (browser)")
-for module in (tree, subjects, topics, today):
+for module in (tree, subjects, topics, today, backup):
     api.include_router(module.router)
 
 

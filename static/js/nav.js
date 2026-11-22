@@ -22,11 +22,6 @@ export function initNav(page) {
   document.querySelectorAll("[data-nav]").forEach((a) => {
     if (a.dataset.nav === page) a.setAttribute("aria-current", "page");
   });
-  const subjectLink = document.querySelector('[data-nav="subject"]');
-  try {
-    const last = localStorage.getItem("last-subject");
-    if (subjectLink && last) subjectLink.href = `subject.html?id=${encodeURIComponent(last)}`;
-  } catch { /* storage blocked */ }
 
   const btn = document.getElementById("themeToggle");
   if (!btn) return;
@@ -37,8 +32,4 @@ export function initNav(page) {
     applyTheme(next);
     renderToggle(btn);
   });
-}
-
-export function rememberSubject(id) {
-  try { localStorage.setItem("last-subject", id); } catch { /* storage blocked */ }
 }

@@ -3,7 +3,7 @@ import {
   addCard, addExam, addResource, deleteCard, deleteExam, deleteResource,
   fetchDashboard, saveProgress, tickPracticeExam, updateTopic,
 } from "./api.js";
-import { initNav, rememberSubject } from "./nav.js";
+import { initNav } from "./nav.js";
 import { openPractice } from "./practice.js";
 import { openReview } from "./review.js";
 import { activeTopic, initTimer, startTimer } from "./timer.js";
@@ -30,7 +30,8 @@ const RESOURCE_KINDS = [["video", "Video"], ["reading", "Reading"], ["slides", "
 const BAR_ORDER = [4, 3, 2, 1, 0];
 
 const params = new URLSearchParams(location.search);
-const subjectId = params.get("id") || "calc1";
+const subjectId = params.get("id");
+if (!subjectId) location.replace("subjects.html");
 let data = null;
 let filter = new URLSearchParams(location.search).get("filter") || "all";
 let showExamForm = false;
@@ -465,7 +466,6 @@ function openFromHash() {
 
 // ---- Start ----
 initNav("subject");
-rememberSubject(subjectId);
 if (!FILTERS.some(([key]) => key === filter)) filter = "all";
 initTimer((session) => { if (session.subjectId === subjectId) reload(); });
 (async function start() {

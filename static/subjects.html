@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Subjects · Study App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+  <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/subjects.css">
+</head>
+<body>
+  <nav class="topnav" aria-label="Main">
+    <a class="brand" href="./">Study App</a>
+    <a class="navlink" data-nav="today" href="./"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Today</a>
+    <a class="navlink" data-nav="tree" href="tree.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="2"></circle><circle cx="5" cy="18" r="2"></circle><circle cx="19" cy="12" r="2"></circle><path d="M7 6h4l4 6M7 18h4l4-6"></path></svg>Skill tree</a>
+    <a class="navlink" data-nav="subject" href="subjects.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"></path><path d="M4 19V5"></path></svg>Subjects</a>
+    <span class="sp"></span>
+    <button class="theme-toggle" id="themeToggle" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"></path></svg><span>Auto</span></button>
+  </nav>
+
+  <main class="wrap subjects">
+    <header class="s-head">
+      <div>
+        <h1>Subjects</h1>
+        <p class="s-sub" id="counts">Loading…</p>
+      </div>
+      <label class="s-search"><span class="sr-only">Find a subject</span>
+        <input type="search" id="search" placeholder="Find a subject" autocomplete="off"></label>
+    </header>
+
+    <section aria-labelledby="h-now">
+      <h2 class="s-h" id="h-now">Taking now</h2>
+      <div class="now-grid" id="now"></div>
+    </section>
+
+    <section aria-labelledby="h-ready">
+      <h2 class="s-h" id="h-ready">Ready to start <small>prerequisites done</small></h2>
+      <ul class="rows" id="ready"></ul>
+    </section>
+
+    <section aria-labelledby="h-done">
+      <h2 class="s-h" id="h-done">Done</h2>
+      <ul class="rows" id="done"></ul>
+    </section>
+
+    <section aria-labelledby="h-later">
+      <h2 class="s-h" id="h-later">Later <small>by area</small></h2>
+      <div id="later"></div>
+    </section>
+
+    <section class="card backup" aria-labelledby="h-backup">
+      <div>
+        <h2 id="h-backup">Your data</h2>
+        <p class="none" id="backupNote">Everything you record is saved on this device. Download a backup now and then, and use it to move to another browser or computer.</p>
+      </div>
+      <div class="backup-actions">
+        <button class="btn" id="downloadBackup" type="button">Download backup</button>
+        <label class="btn" for="restoreFile">Restore from backup…</label>
+        <input type="file" id="restoreFile" accept="application/json,.json" hidden>
+      </div>
+    </section>
+  </main>
+  <script type="module" src="js/subjects.js"></script>
+</body>
+</html>

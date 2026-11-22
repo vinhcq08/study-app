@@ -234,3 +234,39 @@ def test_practice_ticks_survive_reloading_the_catalog(client):
 
 def test_unknown_practice_exam(client):
     assert client.put("/api/practice-exams/nope", json={"done": True}).status_code == 404
+
+
+# ---- Backup ----
+
+def test_backup_round_trip(client):
+    client.put("/api/progress/linalg", json={"status": "in_progress", "grade": "A"})
+    card_id = client.post("/api/topics/linalg:rank/cards", json={"front": "Q", "back": "A"}).json()["id"]
+    client.post(f"/api/cards/{card_id}/review", json={"result": "good"})
+    client.put("/api/topics/linalg:rank", json={"mastery": 3, "notes": "pivots"})
+    client.post("/api/subjects/linalg/exams", json={"name": "Midterm", "exam_date": "2026-12-01"})
+    saved = client.get("/api/backup").json()
+    assert saved["format"] == "study-app-backup" and saved["tables"]["flashcards"]
+
+    client.put("/api/topics/linalg:rank", json={"mastery": 0, "notes": ""})   # change things after the backup
+    client.delete(f"/api/cards/{card_id}")
+    res = client.post("/api/backup", json=saved)
+    assert res.status_code == 200, res.text
+    d = dash(client)
+    t = topic(d, "linalg:rank")
+    assert t["mastery"] == 3 and t["notes"] == "pivots" and len(t["cards"]) == 1
+    assert d["exams"][0]["name"] == "Midterm" and d["subject"]["grade"] == "A"
+
+
+def test_bad_backup_changes_nothing(client):
+    client.put("/api/topics/linalg:rank", json={"mastery": 2})
+    assert client.post("/api/backup", json={"format": "something else"}).status_code == 422
+    broken = client.get("/api/backup").json()
+    broken["tables"]["topic_progress"].append({"topic_id": "no-such-topic", "mastery": 1})
+    assert client.post("/api/backup", json=broken).status_code == 422
+    assert topic(dash(client), "linalg:rank")["mastery"] == 2      # untouched
+
+
+def test_tree_shows_next_exam(client):
+    client.post("/api/subjects/linalg/exams", json={"name": "Midterm", "exam_date": "2026-12-01"})
+    s = next(s for s in client.get("/api/tree").json()["subjects"] if s["id"] == "linalg")
+    assert s["next_exam"]["name"] == "Midterm" and s["next_exam"]["days_left"] == 12

@@ -69,3 +69,5 @@ export const tickPlanItem = (key, done) =>
 export const addToPlan = () => request("/api/today/more", { method: "POST", body: "{}" });
 export const rebuildPlan = () => request("/api/today/rebuild", { method: "POST", body: "{}" });
 export const fetchReview = (subjectId) => request(`/api/subjects/${encodeURIComponent(subjectId)}/review`);
+export const downloadBackup = () => request("/api/backup");
+export const restoreBackup = (backup) => request("/api/backup", { method: "POST", body: JSON.stringify(backup) });

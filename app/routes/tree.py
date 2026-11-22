@@ -31,6 +31,11 @@ def get_tree():
         mastery = db.mastery_by_subject(conn)
         practice = study_store.practice_counts_by_subject(conn)
         started = study_store.started_topics(conn)
+        next_exams = {}
+        for e in sorted(study_store.fetch_exams(conn), key=lambda e: e["exam_date"]):
+            view = dashboard.exam_view(conn, e, now)
+            if not view["past"] and e["subject_id"] not in next_exams:
+                next_exams[e["subject_id"]] = {k: view[k] for k in ("name", "exam_date", "days_left", "readiness_pct")}
     due = {}
     for t in started:
         last = date.fromisoformat(t["last_reviewed"]) if t["last_reviewed"] else None
@@ -47,6 +52,7 @@ def get_tree():
         s["due_count"] = due.get(sid, 0)
         p = practice.get(sid, {"total": 0, "done": 0})
         s["practice_total"], s["practice_done"] = p["total"], p["done"]
+        s["next_exam"] = next_exams.get(sid)
     return {"lanes": lanes, "subjects": list(subjects.values()), "relations": relations}
 
 
