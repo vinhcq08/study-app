@@ -270,3 +270,27 @@ def test_tree_shows_next_exam(client):
     client.post("/api/subjects/linalg/exams", json={"name": "Midterm", "exam_date": "2026-12-01"})
     s = next(s for s in client.get("/api/tree").json()["subjects"] if s["id"] == "linalg")
     assert s["next_exam"]["name"] == "Midterm" and s["next_exam"]["days_left"] == 12
+
+
+# ---- Past paper results ----
+
+def test_past_paper_result_feeds_needs_attention(client):
+    d = dash(client)
+    exam = d["practice_exams"][0]
+    unit = exam["unit_ids"][0]
+    client.put("/api/topics/" + next(t["id"] for t in d["units"][0]["topics"] if t["unit_id"] == unit), json={"mastery": 1})
+    res = client.put(f"/api/practice-exams/{exam['id']}/result", json={"score": 55, "minutes": 80, "weak_units": [unit]})
+    assert res.status_code == 200, res.text
+    d = dash(client)
+    e = next(e for e in d["practice_exams"] if e["id"] == exam["id"])
+    assert e["done"] and e["score"] == 55 and e["minutes"] == 80 and e["weak_units"] == [unit]
+    weak = [t for t in d["weak_spots"] if "went badly on a past paper" in t["weak_reasons"]]
+    assert weak and all(t["unit_id"] == unit and t["mastery"] < 3 for t in weak)
+    assert any("went badly on a past paper" in w["weak_reasons"] for w in client.get("/api/overview").json()["weak_spots"])
+
+    # ticking again keeps the result; a unit from another subject is refused
+    client.put(f"/api/practice-exams/{exam['id']}", json={"done": True})
+    assert next(e for e in dash(client)["practice_exams"] if e["id"] == exam["id"])["score"] == 55
+    assert client.put(f"/api/practice-exams/{exam['id']}/result", json={"weak_units": ["calc1:limits"]}).status_code == 422
+    assert client.put(f"/api/practice-exams/{exam['id']}/result", json={"score": 140}).status_code == 422
+    assert client.put("/api/practice-exams/nope/result", json={}).status_code == 404

@@ -15,6 +15,12 @@ class PracticeExamUpdate(BaseModel):
     done: bool
 
 
+class PracticeResult(BaseModel):
+    score: int | None = Field(default=None, ge=0, le=100)          # percent
+    minutes: int | None = Field(default=None, ge=1, le=600)
+    weak_units: list[str] = Field(default_factory=list, max_length=40)
+
+
 class ExamCreate(BaseModel):
     name: str = Field(min_length=1, max_length=60)
     exam_date: date
@@ -67,9 +73,25 @@ def tick_practice_exam(exam_id: str, update: PracticeExamUpdate):
     done_on = clock.today().isoformat() if update.done else None
     with db.connect() as conn:
         if not study_store.practice_exam_exists(conn, exam_id):
-            raise HTTPException(404, f"No practice exam with id '{exam_id}'")
+            raise HTTPException(404, f"No past paper with id '{exam_id}'")
         study_store.set_practice_done(conn, exam_id, done_on)
     return {"id": exam_id, "done": update.done, "done_on": done_on}
+
+
+@router.put("/practice-exams/{exam_id}/result")
+def save_practice_result(exam_id: str, result: PracticeResult):
+    """How a past paper went: score, time taken, and the units that went badly."""
+    with db.connect() as conn:
+        subject_id = study_store.practice_exam_subject(conn, exam_id)
+        if not subject_id:
+            raise HTTPException(404, f"No past paper with id '{exam_id}'")
+        units = {u["id"] for u in db.fetch_units(conn, subject_id)}
+        bad = [u for u in result.weak_units if u not in units]
+        if bad:
+            raise HTTPException(422, f"Not a unit of this subject: {', '.join(bad)}")
+        weak = list(dict.fromkeys(result.weak_units))
+        study_store.save_practice_result(conn, exam_id, result.score, result.minutes, weak)
+    return {"id": exam_id, "score": result.score, "minutes": result.minutes, "weak_units": weak}
 
 
 @router.get("/subjects/{subject_id}/review")

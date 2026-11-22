@@ -2,7 +2,7 @@
 
 import json
 
-from . import db
+from . import clock, db
 
 SCHEMA = """
 CREATE TABLE IF NOT EXISTS exams (
@@ -377,7 +377,7 @@ def missed_cards(conn, since: str, subject_id: str | None = None) -> dict[str, i
 def started_topics(conn) -> list[dict]:
     """Every topic you've started, across all subjects."""
     return rows(conn, """
-        SELECT t.id, t.name, t.subject_id, s.short_name AS subject_name, p.mastery, p.last_reviewed,
+        SELECT t.id, t.name, t.subject_id, t.unit_id, s.short_name AS subject_name, p.mastery, p.last_reviewed,
                (SELECT COUNT(*) FROM flashcards c WHERE c.topic_id = t.id) AS card_count
         FROM topics t JOIN topic_progress p ON p.topic_id = t.id JOIN subjects s ON s.id = t.subject_id
         WHERE t.retired = 0 AND p.mastery > 0""")
@@ -387,12 +387,38 @@ def started_topics(conn) -> list[dict]:
 
 def fetch_practice_exams(conn, subject_id: str) -> list[dict]:
     exams = rows(conn, """SELECT e.id, e.title, e.school, e.course, e.kind, e.url, e.solutions_url, e.note,
-                                 p.done_on
+                                 p.done_on, p.score, p.minutes, p.weak_units
                           FROM practice_exams e LEFT JOIN practice_exam_progress p ON p.exam_id = e.id
                           WHERE e.subject_id = ? ORDER BY e.position""", (subject_id,))
     for e in exams:
         e["unit_ids"] = [r["unit_id"] for r in rows(conn, "SELECT unit_id FROM practice_exam_units WHERE exam_id = ?", (e["id"],))]
+        e["weak_units"] = json.loads(e["weak_units"]) if e["weak_units"] else []
     return exams
+
+
+def practice_exam_subject(conn, exam_id: str) -> str | None:
+    row = conn.execute("SELECT subject_id FROM practice_exams WHERE id = ?", (exam_id,)).fetchone()
+    return row["subject_id"] if row else None
+
+
+def save_practice_result(conn, exam_id: str, score: int | None, minutes: int | None, weak_units: list[str]) -> None:
+    """Record how a past paper went. Saving a result also ticks the paper off."""
+    conn.execute("""INSERT INTO practice_exam_progress (exam_id, done_on, score, minutes, weak_units)
+                    VALUES (?, ?, ?, ?, ?)
+                    ON CONFLICT(exam_id) DO UPDATE SET score = excluded.score, minutes = excluded.minutes,
+                                                       weak_units = excluded.weak_units""",
+                 (exam_id, clock.today().isoformat(), score, minutes, json.dumps(weak_units) if weak_units else None))
+
+
+def weak_paper_units(conn, since: str, subject_id: str | None = None) -> set[str]:
+    """Units that went badly on past papers done since a date."""
+    sql = """SELECT p.weak_units FROM practice_exam_progress p JOIN practice_exams e ON e.id = p.exam_id
+             WHERE p.weak_units IS NOT NULL AND p.done_on >= ?"""
+    args = [since]
+    if subject_id:
+        sql += " AND e.subject_id = ?"
+        args.append(subject_id)
+    return {u for r in rows(conn, sql, args) for u in json.loads(r["weak_units"])}
 
 
 def practice_exam_exists(conn, exam_id: str) -> bool:
@@ -400,9 +426,9 @@ def practice_exam_exists(conn, exam_id: str) -> bool:
 
 
 def set_practice_done(conn, exam_id: str, done_on: str | None) -> None:
-    if done_on:
+    if done_on:  # ticking again keeps the first date and any result
         conn.execute("""INSERT INTO practice_exam_progress (exam_id, done_on) VALUES (?, ?)
-                        ON CONFLICT(exam_id) DO UPDATE SET done_on = excluded.done_on""", (exam_id, done_on))
+                        ON CONFLICT(exam_id) DO NOTHING""", (exam_id, done_on))
     else:
         conn.execute("DELETE FROM practice_exam_progress WHERE exam_id = ?", (exam_id,))
 

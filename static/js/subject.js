@@ -4,6 +4,7 @@ import {
   fetchDashboard, saveProgress, tickPracticeExam, updateTopic,
 } from "./api.js";
 import { initNav } from "./nav.js";
+import { openPaperResult, resultText } from "./paper-result.js";
 import { openPractice } from "./practice.js";
 import { openReview } from "./review.js";
 import { activeTopic, initTimer, startTimer } from "./timer.js";
@@ -43,6 +44,15 @@ const allTopics = () => data.units.flatMap((u) => u.topics);
 const topicById = (id) => allTopics().find((t) => t.id === id);
 const practiceById = (id) => data.practice_exams.find((e) => e.id === id);
 const levelName = (l) => data.mastery_labels[l];
+const unitNames = () => Object.fromEntries(data.units.map((u) => [u.id, u.name]));
+
+async function askPaperResult(exam) {
+  const saved = await openPaperResult(exam, data.units);
+  if (saved) {
+    await reload();
+    toast(saved.weak_units.length ? "Result saved. Those units are now in Needs attention." : "Result saved.");
+  }
+}
 
 // ---- Small pieces ----
 function segbar(counts, label) {
@@ -65,8 +75,9 @@ function practiceItem(e, keyPrefix) {
       <span class="pe-title">${esc(e.title)}${e.end_of_subject ? ' <span class="kind final">End of subject</span>' : ` <span class="kind">${KIND_LABEL[e.kind]}</span>`}</span>
       <small>${esc(e.school)} · ${esc(e.course)}</small>
       <small>${esc(units)}${e.note ? ` · ${esc(e.note)}` : ""}${e.done ? ` · <b>Done ${shortDate(e.done_on)}</b>` : ""}</small>
+      ${e.done && resultText(e) ? `<small class="pe-result">${esc(resultText(e, unitNames()))}</small>` : ""}
     </label>
-    <span class="pe-links"><a href="${esc(e.url)}" target="_blank" rel="noopener">Open exam</a>${e.solutions_url ? `<a href="${esc(e.solutions_url)}" target="_blank" rel="noopener">Solutions</a>` : ""}</span>
+    <span class="pe-links"><a href="${esc(e.url)}" target="_blank" rel="noopener">Open exam</a>${e.solutions_url ? `<a href="${esc(e.solutions_url)}" target="_blank" rel="noopener">Solutions</a>` : ""}${e.done ? `<button class="linkbtn" data-paper-result="${esc(e.id)}" data-key="pr-${esc(keyPrefix)}-${esc(e.id)}">${resultText(e) ? "Edit result" : "Add result"}</button>` : ""}</span>
   </li>`;
 }
 
@@ -123,7 +134,9 @@ function renderUnits() {
 function renderPractice() {
   const exams = data.practice_exams;
   const m = data.summary;
-  $("practiceSummary").textContent = exams.length ? `${m.practice_done} of ${exams.length} done` : "";
+  const scored = exams.filter((e) => e.done && e.score != null);
+  const avg = scored.length ? Math.round(scored.reduce((a, e) => a + e.score, 0) / scored.length) : null;
+  $("practiceSummary").textContent = exams.length ? `${m.practice_done} of ${exams.length} done${avg != null ? ` · average ${avg}%` : ""}` : "";
   if (!exams.length) {
     $("practice").innerHTML = `<p class="empty">No openly published past papers from top universities were found for this subject. Use your own course's past papers, and add them to topics as resources.</p>`;
     return;
@@ -374,6 +387,7 @@ document.addEventListener("click", (e) => {
   const topicEl = el("[data-topic]");
   if (el("[data-status]")) { saveSubject({ status: el("[data-status]").dataset.status }); return; }
   if (el("#reviewDue")) { reviewDue(); return; }
+  if (el("[data-paper-result]")) { askPaperResult(practiceById(el("[data-paper-result]").dataset.paperResult)); return; }
 
   if (el("[data-level]") && topicEl) { run(() => updateTopic(topicEl.dataset.topic, { mastery: Number(el("[data-level]").dataset.level) })); return; }
   if (el("[data-study]")) { startStudy(el("[data-study]").dataset.study); return; }
@@ -406,7 +420,8 @@ document.addEventListener("change", (e) => {
   if (e.target.matches("input[data-practice]")) {
     const done = e.target.checked;
     const exam = practiceById(e.target.dataset.practice);
-    run(() => tickPracticeExam(exam.id, done), done ? `Ticked off: ${exam.title}` : `Unticked: ${exam.title}`);
+    run(() => tickPracticeExam(exam.id, done), done ? `Ticked off: ${exam.title}` : `Unticked: ${exam.title}`)
+      .then((res) => { if (res && done) askPaperResult(practiceById(exam.id) || exam); });
   }
 });
 

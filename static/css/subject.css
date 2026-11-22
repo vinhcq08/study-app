@@ -234,3 +234,5 @@
 @media (min-width: 1000px) { .exam-cols { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); } }
 .exam-block { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
 
+.pe-result { color: var(--ink) !important; }
+.pe-links .linkbtn { align-self: flex-end; }

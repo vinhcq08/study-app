@@ -121,7 +121,8 @@ def build_dashboard(conn, subject_id: str, now: date) -> dict:
     for t in topics:
         t["practice_exam_ids"] = [e["id"] for e in practice if t["unit_id"] in e["unit_ids"]]
 
-    weak = _weak_list(topics, marks, missed)
+    paper_units = study_store.weak_paper_units(conn, (now - MARK_DOWN_WINDOW).isoformat(), subject_id)
+    weak = _weak_list(topics, marks, missed, paper_units)
     weak_ids = {t["id"]: t["weak_reasons"] for t in weak}
     for t in topics:
         t["weak_reasons"] = weak_ids.get(t["id"], [])
@@ -235,6 +236,6 @@ def build_overview(conn, now: date) -> dict:
         "upcoming_exams": upcoming,
         "weak_spots": [
             {k: t[k] for k in ("id", "name", "subject_id", "subject_name", "weak_reasons", "weak_score")}
-            for t in _weak_list(topics, marks, missed)[:6]
+            for t in _weak_list(topics, marks, missed, study_store.weak_paper_units(conn, (now - MARK_DOWN_WINDOW).isoformat()))[:6]
         ],
     }

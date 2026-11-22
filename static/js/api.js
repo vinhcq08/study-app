@@ -87,3 +87,5 @@ export const rebuildPlan = () => request("/api/today/rebuild", { method: "POST",
 export const fetchReview = (subjectId) => request(`/api/subjects/${encodeURIComponent(subjectId)}/review`);
 export const downloadBackup = () => request("/api/backup");
 export const restoreBackup = (backup) => request("/api/backup", { method: "POST", body: JSON.stringify(backup) });
+export const savePracticeResult = (examId, result) =>
+  request(`/api/practice-exams/${encodeURIComponent(examId)}/result`, { method: "PUT", body: JSON.stringify(result) });
