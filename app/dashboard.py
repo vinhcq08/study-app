@@ -48,11 +48,11 @@ def exam_view(conn, exam: dict, now: date, unit_names: dict[str, str] | None = N
     return view
 
 
-def _weak_list(topics: list[dict], marks: dict, missed: dict) -> list[dict]:
+def _weak_list(topics: list[dict], marks: dict, missed: dict, weak_units: set | None = None) -> list[dict]:
     weak = []
     for t in topics:
-        overdue = -t["days_until_review"] if t.get("is_due") else 0
-        score, reasons = logic.weak_spot(overdue, marks.get(t["id"], 0), missed.get(t["id"], 0))
+        on_paper = bool(weak_units) and t.get("unit_id") in weak_units and t.get("mastery", 0) < logic.EXAM_PREP_BELOW
+        score, reasons = logic.weak_spot(marks.get(t["id"], 0), missed.get(t["id"], 0), on_paper)
         if score >= logic.WEAK_THRESHOLD:
             weak.append({**t, "weak_score": score, "weak_reasons": reasons})
     return sorted(weak, key=lambda t: -t["weak_score"])

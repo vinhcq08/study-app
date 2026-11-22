@@ -56,7 +56,8 @@ def delete_exam(exam_id: int):
 def practice(subject_id: str, topic_id: str | None = None, limit: int = 20):
     with db.connect() as conn:
         _require_subject(conn, subject_id)
-        return {"cards": study_store.practice_cards(conn, subject_id, topic_id, max(1, min(limit, 50)))}
+        return {"cards": study_store.practice_cards(conn, subject_id, topic_id, max(1, min(limit, 50)),
+                                                    clock.today().isoformat())}
 
 
 @router.put("/practice-exams/{exam_id}")

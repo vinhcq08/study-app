@@ -261,3 +261,6 @@ dialog.practice::backdrop { background: rgb(10 15 25 / 0.6); }
 .boot-spin { width: 34px; height: 34px; border-radius: 50%; border: 3px solid var(--line); border-top-color: var(--accent); animation: spin 0.9s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .boot-spin { animation-duration: 3s; } }
+.mit-compare { font-size: 14px; }
+.mit-compare summary { cursor: pointer; color: var(--info); font-weight: 500; width: fit-content; }
+.mit-compare[open] summary { margin-bottom: 10px; }

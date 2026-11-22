@@ -1,5 +1,5 @@
 // Today: the home page. A short plan picked from what's due, your exams and practice exams.
-import { fetchToday, tickPlanItem } from "./api.js";
+import { addToPlan, fetchToday, rebuildPlan, tickPlanItem } from "./api.js";
 import { initNav } from "./nav.js";
 import { openPractice } from "./practice.js";
 import { activeTopic, initTimer, startTimer } from "./timer.js";
@@ -7,7 +7,7 @@ import { esc, hoursAndMinutes, inDays, longDate, plural, toast } from "./util.js
 
 const MASTERY_LABELS = ["Not started", "Learning", "Practising", "Confident", "Mastered"];
 const KIND_LABEL = {
-  review: "Review", exam_prep: "Exam prep", practice: "Practice exam", cards: "Flashcards",
+  review: "Review", exam_prep: "Exam prep", practice: "Past paper", cards: "Flashcards",
   attention: "Needs attention", new: "New topic",
 };
 const TIMED = new Set(["review", "exam_prep", "attention", "new"]);
@@ -64,10 +64,13 @@ function renderPlan() {
       </div>
       <div class="hero-actions">
         ${actionsFor(next, true)}
-        <label class="hero-tick"><input type="checkbox" data-tick="${esc(next.key)}"> Mark done</label>
+        <label class="hero-tick"><input type="checkbox" data-tick="${esc(next.key)}"> ${next.kind === "practice" ? "Mark paper done" : "Mark done"}</label>
       </div>
     </article>` : `<article class="hero calm"><span class="hero-title">Nothing left in today's plan.</span>
-      <span class="hero-detail">Good work. Practise flashcards or pick a topic on a subject page if you want to keep going.</span></article>`;
+      <span class="hero-detail">Good work. Add more if you want to keep going.</span>
+      <div class="hero-actions"><button class="btn" data-more>Add more to today</button></div></article>`;
+  $("planTools").innerHTML = next ? `<button class="linkbtn" data-more>Add more to today's plan</button>
+    <button class="linkbtn" data-rebuild title="Keeps what you've done and picks the rest again">Rebuild plan</button>` : "";
 
   $("thenHead").hidden = !rest.length;
   $("plan").innerHTML = rest.map((i) => `
@@ -83,7 +86,7 @@ function renderPlan() {
 
   const doneRows = done.map((i) => `
     <li class="item">
-      <input type="checkbox" id="tick-${esc(i.key)}" data-tick="${esc(i.key)}" checked>
+      <input type="checkbox" id="tick-${esc(i.key)}" data-tick="${esc(i.key)}" checked${i.done_by === "action" && i.kind !== "practice" ? ' disabled title="Done through the real activity"' : ""}>
       <label for="tick-${esc(i.key)}" class="item-text"><span class="item-title">${esc(i.title)}</span><small>${esc(i.subject_name)}</small></label>
       <span class="item-min">${i.minutes} min</span>
     </li>`).concat(data.sessions_today.map((s) => `
@@ -150,13 +153,26 @@ document.addEventListener("change", async (e) => {
   try {
     await tickPlanItem(key, e.target.checked);
     await reload();
-    if (e.target.checked) toast("Done. Nice work.");
+    if (e.target.checked) toast(itemByKey(key)?.kind === "practice" ? "Past paper ticked off." : "Done. Nice work.");
   } catch (err) {
     toast(`Couldn't save: ${err.message}`, true);
   }
 });
 
+async function planAction(fn, message) {
+  try {
+    const res = await fn();
+    await reload();
+    if (res && res.added === 0) toast("Nothing more to add right now.");
+    else if (message) toast(message);
+  } catch (err) {
+    toast(`Couldn't update the plan: ${err.message}`, true);
+  }
+}
+
 document.addEventListener("click", (e) => {
+  if (e.target.closest("[data-more]")) { planAction(addToPlan, "Added to today's plan."); return; }
+  if (e.target.closest("[data-rebuild]")) { planAction(rebuildPlan, "Plan rebuilt. Finished items were kept."); return; }
   const start = e.target.closest("[data-start]");
   if (start) {
     const i = itemByKey(start.dataset.start);

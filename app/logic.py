@@ -143,6 +143,14 @@ def next_box(box: int, result: str) -> int:
     raise ValueError(f"unknown result {result!r}")
 
 
+# Days until a card comes back, by the box it's now in.
+CARD_REVIEW_DAYS = {1: 1, 2: 3, 3: 7, 4: 21}
+
+
+def next_card_due(box: int, on: date) -> date:
+    return on + timedelta(days=CARD_REVIEW_DAYS.get(box, 1))
+
+
 def mastery_from_cards(boxes: list[int]) -> int | None:
     """A topic's mastery from its flashcards: the average box. None if it has no cards."""
     if not boxes:
@@ -184,16 +192,17 @@ def review_queue(topics: list[dict], exam_topic_ids: set[str]) -> list[dict]:
 
 # ---- Weak spots ----
 
-WEAK_OVERDUE_DAYS = 3     # overdue by at least this many days counts
+# "Needs attention" means you're struggling with a topic, not that it's late:
+# lateness already shows as "due for review".
 WEAK_THRESHOLD = 3        # minimum score to be listed
 
 
-def weak_spot(days_overdue: int, mark_downs: int, missed_cards: int) -> tuple[int, list[str]]:
+def weak_spot(mark_downs: int, missed_cards: int, struggled_on_paper: bool = False) -> tuple[int, list[str]]:
     """Score how much a topic needs attention, with the reasons in plain words."""
     score, reasons = 0, []
-    if days_overdue >= WEAK_OVERDUE_DAYS:
-        score += min(days_overdue, 30)
-        reasons.append(f"{days_overdue} days overdue")
+    if struggled_on_paper:
+        score += 3
+        reasons.append("went badly on a past paper")
     if mark_downs:
         score += 4 * mark_downs
         reasons.append("marked down once" if mark_downs == 1 else f"marked down {mark_downs} times")

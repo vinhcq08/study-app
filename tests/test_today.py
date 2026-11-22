@@ -60,7 +60,7 @@ def test_plan_includes_reviews_exam_prep_practice_and_cards(client, clock):
     client.put("/api/topics/linalg:rank", json={"mastery": 1})
     client.post("/api/topics/linalg:rank/cards", json={"front": "Q", "back": "A"})
     client.post("/api/subjects/linalg/exams", json={"name": "Midterm", "exam_date": "2026-12-01"})
-    clock["day"] = date(2026, 11, 22)   # Learning comes due after 2 days
+    clock["day"] = date(2026, 11, 22)   # Learning comes due after 2 days; a new day builds a new plan
     plan = today(client)["plan"]
     kinds = [i["kind"] for i in plan]
     assert kinds[0] == "review" and plan[0]["topic_id"] == "linalg:rank"
@@ -71,19 +71,69 @@ def test_plan_includes_reviews_exam_prep_practice_and_cards(client, clock):
 
 def test_final_week_suggests_end_of_subject_exam(client):
     client.post("/api/subjects/linalg/exams", json={"name": "Final", "exam_date": "2026-11-23"})
+    client.post("/api/today/rebuild")
     practice = next(i for i in today(client)["plan"] if i["kind"] == "practice")
     assert "Final" in practice["title"]
 
 
-def test_ticking_plan_items_and_streak(client):
-    item = today(client)["plan"][0]
+def test_ticking_does_the_real_action(client):
+    item = today(client)["plan"][0]                      # "Start Calculus I: ..."
+    assert item["kind"] == "new"
     assert client.put(f"/api/today/ticks/{item['key']}", json={"done": True}).status_code == 200
     data = today(client)
     assert data["plan"][0]["done"] is True
     assert data["planned_minutes"] == sum(i["minutes"] for i in data["plan"] if not i["done"])
     assert data["streak_days"] == 1 and data["studied_today"] is True
-    client.put(f"/api/today/ticks/{item['key']}", json={"done": False})
-    assert today(client)["plan"][0]["done"] is False
+    topic = client.get("/api/subjects/calc1/dashboard").json()["units"][0]["topics"][0]
+    assert topic["id"] == item["topic_id"] and topic["mastery"] == 1   # the topic really started
+
+
+def test_plan_stays_fixed_and_completes_from_real_actions(client):
+    first = [i["key"] for i in today(client)["plan"]]
+    item = today(client)["plan"][1]
+    client.put(f"/api/topics/{item['topic_id']}", json={"mastery": 2})  # study it on the subject page
+    data = today(client)
+    assert [i["key"] for i in data["plan"]] == first                 # no reshuffle
+    assert data["plan"][1]["done"] is True
+
+
+def test_ticking_a_past_paper_ticks_the_paper(client):
+    client.put("/api/progress/linalg", json={"status": "in_progress"})
+    client.post("/api/today/rebuild")
+    paper = next(i for i in today(client)["plan"] if i["kind"] == "practice")
+    client.put(f"/api/today/ticks/{paper['key']}", json={"done": True})
+    exams = client.get("/api/subjects/linalg/dashboard").json()["practice_exams"]
+    assert next(e for e in exams if e["id"] == paper["exam_id"])["done"] is True
+    client.put(f"/api/today/ticks/{paper['key']}", json={"done": False})
+    exams = client.get("/api/subjects/linalg/dashboard").json()["practice_exams"]
+    assert next(e for e in exams if e["id"] == paper["exam_id"])["done"] is False
+
+
+def test_ticking_reviews_marks_topics_reviewed(client, clock):
+    client.put("/api/topics/linalg:rank", json={"mastery": 1})
+    client.put("/api/topics/linalg:determinants", json={"mastery": 1})
+    clock["day"] = date(2026, 11, 22)
+    review = today(client)["plan"][0]
+    assert review["kind"] == "review" and review["count"] == 2
+    client.put(f"/api/today/ticks/{review['key']}", json={"done": True})
+    dash = client.get("/api/subjects/linalg/dashboard").json()
+    assert dash["summary"]["due_count"] == 0
+
+
+def test_add_more_and_rebuild(client):
+    before = today(client)["plan"]
+    assert client.post("/api/today/more").json()["added"] > 0
+    after = today(client)["plan"]
+    assert [i["key"] for i in after[:len(before)]] == [i["key"] for i in before]
+    assert len({i["key"] for i in after}) == len(after)                # no duplicates
+    client.put(f"/api/today/ticks/{before[0]['key']}", json={"done": True})
+    client.post("/api/today/rebuild")
+    rebuilt = today(client)["plan"]
+    assert rebuilt[0]["key"] == before[0]["key"] and rebuilt[0]["done"]   # done items kept
+
+
+def test_unknown_plan_item(client):
+    assert client.put("/api/today/ticks/nope", json={"done": True}).status_code == 404
 
 
 def test_week_minutes_and_subject_levels(client):

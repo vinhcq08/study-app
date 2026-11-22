@@ -69,3 +69,6 @@
 .wday.today small { color: var(--ink); font-weight: 700; }
 .wday.future .wbar { border-bottom-style: dashed; }
 .plan.done .session .item-title { text-decoration: none; color: var(--ink); }
+.plan-tools { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+.linkbtn { background: none; border: 0; padding: 4px 0; color: var(--info); font: 500 13.5px var(--f-body); cursor: pointer; text-decoration: underline; }
+.linkbtn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }

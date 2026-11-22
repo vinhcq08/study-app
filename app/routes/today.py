@@ -1,9 +1,9 @@
-"""The Today page: a daily plan you can tick off."""
+"""The Today page: a daily plan you can work through and tick off."""
 
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
-from .. import clock, db, study_store, today
+from .. import clock, db, today
 
 router = APIRouter(prefix="/api")
 
@@ -20,7 +20,23 @@ def get_today():
 
 @router.put("/today/ticks/{item_key:path}")
 def tick_plan_item(item_key: str, update: TickUpdate):
-    key = item_key[:200]
     with db.connect() as conn:
-        study_store.set_plan_tick(conn, clock.today().isoformat(), key, update.done)
-    return {"key": key, "done": update.done}
+        try:
+            today.tick(conn, clock.today(), item_key, update.done)
+        except KeyError:
+            raise HTTPException(404, f"Today's plan has no item '{item_key}'")
+    return {"key": item_key, "done": update.done}
+
+
+@router.post("/today/more")
+def add_to_plan():
+    with db.connect() as conn:
+        added = today.add_more(conn, clock.today())
+    return {"added": added}
+
+
+@router.post("/today/rebuild")
+def rebuild_plan():
+    with db.connect() as conn:
+        today.rebuild(conn, clock.today())
+    return {"rebuilt": True}

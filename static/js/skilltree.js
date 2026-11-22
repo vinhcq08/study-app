@@ -1,8 +1,7 @@
 // Skill Tree page: draws the curriculum graph and lets you track progress.
-import { fetchOverview, fetchTree, saveProgress } from "./api.js";
+import { fetchTree, saveProgress } from "./api.js";
 import { initNav } from "./nav.js";
 import { initTimer } from "./timer.js";
-import { hoursAndMinutes, inDays } from "./util.js";
 
 // ---- Layout constants (pixels) ----
 const PADL = 170;   // space for lane labels on the left
@@ -37,7 +36,6 @@ const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 let lanes = [];
 let subjects = {};      // id -> subject (from the API, including state)
 let relations = [];
-let overview = null;   // upcoming exams, weak spots and study time across subjects
 let tiers = 0;
 let rows = 0;
 let W = 0;
@@ -205,14 +203,6 @@ const chip = (id) => {
 };
 const chipList = (ids) => (ids.length ? `<div class="chips">${ids.map(chip).join("")}</div>` : '<p class="none">None</p>');
 
-function nextUp() {
-  const all = Object.values(subjects);
-  const courses = all.filter((s) => !isGap(s) && s.state === "ready").sort((a, b) => a.tier - b.tier || a.grid_row - b.grid_row);
-  const prio = { High: 0, Medium: 1 };
-  const gaps = all.filter((s) => isGap(s) && s.state === "ready" && visible(s)).sort((a, b) => (prio[a.priority] ?? 2) - (prio[b.priority] ?? 2));
-  return [...courses.slice(0, 5), ...gaps.slice(0, 2)].map((s) => s.id);
-}
-
 function renderOverview() {
   const all = Object.values(subjects);
   const courses = all.filter((s) => !isGap(s));
@@ -225,18 +215,9 @@ function renderOverview() {
       <div><b>${count("done")}<small> / ${courses.length}</small></b><span>Subjects done</span></div>
       <div><b>${count("in_progress")}</b><span>In progress</span></div>
       <div><b>${count("ready")}</b><span>Ready to start</span></div>
-      <div><b>${overview ? overview.practice_done : "–"}<small> / ${overview ? overview.practice_total : "–"}</small></b><span>Practice exams done</span></div>
+      <div><b>${gaps.filter((s) => s.state === "done").length}<small> / ${gaps.length}</small></b><span>MIT gap-fillers done</span></div>
     </div>
-    ${overview ? `<p class="none">Studied ${hoursAndMinutes(overview.minutes_this_week)} this week · ${overview.due_total} topic${overview.due_total === 1 ? "" : "s"} due for review · ${gaps.filter((s) => s.state === "done").length} of ${gaps.length} gap-fillers done</p>` : ""}
-    ${overview && overview.upcoming_exams.length ? `<h3>Upcoming exams</h3><ul class="ov-list">${overview.upcoming_exams.map((e) => `
-      <li><a href="subject.html?id=${encodeURIComponent(e.subject_id)}">${esc(e.name)} · ${esc(e.subject_name)}</a>
-        <small>${inDays(e.days_left)} · ${e.readiness_pct}% ready</small></li>`).join("")}</ul>` : ""}
-    ${overview && overview.weak_spots.length ? `<h3>Needs attention</h3><ul class="ov-list">${overview.weak_spots.map((t) => `
-      <li><a href="subject.html?id=${encodeURIComponent(t.subject_id)}#t-${encodeURIComponent(t.id)}">${esc(t.name)}</a>
-        <small>${esc(t.subject_name)} · ${esc(t.weak_reasons.join(", "))}</small></li>`).join("")}</ul>` : ""}
-    <h3>Next up</h3>
-    ${chipList(nextUp())}
-    <p class="none">Select any subject in the tree to mark it in progress or done. A subject becomes ready once all its prerequisites are done.</p>
+    <p class="none">Select a subject to see what it needs and unlocks, set its status, or open its page. <b>Path to AI</b> above highlights every subject leading to machine learning, deep learning, generative AI and computer vision.</p>
     <h3>Legend</h3>
     <div class="legend">
       <div><span class="sw done"></span>Done</div>
@@ -280,7 +261,7 @@ function renderDetail(s) {
       <span>${s.mastery_pct}% topic mastery across ${s.topic_count} topics<br><small class="none">${s.next_level_at ? `${s.next_level_at - s.mastery_pct}% more to reach level ${s.level + 1}` : "Top level reached"}</small></span></div>
     ${s.due_count || s.practice_total ? `<h3>Do next</h3><div class="donext">
       ${s.due_count ? `<a class="btn" href="subject.html?id=${encodeURIComponent(s.id)}&filter=due">Review ${s.due_count} due topic${s.due_count === 1 ? "" : "s"}</a>` : ""}
-      ${s.practice_total ? `<a class="btn" href="subject.html?id=${encodeURIComponent(s.id)}#practice-exams">Practice exams · ${s.practice_done} of ${s.practice_total} done</a>` : ""}
+      ${s.practice_total ? `<a class="btn" href="subject.html?id=${encodeURIComponent(s.id)}#exams-section">Past papers · ${s.practice_done} of ${s.practice_total} done</a>` : ""}
     </div>` : ""}
     <dl class="kv">
       <dt>MIT</dt><dd>${esc(s.mit_title)}</dd>
@@ -304,11 +285,10 @@ function renderStats() {
   const c = (m) => courses.filter((s) => s.mit_match === m).length;
   const done = courses.filter((s) => s.state === "done").length;
   $("stats").innerHTML = `
-    <span><b>${done}/${courses.length}</b>subjects done</span>
     <span><b>${c("strong")}</b>strong MIT matches</span>
     <span><b>${c("partial")}</b>partial matches</span>
     <span><b>${c("extra")}</b>beyond MIT's CS core</span>
-    <span><b>${Object.values(subjects).filter(isGap).length}</b>MIT gaps to fill</span>`;
+    <span><b>${Object.values(subjects).filter(isGap).length}</b>MIT gaps to fill (dashed in the tree)</span>`;
 }
 
 // ---- Saving ----
@@ -347,12 +327,7 @@ async function save(id, changes) {
   }
 }
 
-async function loadOverview() {
-  try { overview = await fetchOverview(); } catch { overview = null; }
-}
-
 async function reload() {
-  await loadOverview();
   const data = await fetchTree();
   subjects = Object.fromEntries(data.subjects.map((s) => [s.id, s]));
   relations = data.relations;
@@ -457,8 +432,7 @@ async function start() {
     rows = Math.max(...lanes.map((l) => l.row_end)) + 1;
     W = PADL + tiers * COLW + 10;
     H = HEAD + rows * ROWH + 10;
-    await loadOverview();
-    buildCanvas();
+      buildCanvas();
     fit();
     refresh();
     const fromHash = decodeURIComponent(location.hash.slice(1));

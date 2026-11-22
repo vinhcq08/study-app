@@ -38,45 +38,27 @@
         <div class="units" id="unitBars"></div>
       </section>
       <section class="card">
-        <div class="card-head"><h2>Review queue</h2><span class="count" id="dueCount"></span></div>
-        <div id="review"></div>
-      </section>
-    </div>
-
-    <section class="card" id="practice-exams">
-      <div class="card-head">
-        <h2>Practice exams</h2>
-        <span class="none" id="practiceSummary"></span>
-      </div>
-      <p class="none">Past exams that MIT, Berkeley, Stanford, CMU and other universities publish openly. Tick each one off when you've worked through it under exam conditions and checked your answers.</p>
-      <div id="practice"></div>
-    </section>
-
-    <div class="grid2">
-      <section class="card">
-        <div class="card-head"><h2>Your exam dates</h2><button class="mini" id="toggleExamForm" aria-expanded="false">Add exam</button></div>
-        <div id="exams"></div>
-      </section>
-      <section class="card">
-        <div class="card-head"><h2>Needs attention</h2></div>
-        <div id="weak"></div>
-      </section>
-    </div>
-
-    <div class="grid2">
-      <section class="card">
-        <div class="card-head"><h2>Study time</h2><span class="none">Minutes per week from the study timer</span></div>
-        <div id="activity"></div>
-        <h3>Recent</h3>
-        <div id="recent"></div>
-      </section>
-      <section class="card">
         <div class="card-head"><h2>Before and after</h2></div>
         <div id="links"></div>
       </section>
     </div>
 
-    <section class="card">
+    <section class="card" id="exams-section">
+      <div class="card-head"><h2>Exams</h2></div>
+      <div class="exam-cols">
+        <div class="exam-block">
+          <div class="card-head"><h3>Your exam dates</h3><button class="mini" id="toggleExamForm" aria-expanded="false">Add exam date</button></div>
+          <div id="exams"></div>
+        </div>
+        <div class="exam-block" id="practice-exams">
+          <div class="card-head"><h3>Past papers</h3><span class="none" id="practiceSummary"></span></div>
+          <p class="none">Exams that MIT, Berkeley, Stanford, CMU and other universities publish openly. Tick one off when you've done it under exam conditions and checked your answers.</p>
+          <div id="practice"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="topicsCard">
       <div class="card-head">
         <h2>Topics</h2>
         <button class="mini" id="practiseAll">Practise flashcards</button>

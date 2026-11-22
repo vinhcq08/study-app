@@ -81,6 +81,12 @@ CREATE TABLE IF NOT EXISTS practice_exam_progress (
     done_on  TEXT NOT NULL
 );
 
+-- Today's plan, built once per day so it doesn't reshuffle while you work.
+CREATE TABLE IF NOT EXISTS daily_plans (
+    day    TEXT PRIMARY KEY,
+    items  TEXT NOT NULL            -- JSON list of plan items
+);
+
 -- Items you ticked off on the Today page, per day.
 CREATE TABLE IF NOT EXISTS plan_ticks (
     day       TEXT NOT NULL,
@@ -116,8 +122,24 @@ def load_topic_links() -> list[dict]:
     ]
 
 
+# Columns added after the first release. Older databases get them on startup.
+ADDED_COLUMNS = {
+    "flashcards": {"due_on": "TEXT"},
+    "practice_exam_progress": {"score": "INTEGER", "minutes": "INTEGER", "weak_units": "TEXT"},
+}
+
+
+def migrate(conn) -> None:
+    for table, columns in ADDED_COLUMNS.items():
+        have = {r["name"] for r in conn.execute(f"PRAGMA table_info({table})")}
+        for name, kind in columns.items():
+            if name not in have:
+                conn.execute(f"ALTER TABLE {table} ADD COLUMN {name} {kind}")
+
+
 def init(conn) -> None:
     conn.executescript(SCHEMA)
+    migrate(conn)
     links = load_topic_links()
     known = {r["id"] for r in conn.execute("SELECT id FROM topics WHERE retired = 0")}
     missing = [l for l in links if l["from_topic"] not in known or l["to_topic"] not in known]
@@ -234,7 +256,7 @@ def minutes_by_topic(conn, subject_id: str) -> dict[str, int]:
 
 # ---- Flashcards ----
 
-CARD_COLUMNS = "c.id, c.topic_id, c.front, c.back, c.box, c.last_result, c.last_practised, c.source"
+CARD_COLUMNS = "c.id, c.topic_id, c.front, c.back, c.box, c.last_result, c.last_practised, c.source, c.due_on"
 
 
 def fetch_cards_for_subject(conn, subject_id: str) -> list[dict]:
@@ -248,16 +270,17 @@ def fetch_card(conn, card_id: int) -> dict | None:
     return found[0] if found else None
 
 
-def practice_cards(conn, subject_id: str, topic_id: str | None, limit: int) -> list[dict]:
-    """Weakest and least recently practised cards first."""
+def practice_cards(conn, subject_id: str, topic_id: str | None, limit: int, today: str = "9999-12-31") -> list[dict]:
+    """Due cards first, then the weakest and least recently practised."""
     sql = f"""SELECT {CARD_COLUMNS}, t.name AS topic_name FROM flashcards c JOIN topics t ON t.id = c.topic_id
               WHERE t.subject_id = ? AND t.retired = 0"""
     params: list = [subject_id]
     if topic_id:
         sql += " AND c.topic_id = ?"
         params.append(topic_id)
-    sql += " ORDER BY c.box, c.last_practised IS NOT NULL, c.last_practised, c.id LIMIT ?"
-    params.append(limit)
+    sql += """ ORDER BY (c.due_on IS NOT NULL AND c.due_on > ?), c.box,
+               c.last_practised IS NOT NULL, c.last_practised, c.id LIMIT ?"""
+    params += [today, limit]
     return rows(conn, sql, params)
 
 
@@ -277,10 +300,10 @@ def delete_card(conn, card_id: int) -> bool:
     return conn.execute("DELETE FROM flashcards WHERE id = ?", (card_id,)).rowcount > 0
 
 
-def record_card_review(conn, card: dict, result: str, new_box: int, on: str) -> None:
+def record_card_review(conn, card: dict, result: str, new_box: int, on: str, due_on: str) -> None:
     conn.execute(
-        "UPDATE flashcards SET box = ?, last_result = ?, last_practised = ? WHERE id = ?",
-        (new_box, result, on, card["id"]),
+        "UPDATE flashcards SET box = ?, last_result = ?, last_practised = ?, due_on = ? WHERE id = ?",
+        (new_box, result, on, due_on, card["id"]),
     )
     conn.execute(
         "INSERT INTO card_reviews (card_id, topic_id, result, reviewed_on) VALUES (?, ?, ?, ?)",
@@ -402,13 +425,6 @@ def all_topics(conn) -> list[dict]:
         WHERE t.retired = 0 ORDER BY u.position, t.position""")
 
 
-def weak_card_counts(conn) -> dict[str, int]:
-    """Flashcards still in boxes 0 to 2, per subject."""
-    return {r["subject_id"]: r["n"] for r in rows(conn, """
-        SELECT t.subject_id, COUNT(*) AS n FROM flashcards c JOIN topics t ON t.id = c.topic_id
-        WHERE c.box <= 2 AND t.retired = 0 GROUP BY t.subject_id""")}
-
-
 def plan_ticks(conn, day: str) -> set[str]:
     return {r["item_key"] for r in rows(conn, "SELECT item_key FROM plan_ticks WHERE day = ?", (day,))}
 
@@ -431,3 +447,31 @@ def practice_counts_by_subject(conn) -> dict[str, dict]:
     return {r["subject_id"]: {"total": r["total"], "done": r["done"]} for r in rows(conn, """
         SELECT e.subject_id, COUNT(*) AS total, COUNT(p.exam_id) AS done
         FROM practice_exams e LEFT JOIN practice_exam_progress p ON p.exam_id = e.id GROUP BY e.subject_id""")}
+
+
+def get_daily_plan(conn, day: str) -> list[dict] | None:
+    row = conn.execute("SELECT items FROM daily_plans WHERE day = ?", (day,)).fetchone()
+    return json.loads(row["items"]) if row else None
+
+
+def save_daily_plan(conn, day: str, items: list[dict]) -> None:
+    conn.execute("""INSERT INTO daily_plans (day, items) VALUES (?, ?)
+                    ON CONFLICT(day) DO UPDATE SET items = excluded.items""", (day, json.dumps(items)))
+
+
+def card_reviews_on(conn, day: str) -> dict[str, int]:
+    """Flashcard answers given on a day, per subject."""
+    return {r["subject_id"]: r["n"] for r in rows(conn, """
+        SELECT t.subject_id, COUNT(*) AS n FROM card_reviews r JOIN topics t ON t.id = r.topic_id
+        WHERE r.reviewed_on = ? GROUP BY t.subject_id""", (day,))}
+
+
+def done_practice_exam_ids(conn) -> set[str]:
+    return {r["exam_id"] for r in rows(conn, "SELECT exam_id FROM practice_exam_progress")}
+
+
+def due_card_counts(conn, today: str) -> dict[str, int]:
+    """Flashcards due today (new cards count as due), per subject."""
+    return {r["subject_id"]: r["n"] for r in rows(conn, """
+        SELECT t.subject_id, COUNT(*) AS n FROM flashcards c JOIN topics t ON t.id = c.topic_id
+        WHERE t.retired = 0 AND (c.due_on IS NULL OR c.due_on <= ?) GROUP BY t.subject_id""", (today,))}

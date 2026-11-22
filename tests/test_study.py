@@ -36,6 +36,14 @@ def topic(data, topic_id):
 
 # ---- Rules ----
 
+def test_card_due_dates(client):
+    card_id = client.post("/api/topics/linalg:rank/cards", json={"front": "Q", "back": "A"}).json()["id"]
+    res = client.post(f"/api/cards/{card_id}/review", json={"result": "good"}).json()   # box 1 -> 1 day
+    assert res["due_on"] == "2026-11-20"
+    res = client.post(f"/api/cards/{card_id}/review", json={"result": "easy"}).json()   # box 3 -> 7 days
+    assert res["due_on"] == "2026-11-26"
+
+
 def test_leitner_boxes():
     assert logic.next_box(0, "good") == 1
     assert logic.next_box(3, "good") == 4
@@ -55,10 +63,11 @@ def test_review_queue_puts_exam_topics_first():
 
 
 def test_weak_spot_scoring():
-    assert logic.weak_spot(0, 0, 0) == (0, [])
-    score, reasons = logic.weak_spot(10, 1, 2)
-    assert score == 10 + 4 + 4
-    assert reasons == ["10 days overdue", "marked down once", "missed 2 flashcards"]
+    assert logic.weak_spot(0, 0) == (0, [])
+    assert logic.weak_spot(0, 1)[0] < logic.WEAK_THRESHOLD          # one miss isn't a pattern
+    score, reasons = logic.weak_spot(1, 2, struggled_on_paper=True)
+    assert score == 3 + 4 + 4
+    assert reasons == ["went badly on a past paper", "marked down once", "missed 2 flashcards"]
 
 
 def test_topic_links_all_resolve(client):

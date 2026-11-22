@@ -1,7 +1,7 @@
 // Subject dashboard: topics, mastery, reviews, exams, practice exams, flashcards and study time.
 import {
   addCard, addExam, addResource, deleteCard, deleteExam, deleteResource,
-  fetchDashboard, tickPracticeExam, updateTopic,
+  fetchDashboard, saveProgress, tickPracticeExam, updateTopic,
 } from "./api.js";
 import { initNav, rememberSubject } from "./nav.js";
 import { openPractice } from "./practice.js";
@@ -71,44 +71,40 @@ function practiceItem(e, keyPrefix) {
 // ---- Sections ----
 function renderHead() {
   const s = data.subject;
+  const m = data.summary;
   const color = laneColor(s);
   document.title = `${s.name} · Study App`;
   $("crumbName").textContent = s.short_name;
+  const semesters = [1, 2, 3, 4].flatMap((y) => [1, 2].map((t) => `Year ${y} · Sem ${t}`));
   $("head").innerHTML = `
-    <div class="eyebrow" style="--c:${color}">${esc(s.lane_name.toUpperCase())} · TIER ${s.tier + 1}${s.kind === "gap_filler" ? " · MIT GAP-FILLER" : ""}</div>
-    <div class="title-row"><span class="lvl" title="Level ${data.summary.level} of 5"><small>LV</small><b>${data.summary.level}</b></span><h1>${esc(s.name)}</h1></div>
-    <p class="none">${data.summary.next_level_at ? `${data.summary.next_level_at - data.summary.mastery_pct}% more topic mastery to reach level ${data.summary.level + 1}` : "Top level reached"}</p>
-    <div class="meta">
-      <span class="tag state" style="--c:${color}">${STATE_TEXT[s.state]}</span>
-      ${s.mit_code ? `<span class="tag">MIT <b>${esc(s.mit_code)}</b></span>` : ""}
-      ${s.semester ? `<span class="tag">Semester <b>${esc(s.semester)}</b></span>` : ""}
-      ${s.grade ? `<span class="tag">Grade <b>${esc(s.grade)}</b></span>` : ""}
-      <a href="tree.html#${encodeURIComponent(s.id)}">Show in skill tree</a>
+    <div class="eyebrow" style="--c:${color}">${esc(s.lane_name.toUpperCase())} · TIER ${s.tier + 1}${s.kind === "gap_filler" ? " · MIT GAP-FILLER" : ""}${s.mit_code ? ` · MIT ${esc(s.mit_code)}` : ""}</div>
+    <div class="title-row"><span class="lvl" title="Level ${m.level} of 5"><small>LV</small><b>${m.level}</b></span><h1>${esc(s.name)}</h1></div>
+    <p class="none">${m.next_level_at ? `${m.next_level_at - m.mastery_pct}% more topic mastery to reach level ${m.level + 1}` : "Top level reached"} · <a href="tree.html#${encodeURIComponent(s.id)}">Show in skill tree</a></p>
+    <div class="head-edit" style="--c:${color}">
+      <div class="seg status-seg" role="group" aria-label="Subject status">
+        ${[["not_started", "Not started"], ["in_progress", "In progress"], ["done", "Done"]].map(([v, l]) =>
+          `<button data-status="${v}" aria-pressed="${s.status === v}" data-key="st:${v}">${l}</button>`).join("")}
+      </div>
+      <label class="field">Semester<input id="f-semester" list="semesters" value="${esc(s.semester)}" placeholder="e.g. Year 1 · Sem 1" maxlength="30"></label>
+      <datalist id="semesters">${semesters.map((x) => `<option value="${x}"></option>`).join("")}</datalist>
+      <label class="field small">Grade<input id="f-grade" value="${esc(s.grade)}" placeholder="e.g. A" maxlength="10"></label>
+      ${s.state === "locked" && s.status === "not_started" ? '<span class="none">Prerequisites not done yet</span>' : ""}
     </div>`;
 }
 
 function renderKpis() {
   const m = data.summary;
-  const due = data.review_queue.filter((q) => q.reason === "due");
-  const next = data.upcoming_reviews[0];
-  const dueSub = due.length
-    ? (due[0].days_until_review < 0 ? `Oldest is ${plural(-due[0].days_until_review, "day")} overdue` : "Due today")
-    : next ? `Next: ${esc(next.name)} ${inDays(next.days_until_review)}` : "Nothing scheduled yet";
   const ex = m.next_exam;
   const studied = m.days_since_studied;
   $("kpis").innerHTML = `
-    <div class="kpi"><span class="label">Topic mastery</span><span class="value">${m.mastery_pct}%</span>${segbar(m.level_counts, "Topics by mastery")}<span class="sub">${m.started} of ${m.topic_count} started · ${m.mastered} mastered</span></div>
-    <div class="kpi"><span class="label">Due for review</span><span class="value">${m.due_count}</span><span class="sub">${dueSub}</span></div>
+    <div class="kpi"><span class="label">Topic mastery</span><span class="value">${m.mastery_pct}%</span>${segbar(m.level_counts, "Topics by mastery")}
+      <span class="sub">${m.started} of ${m.topic_count} started · ${m.mastered} mastered${m.minutes_total ? ` · ${hoursAndMinutes(m.minutes_total)} studied` : ""}${studied == null ? "" : `, last ${ago(studied)}`}</span></div>
+    <div class="kpi"><span class="label">Due for review</span><span class="value">${m.due_count}</span>
+      ${m.due_count ? `<button class="btn primary kpi-btn" id="reviewDue">Review ${plural(m.due_count, "due topic")}</button>`
+        : `<span class="sub">${data.upcoming_reviews[0] ? `Next: ${esc(data.upcoming_reviews[0].name)} ${inDays(data.upcoming_reviews[0].days_until_review)}` : "Nothing scheduled yet"}</span>`}</div>
     <div class="kpi"><span class="label">Next exam</span>${ex
-      ? `<span class="value">${ex.days_left === 0 ? "Today" : `${ex.days_left}<small> days</small>`}</span><span class="sub">${esc(ex.name)} · ${ex.readiness_pct}% ready</span>`
-      : `<span class="value">–</span><span class="sub">No date set. Add one below.</span>`}</div>
-    <div class="kpi"><span class="label">Practice exams</span>${m.practice_total
-      ? `<span class="value">${m.practice_done}<small> / ${m.practice_total}</small></span><span class="sub">${m.finals_done} of ${plural(m.finals_total, "end-of-subject exam")} done</span>`
-      : `<span class="value">–</span><span class="sub">None published for this subject</span>`}</div>
-    <div class="kpi"><span class="label">Studied this week</span><span class="value">${m.minutes_this_week}<small> min</small></span><span class="sub">${hoursAndMinutes(m.minutes_total)} in total${studied == null ? "" : ` · last studied ${ago(studied)}`}</span></div>
-    <div class="kpi"><span class="label">Key topics for AI</span>${m.ai_key_count
-      ? `<span class="value">${m.ai_key_pct}%</span><span class="sub">mastery across ${plural(m.ai_key_count, "★ topic")}</span>`
-      : `<span class="value">–</span><span class="sub">None in this subject</span>`}</div>`;
+      ? `<span class="value">${ex.days_left === 0 ? "Today" : `${ex.days_left}<small> days</small>`}</span><span class="sub">${esc(ex.name)} · ${ex.readiness_pct}% ready · past papers ${m.practice_done} of ${m.practice_total}</span>`
+      : `<span class="value">–</span><span class="sub">No date set. <a href="#exams-section">Add one</a> · past papers ${m.practice_done} of ${m.practice_total}</span>`}</div>`;
 }
 
 function renderUnits() {
@@ -120,41 +116,21 @@ function renderUnits() {
     </div>`).join("");
 }
 
-function renderReview() {
-  const queue = data.review_queue;
-  const due = queue.filter((q) => q.reason === "due");
-  $("dueCount").textContent = due.length ? plural(due.length, "topic") + " due" : "";
-  const intervals = Object.entries(data.review_after_days).map(([lvl, d]) => `${levelName(lvl)} ${d}d`).join(" · ");
-  const row = (t) => {
-    const when = t.reason === "exam_prep"
-      ? `Exam prep · ${levelName(t.mastery)}`
-      : `${t.days_until_review < 0 ? `due ${ago(-t.days_until_review)}` : "due today"} · ${levelName(t.mastery)}`;
-    return `<li><div class="who"><b>${esc(t.name)}${t.for_exam ? ' <span class="kind exam">On next exam</span>' : ""}</b>
-      <small>${esc(t.unit_name)} · ${when}</small></div>
-      ${t.reason === "due" ? `<button class="mini" data-review="${esc(t.id)}" data-key="rq:${esc(t.id)}">Mark reviewed</button>` : studyButton(t)}</li>`;
-  };
-  const upcoming = data.upcoming_reviews.map((t) =>
-    `<li><div class="who"><b>${esc(t.name)}</b><small>${esc(t.unit_name)} · due ${inDays(t.days_until_review)}</small></div></li>`).join("");
-  $("review").innerHTML = `
-    ${queue.length ? `<ul class="rq">${queue.slice(0, 8).map(row).join("")}</ul>
-      ${queue.length > 8 ? `<p class="empty">and ${queue.length - 8} more. Use the “Due for review” or “On next exam” filter below.</p>` : ""}`
-      : `<p class="empty">Nothing to review right now.</p>${upcoming ? `<h3>Coming up</h3><ul class="rq">${upcoming}</ul>` : ""}`}
-    <p class="intervals">A topic comes due again after: ${intervals}. In the ${data.exam_prep_days} days before an exam, its weaker topics join the queue as exam prep.</p>`;
-}
+
 
 function renderPractice() {
   const exams = data.practice_exams;
   const m = data.summary;
   $("practiceSummary").textContent = exams.length ? `${m.practice_done} of ${exams.length} done` : "";
   if (!exams.length) {
-    $("practice").innerHTML = `<p class="empty">No openly published exams from top universities were found for this subject. Use your own course's past papers, and add them to topics as resources.</p>`;
+    $("practice").innerHTML = `<p class="empty">No openly published past papers from top universities were found for this subject. Use your own course's past papers, and add them to topics as resources.</p>`;
     return;
   }
   const finals = exams.filter((e) => e.end_of_subject);
   const others = exams.filter((e) => !e.end_of_subject);
   const pct = Math.round((100 * m.practice_done) / exams.length);
   $("practice").innerHTML = `
-    <div class="pe-progress">${meter(pct, "Practice exams done")}<span>${pct}%</span></div>
+    <div class="pe-progress">${meter(pct, "Past papers done")}<span>${pct}%</span></div>
     <div class="pe-cols">
       <div><h3>By unit</h3>${others.length ? `<ul class="pe-list">${others.map((e) => practiceItem(e, "pe")).join("")}</ul>` : '<p class="empty">Only end-of-subject exams for this subject.</p>'}</div>
       <div><h3>End-of-subject exams</h3>${finals.length ? `<ul class="pe-list">${finals.map((e) => practiceItem(e, "pe")).join("")}</ul>` : '<p class="empty">No final exams were found. The unit exams together cover the subject.</p>'}</div>
@@ -166,7 +142,7 @@ function renderExams() {
   const units = data.units;
   const soon = new Date(Date.parse(data.today) + 14 * 86400000).toISOString().slice(0, 10);
   $("toggleExamForm").setAttribute("aria-expanded", String(showExamForm));
-  $("toggleExamForm").textContent = showExamForm ? "Cancel" : "Add exam";
+  $("toggleExamForm").textContent = showExamForm ? "Cancel" : "Add exam date";
   $("exams").innerHTML = `
     ${showExamForm ? `<form class="form" data-form="exam">
       <div class="form-row"><label class="field">Name<input name="name" required maxlength="60" placeholder="e.g. Midterm" data-key="ex:name"></label>
@@ -182,48 +158,12 @@ function renderExams() {
         <button class="mini" data-del-exam="${e.id}" aria-label="Delete ${esc(e.name)}">Delete</button>
       </li>`).join("")}</ul>
       <p class="intervals">Readiness is the average mastery of the topics the exam covers.</p>`
-      : showExamForm ? "" : '<p class="empty">No exams yet. Add your midterm and final dates to see a countdown and get exam prep in the review queue.</p>'}`;
+      : showExamForm ? "" : '<p class="empty">No dates yet. Add your midterm and final to get a countdown and exam prep in your Today plan.</p>'}`;
 }
 
-function renderWeak() {
-  const weak = data.weak_spots;
-  $("weak").innerHTML = weak.length ? `<ul class="rq">${weak.map((t) => `
-    <li><div class="who"><b>${esc(t.name)}</b><small>${esc(t.unit_name)} · ${esc(t.weak_reasons.join(", "))}</small></div>
-      ${t.cards.length ? `<button class="mini" data-practise-topic="${esc(t.id)}">Practise cards</button>` : studyButton(t)}</li>`).join("")}</ul>`
-    : `<p class="empty">Nothing needs attention. A topic shows up here when it's at least 3 days overdue, when you mark it down, or when you miss its flashcards.</p>`;
-}
 
-function niceMax(max, floor) {
-  if (max <= floor) return floor;
-  const p = 10 ** Math.floor(Math.log10(max));
-  return [1, 2, 5, 10].map((f) => f * p).find((v) => v >= max);
-}
 
-function renderActivity() {
-  const weeks = data.activity.weeks;
-  const max = niceMax(Math.max(...weeks.map((w) => w.minutes)), 60);
-  const ticks = [0, max / 2, max];
-  const total = weeks.reduce((a, w) => a + w.minutes, 0);
-  $("activity").innerHTML = `
-    <div class="colchart" role="img" aria-label="${total} minutes studied in the last ${weeks.length} weeks">
-      ${ticks.map((t) => `<div class="grid" style="bottom:${(t / max) * 100}%"><span>${t}</span></div>`).join("")}
-      <div class="cols">${weeks.map((w, i) => {
-        const label = `${i === weeks.length - 1 ? "This week" : `Week of ${shortDate(w.week_start)}`}: ${w.minutes} min, ${plural(w.count, "update")}`;
-        return `<div class="col" tabindex="0" data-tip="${label}" aria-label="${label}"><i style="height:${(w.minutes / max) * 100}%"></i></div>`;
-      }).join("")}</div>
-    </div>
-    <div class="xlabels">${weeks.map((w, i) => `<span>${i === weeks.length - 1 ? "Now" : (weeks.length - 1 - i) % 3 === 0 ? shortDate(w.week_start) : ""}</span>`).join("")}</div>
-    ${total === 0 ? '<p class="empty">No timed sessions yet. Press Study on a topic to start a 25-minute session.</p>' : ""}`;
 
-  const recent = data.activity.recent;
-  $("recent").innerHTML = recent.length ? `<ul class="recent">${recent.map((a) => {
-    const what = a.kind === "mastery" ? `${esc(a.topic_name)} → ${levelName(a.mastery_to)}`
-      : a.kind === "review" ? `Reviewed ${esc(a.topic_name)}`
-      : a.kind === "study" ? `Studied ${esc(a.topic_name)} for ${a.minutes} min`
-      : `Updated notes on ${esc(a.topic_name)}`;
-    return `<li>${what}<time datetime="${a.at}">${ago(daysBetween(a.at, data.today))}</time></li>`;
-  }).join("")}</ul>` : '<p class="empty">Nothing yet.</p>';
-}
 
 function neighbourList(items, emptyText) {
   if (!items.length) return `<p class="empty">${emptyText}</p>`;
@@ -255,7 +195,7 @@ function topicMeta(t) {
   if (t.weak_reasons.length) bits.push(`<span class="badge attention">${esc(t.weak_reasons[0])}</span>`);
   const counts = [
     t.cards.length && plural(t.cards.length, "card"),
-    t.practice_exam_ids.length && plural(t.practice_exam_ids.length, "practice exam"),
+    t.practice_exam_ids.length && plural(t.practice_exam_ids.length, "past paper"),
     t.resources.length && plural(t.resources.length, "resource"),
     t.minutes && `${hoursAndMinutes(t.minutes)} studied`,
   ].filter(Boolean);
@@ -280,9 +220,9 @@ function topicDetails(t) {
       <small class="none">Saved when you click outside the box.</small>
     </section>
     <section>
-      <h4>Practice exams on this topic</h4>
+      <h4>Past papers on this topic</h4>
       ${practice.length ? `<ul class="pe-list compact">${practice.map((e) => practiceItem(e, "tp-" + t.id)).join("")}</ul>`
-        : '<p class="empty">None of the practice exams cover this unit.</p>'}
+        : '<p class="empty">None of the past papers cover this unit.</p>'}
     </section>
     </div>
     <div class="dcol">
@@ -372,11 +312,8 @@ function render() {
   renderHead();
   renderKpis();
   renderUnits();
-  renderReview();
   renderPractice();
   renderExams();
-  renderWeak();
-  renderActivity();
   renderLinks();
   renderTopics();
   if (key) document.querySelector(`[data-key="${CSS.escape(key)}"]`)?.focus();
@@ -414,9 +351,30 @@ function practise(topicId) {
   }, () => reload());
 }
 
+async function saveSubject(changes) {
+  const s = data.subject;
+  const body = { status: s.status, semester: s.semester, grade: s.grade, ...changes };
+  try {
+    const res = await saveProgress(subjectId, body);
+    await reload();
+    if (res.unlocked.length) toast(`Unlocked ${plural(res.unlocked.length, "subject")} on the skill tree.`);
+    else toast("Saved.");
+  } catch (err) {
+    toast(`Couldn't save: ${err.message}`, true);
+  }
+}
+
+function reviewDue() {
+  filter = "due";
+  renderTopics();
+  document.getElementById("topicsCard")?.scrollIntoView({ block: "start" });
+}
+
 document.addEventListener("click", (e) => {
   const el = (sel) => e.target.closest(sel);
   const topicEl = el("[data-topic]");
+  if (el("[data-status]")) { saveSubject({ status: el("[data-status]").dataset.status }); return; }
+  if (el("#reviewDue")) { reviewDue(); return; }
 
   if (el("[data-level]") && topicEl) { run(() => updateTopic(topicEl.dataset.topic, { mastery: Number(el("[data-level]").dataset.level) })); return; }
   if (el("[data-study]")) { startStudy(el("[data-study]").dataset.study); return; }
@@ -443,6 +401,8 @@ document.addEventListener("click", (e) => {
 });
 
 document.addEventListener("change", (e) => {
+  if (e.target.id === "f-semester") { saveSubject({ semester: e.target.value }); return; }
+  if (e.target.id === "f-grade") { saveSubject({ grade: e.target.value }); return; }
   if (e.target.matches("textarea[data-notes]")) {
     run(() => updateTopic(e.target.closest("[data-topic]").dataset.topic, { notes: e.target.value }));
   }
@@ -462,7 +422,7 @@ document.addEventListener("submit", (e) => {
   if (kind === "exam") {
     const unitIds = fd.getAll("unit");
     if (!unitIds.length) { toast("Pick at least one unit the exam covers.", true); return; }
-    run(() => addExam(subjectId, { name: fd.get("name"), exam_date: fd.get("exam_date"), unit_ids: unitIds }), "Exam added.")
+    run(() => addExam(subjectId, { name: fd.get("name"), exam_date: fd.get("exam_date"), unit_ids: unitIds }), "Exam date added.")
       .then((res) => { if (res) { showExamForm = false; renderExams(); } });
     return;
   }

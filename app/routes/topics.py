@@ -117,11 +117,12 @@ def review_card(card_id: int, review: CardReview):
     with db.connect() as conn:
         card = _card(conn, card_id)
         box = logic.next_box(card["box"], review.result)
-        study_store.record_card_review(conn, card, review.result, box, today)
+        due_on = logic.next_card_due(box, clock.today()).isoformat()
+        study_store.record_card_review(conn, card, review.result, box, today, due_on)
         topic = db.fetch_topic(conn, card["topic_id"])
         level = logic.mastery_from_cards(study_store.card_boxes(conn, card["topic_id"]))
         result = services.change_topic(conn, topic, today, mastery=level, studied=True)
-    return {"card_id": card_id, "box": box, "topic_id": card["topic_id"], **result}
+    return {"card_id": card_id, "box": box, "due_on": due_on, "topic_id": card["topic_id"], **result}
 
 
 # ---- Resources ----

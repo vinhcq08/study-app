@@ -66,3 +66,5 @@ export function fetchPractice(subjectId, topicId) {
 export const fetchToday = () => request("/api/today");
 export const tickPlanItem = (key, done) =>
   request(`/api/today/ticks/${encodeURIComponent(key)}`, { method: "PUT", body: JSON.stringify({ done }) });
+export const addToPlan = () => request("/api/today/more", { method: "POST", body: "{}" });
+export const rebuildPlan = () => request("/api/today/rebuild", { method: "POST", body: "{}" });
