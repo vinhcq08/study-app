@@ -1,7 +1,9 @@
 """Build the GitHub Pages version of the app into a folder of static files.
 
-The pages, CSS and JavaScript are copied as they are. The Python code and data are copied
-too, and run in the browser with Pyodide (see app/browser.py and static/js/browser-backend.js).
+The pages, CSS and JavaScript are copied as they are, except that index.html becomes a small
+shell (scripts/pages_shell.html) that starts Python once and shows the pages in a frame; the
+Today page moves to today.html. The Python code and data are copied too, and run in the
+browser with Pyodide (see app/browser.py and static/js/browser-backend.js).
 
     python scripts/build_pages.py --pyodide path/to/pyodide --out _site
 
@@ -31,6 +33,13 @@ def build(pyodide_dir: Path, out: Path) -> None:
         shutil.rmtree(out)
     shutil.copytree(ROOT / "static", out)
     (out / "js" / "config.js").write_text('export const BACKEND = "browser";\n', encoding="utf-8")
+    # index.html becomes a shell that starts Python once and shows the pages in a frame,
+    # so the Today page moves to today.html and links to "./" point there.
+    (out / "index.html").rename(out / "today.html")
+    for page in out.glob("*.html"):
+        text = page.read_text(encoding="utf-8")
+        page.write_text(text.replace('href="./"', 'href="today.html"'), encoding="utf-8")
+    shutil.copy2(ROOT / "scripts" / "pages_shell.html", out / "index.html")
     (out / ".nojekyll").write_text("", encoding="utf-8")  # serve every file as is
 
     # Pyodide runtime and the package wheels it needs

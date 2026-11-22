@@ -2,20 +2,36 @@
 
 import { BACKEND } from "./config.js";
 
+// On the GitHub Pages site, Python runs once in the shell page (index.html) that shows this
+// page in a frame. Opened on its own, a page goes through the shell instead.
+function findShell() {
+  try {
+    if (window.parent !== window && window.parent.studyBackend) return window.parent.studyBackend;
+  } catch { /* not our shell */ }
+  const page = location.pathname.split("/").pop() || "today.html";
+  location.replace(`./#${page}${location.search}${location.hash}`);
+  return null;
+}
+const shell = BACKEND === "browser" ? findShell() : null;
+
+function fail(status, text, fallback) {
+  let detail = fallback || `Error ${status}`;
+  try { detail = JSON.parse(text).detail ?? detail; } catch { /* not JSON */ }
+  throw new Error(typeof detail === "string" ? detail : JSON.stringify(detail));
+}
+
 async function request(path, options = {}) {
   if (BACKEND === "browser") {
-    const backend = await import("./browser-backend.js");
-    return backend.request(path, options);
+    if (!shell) return new Promise(() => {});   // moving to the shell
+    const { status, text } = await shell.call(options.method || "GET", path, options.body || "");
+    if (status >= 400) fail(status, text);
+    return status === 204 || !text ? null : JSON.parse(text);
   }
   const res = await fetch(path, {
     headers: { "Content-Type": "application/json" },
     ...options,
   });
-  if (!res.ok) {
-    let detail = res.statusText;
-    try { detail = (await res.json()).detail ?? detail; } catch { /* not JSON */ }
-    throw new Error(typeof detail === "string" ? detail : JSON.stringify(detail));
-  }
+  if (!res.ok) fail(res.status, await res.text(), res.statusText);
   if (res.status === 204) return null;
   return res.json();
 }

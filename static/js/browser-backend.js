@@ -1,5 +1,7 @@
 // Runs the app's Python API inside the browser with Pyodide (used by the GitHub Pages version).
 // Your data is stored in this browser's IndexedDB, so it stays on this device.
+// The Pages site's index.html (scripts/pages_shell.html) loads this once and shows each page
+// in a frame; the pages' api.js reaches it through window.parent.studyBackend.
 import { loadPyodide } from "../pyodide/pyodide.mjs";
 
 const HOME = "/home/pyodide/study";
@@ -22,7 +24,7 @@ function bootScreen(text) {
 const sync = (py, populate) => new Promise((resolve, reject) =>
   py.FS.syncfs(populate, (err) => (err ? reject(err) : resolve())));
 
-function boot() {
+export function boot() {
   if (ready) return ready;
   ready = (async () => {
     let seen = false;
@@ -57,11 +59,12 @@ function boot() {
   return ready;
 }
 
-export async function request(path, options = {}) {
+// Returns plain values ({ status, text }) so pages in another frame can use the result safely.
+export async function call(method, path, body = "") {
   const py = await boot();
-  const method = (options.method || "GET").toUpperCase();
+  method = (method || "GET").toUpperCase();
   const handle = py.pyimport("app.browser").handle;
-  const result = await handle(method, path, options.body || "");
+  const result = await handle(method, path, body || "");
   const [status, text] = result.toJs();
   result.destroy();
   handle.destroy();
@@ -69,11 +72,5 @@ export async function request(path, options = {}) {
     writes = writes.then(() => sync(py, false)).catch(() => {});
     await writes;
   }
-  if (status >= 400) {
-    let detail = `Error ${status}`;
-    try { detail = JSON.parse(text).detail ?? detail; } catch { /* not JSON */ }
-    throw new Error(typeof detail === "string" ? detail : JSON.stringify(detail));
-  }
-  if (status === 204 || !text) return null;
-  return JSON.parse(text);
+  return { status, text };
 }
