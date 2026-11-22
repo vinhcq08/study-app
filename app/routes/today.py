@@ -1,15 +1,19 @@
 """The Today page: a daily plan you can work through and tick off."""
 
 from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
-from .. import clock, db, today
+from .. import clock, db, study_store, today
 
 router = APIRouter(prefix="/api")
 
 
 class TickUpdate(BaseModel):
     done: bool
+
+
+class Settings(BaseModel):
+    daily_minutes: int | None = Field(default=None, ge=10, le=720)   # None: no limit
 
 
 @router.get("/today")
@@ -40,3 +44,20 @@ def rebuild_plan():
     with db.connect() as conn:
         today.rebuild(conn, clock.today())
     return {"rebuilt": True}
+
+
+@router.get("/settings")
+def get_settings():
+    with db.connect() as conn:
+        return {"daily_minutes": today.daily_budget(conn)}
+
+
+@router.put("/settings")
+def save_settings(settings: Settings):
+    """Save your settings. A new daily time budget rebuilds today's plan, keeping what's done."""
+    with db.connect() as conn:
+        changed = settings.daily_minutes != today.daily_budget(conn)
+        study_store.set_setting(conn, today.BUDGET_KEY, settings.daily_minutes)
+        if changed:
+            today.rebuild(conn, clock.today())
+    return {"daily_minutes": settings.daily_minutes}

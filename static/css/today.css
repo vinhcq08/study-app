@@ -72,3 +72,9 @@
 .plan-tools { display: flex; flex-wrap: wrap; gap: 6px 18px; }
 .linkbtn { background: none; border: 0; padding: 4px 0; color: var(--info); font: 500 13.5px var(--f-body); cursor: pointer; text-decoration: underline; }
 .linkbtn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+
+/* Header right: streak and the time you have today */
+.t-right { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.budget { display: inline-flex; align-items: center; gap: 8px; font-size: 13.5px; color: var(--muted); }
+.budget select { font: 500 14px var(--f-body); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-ctl); padding: 7px 8px; min-height: 36px; }
+@media (max-width: 560px) { .t-right { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 10px 14px; } }

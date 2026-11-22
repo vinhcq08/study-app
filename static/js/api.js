@@ -89,3 +89,4 @@ export const downloadBackup = () => request("/api/backup");
 export const restoreBackup = (backup) => request("/api/backup", { method: "POST", body: JSON.stringify(backup) });
 export const savePracticeResult = (examId, result) =>
   request(`/api/practice-exams/${encodeURIComponent(examId)}/result`, { method: "PUT", body: JSON.stringify(result) });
+export const saveSettings = (settings) => request("/api/settings", { method: "PUT", body: JSON.stringify(settings) });

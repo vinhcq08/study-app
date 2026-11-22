@@ -28,8 +28,18 @@ def _item(key, kind, title, detail, minutes, subject, topic=None, **extra):
     }
 
 
-def build_plan(conn, now: date, exclude_keys=frozenset(), exclude_topics=frozenset(), limit=None) -> list[dict]:
-    """Pick plan items. Items whose key or topic is excluded are skipped (used to add more later)."""
+BUDGET_KEY = "daily_minutes"
+
+
+def daily_budget(conn) -> int | None:
+    """Minutes you have each day, or None for no limit."""
+    return study_store.get_setting(conn, BUDGET_KEY)
+
+
+def build_plan(conn, now: date, exclude_keys=frozenset(), exclude_topics=frozenset(), limit=None,
+               budget: int | None = None, keep_one: bool = True) -> list[dict]:
+    """Pick plan items in priority order. Items whose key or topic is excluded are skipped (used
+    to add more later). With a budget, new topics fill the time left and the plan is trimmed to fit."""
     today = now.isoformat()
     subjects = {s["id"]: s for s in db.fetch_subjects(conn)}
     states = logic.compute_states(subjects, db.fetch_relations(conn))
@@ -108,6 +118,10 @@ def build_plan(conn, now: date, exclude_keys=frozenset(), exclude_topics=frozens
 
     # 6. Keep a short plan useful: the next new topic in subjects you're taking, or can start.
     wanted = limit if limit is not None else logic.PLAN_MIN_ITEMS
+    minutes = lambda: sum(i["minutes"] for i in items)  # noqa: E731
+    if budget is not None and limit is None:
+        room = (budget - minutes()) // logic.NEW_TOPIC_MINUTES
+        wanted = min(logic.PLAN_MAX_ITEMS, len(items) + max(0, room))
     if len(items) < wanted:
         ready = sorted((s for s in subjects.values()
                         if s["kind"] == "course" and states[s["id"]] == "ready" and s["status"] == "not_started"),
@@ -120,9 +134,11 @@ def build_plan(conn, now: date, exclude_keys=frozenset(), exclude_topics=frozens
                 t = fresh[0]
                 verb = "Continue" if s["status"] == "in_progress" else "Start"
                 add(_item(f"new:{t['id']}", "new", f"{verb} {s['short_name']}: {t['name']}",
-                          t["unit_name"], 25, s, t))
+                          t["unit_name"], logic.NEW_TOPIC_MINUTES, s, t))
                 used.add(t["id"])
-    return items[:limit] if limit is not None else items
+    if limit is not None:
+        return items[:limit]
+    return logic.fit_budget(items, budget, keep_one)
 
 
 def evaluate(conn, plan: list[dict], now: date) -> list[dict]:
@@ -160,7 +176,7 @@ def todays_plan(conn, now: date) -> list[dict]:
     today = now.isoformat()
     plan = study_store.get_daily_plan(conn, today)
     if plan is None:
-        plan = build_plan(conn, now)
+        plan = build_plan(conn, now, budget=daily_budget(conn))
         study_store.save_daily_plan(conn, today, plan)
     return plan
 
@@ -198,8 +214,12 @@ def add_more(conn, now: date, count: int = 3) -> int:
 def rebuild(conn, now: date) -> None:
     """Rebuild today's plan, keeping the items you've already done."""
     done = [i for i in evaluate(conn, todays_plan(conn, now), now) if i["done"]]
+    budget = daily_budget(conn)
+    if budget is not None:  # the time you have today includes what you've already done
+        budget = max(0, budget - sum(i["minutes"] for i in done))
     fresh = build_plan(conn, now, exclude_keys={i["key"] for i in done},
-                       exclude_topics={i["topic_id"] for i in done if i["topic_id"]})
+                       exclude_topics={i["topic_id"] for i in done if i["topic_id"]},
+                       budget=budget, keep_one=not done)
     keep = [{k: v for k, v in i.items() if k not in ("done", "done_by")} for i in done]
     study_store.save_daily_plan(conn, now.isoformat(), keep + fresh)
 
@@ -236,6 +256,7 @@ def build_today(conn, now: date) -> dict:
         "today": today,
         "plan": plan,
         "planned_minutes": sum(i["minutes"] for i in open_items),
+        "daily_minutes": daily_budget(conn),
         "studied_today_minutes": sum(s["minutes"] for s in sessions_today),
         "sessions_today": [{"topic_name": s["topic_name"], "minutes": s["minutes"]} for s in sessions_today],
         "streak_days": logic.streak(days, now),

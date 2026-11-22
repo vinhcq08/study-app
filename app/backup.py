@@ -8,7 +8,7 @@ VERSION = 1
 # Parents before children, so restoring can insert in this order and delete in reverse.
 TABLES = [
     "progress", "topic_progress", "activity", "exams", "exam_units", "study_sessions",
-    "flashcards", "card_reviews", "resources", "practice_exam_progress", "plan_ticks", "daily_plans",
+    "flashcards", "card_reviews", "resources", "practice_exam_progress", "plan_ticks", "daily_plans", "settings",
 ]
 
 

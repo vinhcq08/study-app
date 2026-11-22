@@ -1,5 +1,5 @@
 // Today: the home page. A short plan picked from what's due, your exams and practice exams.
-import { addToPlan, fetchToday, rebuildPlan, tickPlanItem } from "./api.js";
+import { addToPlan, fetchToday, rebuildPlan, tickPlanItem, saveSettings } from "./api.js";
 import { initNav } from "./nav.js";
 import { openPractice } from "./practice.js";
 import { openReview } from "./review.js";
@@ -39,7 +39,17 @@ function actionsFor(i, primary) {
   return "";
 }
 
+const BUDGETS = [30, 45, 60, 90, 120, 180, 240];
+
+function renderBudget() {
+  const current = data.daily_minutes;
+  const options = [...new Set([...BUDGETS, ...(current ? [current] : [])])].sort((a, b) => a - b);
+  $("budget").innerHTML = `<option value="">No limit</option>` +
+    options.map((m) => `<option value="${m}"${m === current ? " selected" : ""}>${hoursAndMinutes(m)}</option>`).join("");
+}
+
 function renderHead() {
+  renderBudget();
   $("tDate").textContent = longDate(data.today).toUpperCase();
   const open = data.plan.filter((i) => !i.done);
   $("tTitle").textContent = open.length ? `Today · ${hoursAndMinutes(data.planned_minutes)}` : "Today · plan done";
@@ -160,6 +170,17 @@ document.addEventListener("change", async (e) => {
     await tickPlanItem(key, e.target.checked);
     await reload();
     if (e.target.checked) toast(itemByKey(key)?.kind === "practice" ? "Past paper ticked off." : "Done. Nice work.");
+  } catch (err) {
+    toast(`Couldn't save: ${err.message}`, true);
+  }
+});
+
+$("budget").addEventListener("change", async (e) => {
+  const minutes = e.target.value ? Number(e.target.value) : null;
+  try {
+    await saveSettings({ daily_minutes: minutes });
+    await reload();
+    toast(minutes ? `Plan fitted to ${hoursAndMinutes(minutes)}. Finished items were kept.` : "No time limit. Plan rebuilt.");
   } catch (err) {
     toast(`Couldn't save: ${err.message}`, true);
   }

@@ -148,3 +148,33 @@ def test_week_minutes_and_subject_levels(client):
 def test_tree_reports_level_due_and_practice(client):
     s = next(s for s in client.get("/api/tree").json()["subjects"] if s["id"] == "linalg")
     assert s["level"] == 1 and s["due_count"] == 0 and s["practice_total"] > 0
+
+
+def test_fit_budget_keeps_priority_order():
+    items = [{"minutes": m} for m in (25, 15, 25, 10)]
+    assert [i["minutes"] for i in logic.fit_budget(items, 30)] == [25]
+    assert [i["minutes"] for i in logic.fit_budget(items, 50)] == [25, 15, 10]
+    assert [i["minutes"] for i in logic.fit_budget(items, 5)] == [25]        # never empty with time left
+    assert logic.fit_budget(items, 5, keep_one=False) == []                    # after you've done some
+    assert logic.fit_budget(items, 0) == []
+    assert logic.fit_budget(items, None) == items
+
+
+def test_daily_budget_shapes_the_plan(client):
+    client.put("/api/progress/calc1", json={"status": "done"})
+    assert today(client)["daily_minutes"] is None
+    assert client.put("/api/settings", json={"daily_minutes": 120}).status_code == 200
+    d = today(client)
+    assert d["daily_minutes"] == 120
+    assert 3 < len(d["plan"]) <= logic.PLAN_MAX_ITEMS and d["planned_minutes"] <= 120
+
+    client.put(f"/api/today/ticks/{d['plan'][0]['key']}", json={"done": True})
+    client.put("/api/settings", json={"daily_minutes": 30})
+    d = today(client)
+    assert d["plan"][0]["done"]                                  # what's done is kept
+    assert d["planned_minutes"] <= 30 and len(d["plan"]) >= 1
+
+    client.put("/api/settings", json={"daily_minutes": None})
+    assert client.get("/api/settings").json() == {"daily_minutes": None}
+    assert client.put("/api/settings", json={"daily_minutes": 5}).status_code == 422
+    assert "settings" in client.get("/api/backup").json()["tables"]

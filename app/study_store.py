@@ -81,6 +81,12 @@ CREATE TABLE IF NOT EXISTS practice_exam_progress (
     done_on  TEXT NOT NULL
 );
 
+-- Your preferences, such as how many minutes you have each day.
+CREATE TABLE IF NOT EXISTS settings (
+    key    TEXT PRIMARY KEY,
+    value  TEXT NOT NULL
+);
+
 -- Today's plan, built once per day so it doesn't reshuffle while you work.
 CREATE TABLE IF NOT EXISTS daily_plans (
     day    TEXT PRIMARY KEY,
@@ -501,3 +507,18 @@ def due_card_counts(conn, today: str) -> dict[str, int]:
     return {r["subject_id"]: r["n"] for r in rows(conn, """
         SELECT t.subject_id, COUNT(*) AS n FROM flashcards c JOIN topics t ON t.id = c.topic_id
         WHERE t.retired = 0 AND (c.due_on IS NULL OR c.due_on <= ?) GROUP BY t.subject_id""", (today,))}
+
+
+# ---- Settings ----
+
+def get_setting(conn, key: str, default=None):
+    row = conn.execute("SELECT value FROM settings WHERE key = ?", (key,)).fetchone()
+    return json.loads(row["value"]) if row else default
+
+
+def set_setting(conn, key: str, value) -> None:
+    if value is None:
+        conn.execute("DELETE FROM settings WHERE key = ?", (key,))
+    else:
+        conn.execute("""INSERT INTO settings (key, value) VALUES (?, ?)
+                        ON CONFLICT(key) DO UPDATE SET value = excluded.value""", (key, json.dumps(value)))

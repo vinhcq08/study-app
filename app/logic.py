@@ -250,3 +250,23 @@ def streak(study_days: set[date], today: date) -> int:
 REVIEW_MINUTES_PER_TOPIC = 5
 PLAN_MIN_ITEMS = 3
 FINAL_EXAM_DAYS = 7   # in the last week before an exam, suggest the end-of-subject practice exam
+
+
+PLAN_MAX_ITEMS = 8          # with a time budget, never plan more than this
+NEW_TOPIC_MINUTES = 25
+
+
+def fit_budget(items: list[dict], budget: int | None, keep_one: bool = True) -> list[dict]:
+    """Keep items in priority order while they fit in the minutes you have.
+
+    A later, shorter item can still fit after a longer one is skipped. With keep_one, the first
+    item is kept even if it's too long, so a short budget never means an empty plan.
+    """
+    if budget is None:
+        return items
+    kept, total = [], 0
+    for item in items:
+        if (keep_one and not kept and budget > 0) or total + item["minutes"] <= budget:
+            kept.append(item)
+            total += item["minutes"]
+    return kept
