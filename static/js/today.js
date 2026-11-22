@@ -2,6 +2,7 @@
 import { addToPlan, fetchToday, rebuildPlan, tickPlanItem } from "./api.js";
 import { initNav } from "./nav.js";
 import { openPractice } from "./practice.js";
+import { openReview } from "./review.js";
 import { activeTopic, initTimer, startTimer } from "./timer.js";
 import { esc, hoursAndMinutes, inDays, longDate, plural, toast } from "./util.js";
 
@@ -10,7 +11,7 @@ const KIND_LABEL = {
   review: "Review", exam_prep: "Exam prep", practice: "Past paper", cards: "Flashcards",
   attention: "Needs attention", new: "New topic",
 };
-const TIMED = new Set(["review", "exam_prep", "attention", "new"]);
+const TIMED = new Set(["exam_prep", "attention", "new"]);
 
 let data = null;
 const $ = (id) => document.getElementById(id);
@@ -30,6 +31,11 @@ function actionsFor(i, primary) {
       ${i.solutions_url ? `<a class="sub-link" href="${esc(i.solutions_url)}" target="_blank" rel="noopener">Solutions</a>` : ""}`;
   }
   if (i.kind === "cards") return `<button class="${cls}" data-cards="${esc(i.key)}">Practise</button>`;
+  if (i.kind === "review") {
+    return `<button class="${cls}" data-review-subject="${esc(i.subject_id)}">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"></path></svg>Start review</button>
+      <a class="sub-link" href="${subjectUrl(i)}&filter=due">Open</a>`;
+  }
   return "";
 }
 
@@ -121,7 +127,7 @@ function renderSide() {
       <span class="subj"><a href="subject.html?id=${encodeURIComponent(s.id)}">${esc(s.short_name)}</a>
         <span class="mini-bar" role="img" aria-label="${s.mastery_pct}% topic mastery"><i style="width:${s.mastery_pct}%;background:var(--${s.lane_id})"></i></span>
         <small class="none">${s.mastery_pct}%${s.next_level_at ? ` · ${s.next_level_at - s.mastery_pct}% to level ${s.level + 1}` : " · top level"}</small></span></li>`).join("")}</ul>
-      <p class="none">Practice exams done: ${data.practice_done} of ${data.practice_total}</p>`
+      <p class="none">Past papers done: ${data.practice_done} of ${data.practice_total}</p>`
     : '<p class="empty">No subjects in progress. Start one from your plan, or mark one as in progress on the skill tree.</p>';
 
   $("weak").innerHTML = data.weak_spots.length ? `<ul class="side-list plain">${data.weak_spots.slice(0, 4).map((t) => `
@@ -179,6 +185,8 @@ document.addEventListener("click", (e) => {
     startTimer({ topicId: i.topic_id, topicName: i.topic_name, subjectId: i.subject_id, subjectName: i.subject_name, minutes: i.minutes });
     return;
   }
+  const rv = e.target.closest("[data-review-subject]");
+  if (rv) { openReview(rv.dataset.reviewSubject, () => reload()); return; }
   const cards = e.target.closest("[data-cards]");
   if (cards) {
     const i = itemByKey(cards.dataset.cards);

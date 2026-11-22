@@ -1,16 +1,18 @@
 // Pomodoro study timer. One session at a time; it survives page reloads and follows you
 // between pages. Starting a session opens focus mode, a calm full-screen view of the timer.
 // When the time is up, the minutes are logged to the topic.
-import { logSession } from "./api.js";
+import { logSession, updateTopic } from "./api.js";
 import { esc, toast } from "./util.js";
 
 const KEY = "study-timer-v1";
 const LENGTHS = [15, 25, 50];
+const LEVELS = ["Not started", "Learning", "Practising", "Confident", "Mastered"];
 
 let state = null;   // { topicId, topicName, subjectId, subjectName, minutes, elapsedMs, runningSince }
 let bar = null;
 let focus = null;
 let focusOpen = false;
+let checkin = null;  // the session just logged, while we ask how it went
 let onLogged = () => {};
 let audio = null;
 let lastFocused = null;
@@ -33,7 +35,7 @@ function render() {
   window.dispatchEvent(new CustomEvent("timerchange"));
   if (!state) {
     bar.hidden = true;
-    closeFocus();
+    if (!checkin) closeFocus();
     document.title = baseTitle;
     return;
   }
@@ -86,11 +88,11 @@ function openFocus() {
 }
 
 function closeFocus() {
-  if (!focusOpen) return;
+  const wasOpen = focusOpen;
   focusOpen = false;
   if (focus) focus.hidden = true;
   if (bar && state) bar.hidden = false;
-  if (lastFocused && document.contains(lastFocused)) lastFocused.focus();
+  if (wasOpen && lastFocused && document.contains(lastFocused)) lastFocused.focus();
 }
 
 function chime() {
@@ -107,22 +109,72 @@ function chime() {
   } catch { /* sound is optional */ }
 }
 
+// With the app open in several tabs, each tab sees the session end. The first tab to
+// remove it from storage owns it; the others just let go of their copy.
+function claim(session) {
+  let stored = null;
+  try { stored = JSON.parse(localStorage.getItem(KEY)); } catch { /* storage blocked */ }
+  if (stored && stored.id && session.id && stored.id !== session.id) return false;
+  if (!stored && session.id) return false;
+  try { localStorage.removeItem(KEY); } catch { /* storage blocked */ }
+  return true;
+}
+
 async function finish(completed) {
   const session = state;
   const minutes = completed ? session.minutes : Math.floor(elapsed() / 60000);
   state = null;
-  focusOpen = false;
-  save();
-  render();
-  if (minutes < 1) { toast("Less than a minute, so nothing was logged."); return; }
+  if (!claim(session)) { focusOpen = false; render(); return; }
+  if (minutes < 1) {
+    focusOpen = false;
+    render();
+    toast("Less than a minute, so nothing was logged.");
+    return;
+  }
   try {
     await logSession(session.topicId, minutes);
     if (completed) chime();
-    toast(`${completed ? "Session complete. " : ""}Logged ${minutes} min on ${session.topicName}.`);
-    onLogged(session);
   } catch (err) {
+    focusOpen = false;
+    render();
     toast(`Couldn't log the session: ${err.message}`, true);
+    return;
   }
+  showCheckin(session, minutes, completed);
+}
+
+// After a session: one question that sets the topic's mastery, then back to the page.
+function showCheckin(session, minutes, completed) {
+  checkin = session;
+  render();
+  bar.hidden = true;
+  focusOpen = true;
+  focus.hidden = false;
+  focus.innerHTML = `
+    <span class="f-label">${completed ? "Session complete" : "Session logged"} · ${minutes} min · ${esc(session.subjectName)}</span>
+    <span class="f-topic" id="focus-title">How well do you know ${esc(session.topicName)} now?</span>
+    <div class="f-levels" role="group" aria-label="How well do you know it now?">
+      ${[1, 2, 3, 4].map((l) => `<button data-checkin="${l}">${LEVELS[l]}</button>`).join("")}
+    </div>
+    <div class="f-actions"><button data-checkin="skip">Skip</button></div>`;
+  focus.querySelector("[data-checkin]")?.focus();
+}
+
+async function endCheckin(level) {
+  const session = checkin;
+  if (!session) return;
+  checkin = null;
+  focusOpen = false;
+  render();
+  if (level) {
+    try {
+      await updateTopic(session.topicId, { mastery: level, reviewed: true });
+      toast(`${session.topicName} is now ${LEVELS[level]}.`);
+    } catch (err) {
+      toast(`Couldn't save: ${err.message}`, true);
+    }
+  }
+  onLogged(session);
 }
 
 function onAction(e) {
@@ -154,8 +206,15 @@ export function initTimer(callback) {
   setInterval(tick, 500);
 
   bar.addEventListener("click", onAction);
-  focus.addEventListener("click", onAction);
-  focus.addEventListener("keydown", (e) => { if (e.key === "Escape") closeFocus(); });
+  focus.addEventListener("click", (e) => {
+    const c = e.target.closest("[data-checkin]");
+    if (c) { endCheckin(c.dataset.checkin === "skip" ? null : Number(c.dataset.checkin)); return; }
+    onAction(e);
+  });
+  focus.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (checkin) endCheckin(null); else closeFocus();
+  });
   bar.addEventListener("change", (e) => {
     if (e.target.dataset.timer === "length" && state) { state.minutes = Number(e.target.value); save(); tick(); }
   });
@@ -168,7 +227,8 @@ export function startTimer({ topicId, topicName, subjectId, subjectName, minutes
     return false;
   }
   try { audio = audio || new AudioContext(); } catch { audio = null; }
-  state = { topicId, topicName, subjectId, subjectName, minutes: snap(minutes), elapsedMs: 0, runningSince: Date.now() };
+  state = { id: `${Date.now()}-${Math.random().toString(36).slice(2)}`, topicId, topicName, subjectId, subjectName,
+            minutes: snap(minutes), elapsedMs: 0, runningSince: Date.now() };
   save();
   openFocus();
   return true;

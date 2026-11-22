@@ -260,7 +260,7 @@ function renderDetail(s) {
     <div class="lvl-row"><span class="lvl" title="Level ${s.level} of 5"><small>LV</small><b>${s.level}</b></span>
       <span>${s.mastery_pct}% topic mastery across ${s.topic_count} topics<br><small class="none">${s.next_level_at ? `${s.next_level_at - s.mastery_pct}% more to reach level ${s.level + 1}` : "Top level reached"}</small></span></div>
     ${s.due_count || s.practice_total ? `<h3>Do next</h3><div class="donext">
-      ${s.due_count ? `<a class="btn" href="subject.html?id=${encodeURIComponent(s.id)}&filter=due">Review ${s.due_count} due topic${s.due_count === 1 ? "" : "s"}</a>` : ""}
+      ${s.due_count ? `<a class="btn" href="subject.html?id=${encodeURIComponent(s.id)}&review=1">Review ${s.due_count} due topic${s.due_count === 1 ? "" : "s"}</a>` : ""}
       ${s.practice_total ? `<a class="btn" href="subject.html?id=${encodeURIComponent(s.id)}#exams-section">Past papers · ${s.practice_done} of ${s.practice_total} done</a>` : ""}
     </div>` : ""}
     <dl class="kv">

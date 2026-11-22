@@ -264,3 +264,17 @@ dialog.practice::backdrop { background: rgb(10 15 25 / 0.6); }
 .mit-compare { font-size: 14px; }
 .mit-compare summary { cursor: pointer; color: var(--info); font-weight: 500; width: fit-content; }
 .mit-compare[open] summary { margin-bottom: 10px; }
+
+/* Review session */
+.rv-notes { padding: 12px; border-radius: var(--r-ctl); background: var(--surface); border: 1px dashed var(--line); }
+.rv-notes p { margin: 6px 0 0; white-space: pre-wrap; font-size: 14.5px; }
+.rv-q { margin: 16px 0 8px; font-weight: 600; }
+.rv-levels { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.rv-levels .pc-grade.same { border-style: dashed; }
+.rv-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-top: 12px; }
+.rv-foot .pc-keys { margin: 0; }
+dialog .linkbtn { background: none; border: 0; padding: 4px 0; color: var(--info); font: 500 13.5px var(--f-body); cursor: pointer; text-decoration: underline; }
+@media (max-width: 560px) { .rv-levels { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* End-of-session check-in (inside focus mode) */
+.focus .f-levels { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 640px; }

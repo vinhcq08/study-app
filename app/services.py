@@ -23,7 +23,7 @@ def change_topic(conn, topic: dict, on: str, *, mastery=KEEP, notes=KEEP, studie
         if level == 0:
             db.log_activity(conn, topic_id, subject_id, "mastery", on, 0, 1)
             level = 1
-        elif mastery is KEEP:
+        elif mastery is KEEP or mastery == topic["mastery"]:
             db.log_activity(conn, topic_id, subject_id, "review", on, level, level)
         last = on
 

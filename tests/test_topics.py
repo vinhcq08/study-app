@@ -139,3 +139,17 @@ def test_reseeding_keeps_topic_progress(client):
     db.init_db()
     topic = next(t for u in dashboard(client)["units"] for t in u["topics"] if t["id"] == "linalg:rank")
     assert topic["mastery"] == 2
+
+
+def test_review_session_list_and_rating(client, clock):
+    client.put("/api/topics/linalg:rank", json={"mastery": 1})
+    client.put("/api/topics/linalg:determinants", json={"mastery": 2, "notes": "det(AB) = det(A) det(B)"})
+    clock["day"] = date(2026, 11, 25)
+    data = client.get("/api/subjects/linalg/review").json()
+    assert [t["id"] for t in data["topics"]] == ["linalg:rank", "linalg:determinants"]   # most overdue first
+    assert data["topics"][1]["notes"].startswith("det")
+    # Rating a topic at the same level still counts as a review and restarts its clock.
+    client.put("/api/topics/linalg:rank", json={"mastery": 1, "reviewed": True})
+    assert [t["id"] for t in client.get("/api/subjects/linalg/review").json()["topics"]] == ["linalg:determinants"]
+    recent = dashboard(client)["activity"]["recent"]
+    assert recent[0]["kind"] == "review"

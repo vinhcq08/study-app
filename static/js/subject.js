@@ -5,6 +5,7 @@ import {
 } from "./api.js";
 import { initNav, rememberSubject } from "./nav.js";
 import { openPractice } from "./practice.js";
+import { openReview } from "./review.js";
 import { activeTopic, initTimer, startTimer } from "./timer.js";
 import { ago, daysBetween, esc, hoursAndMinutes, inDays, longDate, plural, shortDate, toast } from "./util.js";
 
@@ -288,7 +289,6 @@ function renderTopics() {
             `<button data-level="${i}" aria-pressed="${t.mastery === i}" style="--lvc:var(--lv${i});--lvink:var(--lv${i}-ink)" data-key="lv:${esc(t.id)}:${i}">${l}</button>`).join("")}</div>
           <div class="acts">
             ${studyButton(t)}
-            ${t.mastery > 0 ? `<button class="mini" data-act="review" data-key="rv:${esc(t.id)}">Reviewed</button>` : ""}
             <button class="mini" data-act="details" aria-expanded="${open}" data-key="dt:${esc(t.id)}">Details</button>
           </div>
           ${open ? topicDetails(t) : ""}
@@ -365,9 +365,7 @@ async function saveSubject(changes) {
 }
 
 function reviewDue() {
-  filter = "due";
-  renderTopics();
-  document.getElementById("topicsCard")?.scrollIntoView({ block: "start" });
+  openReview(subjectId, () => reload());
 }
 
 document.addEventListener("click", (e) => {
@@ -379,7 +377,6 @@ document.addEventListener("click", (e) => {
   if (el("[data-level]") && topicEl) { run(() => updateTopic(topicEl.dataset.topic, { mastery: Number(el("[data-level]").dataset.level) })); return; }
   if (el("[data-study]")) { startStudy(el("[data-study]").dataset.study); return; }
   if (el("[data-practise-topic]")) { practise(el("[data-practise-topic]").dataset.practiseTopic); return; }
-  if (el("[data-review]")) { run(() => updateTopic(el("[data-review]").dataset.review, { reviewed: true }), "Marked as reviewed."); return; }
   if (el("[data-del-card]")) { run(() => deleteCard(el("[data-del-card]").dataset.delCard), "Card deleted."); return; }
   if (el("[data-del-res]")) { run(() => deleteResource(el("[data-del-res]").dataset.delRes), "Resource removed."); return; }
   if (el("[data-del-exam]")) { run(() => deleteExam(el("[data-del-exam]").dataset.delExam), "Exam deleted."); return; }
@@ -387,7 +384,6 @@ document.addEventListener("click", (e) => {
   const act = el("[data-act]");
   if (act && topicEl) {
     const id = topicEl.dataset.topic;
-    if (act.dataset.act === "review") run(() => updateTopic(id, { reviewed: true }), "Marked as reviewed.");
     if (act.dataset.act === "details") {
       if (openDetails.has(id)) openDetails.delete(id); else openDetails.add(id);
       renderTopics();
@@ -478,6 +474,7 @@ initTimer((session) => { if (session.subjectId === subjectId) reload(); });
     renderJump();
     render();
     openFromHash();
+    if (params.get("review") === "1" && data.summary.due_count) reviewDue();
   } catch (err) {
     $("head").innerHTML = `<h1>Couldn't load this subject</h1><p class="none">${esc(err.message)}. <a href="tree.html">Back to the skill tree</a></p>`;
   }

@@ -5,7 +5,8 @@ from datetime import date
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
-from .. import clock, dashboard, db, study_store
+from .. import clock, dashboard, db, logic, study_store
+from .. import today as plan
 
 router = APIRouter(prefix="/api")
 
@@ -69,3 +70,22 @@ def tick_practice_exam(exam_id: str, update: PracticeExamUpdate):
             raise HTTPException(404, f"No practice exam with id '{exam_id}'")
         study_store.set_practice_done(conn, exam_id, done_on)
     return {"id": exam_id, "done": update.done, "done_on": done_on}
+
+
+@router.get("/subjects/{subject_id}/review")
+def review_list(subject_id: str):
+    """Topics due for review in a subject, most overdue first, for a review session."""
+    now = clock.today()
+    with db.connect() as conn:
+        _require_subject(conn, subject_id)
+        subject = next(s for s in db.fetch_subjects(conn) if s["id"] == subject_id)
+        topics = [plan._due_info(t, now) for t in study_store.all_topics(conn) if t["subject_id"] == subject_id]
+        due = sorted((t for t in topics if t["is_due"]), key=lambda t: t["days_until_review"])
+        cards = {c["topic_id"] for c in study_store.fetch_cards_for_subject(conn, subject_id)}
+        items = [{
+            "id": t["id"], "name": t["name"], "unit_name": t["unit_name"], "mastery": t["mastery"],
+            "days_overdue": -t["days_until_review"], "notes": db.fetch_topic(conn, t["id"])["notes"],
+            "has_cards": t["id"] in cards,
+        } for t in due]
+    return {"subject_id": subject_id, "subject_name": subject["short_name"],
+            "labels": logic.MASTERY_LABELS, "topics": items}
