@@ -89,6 +89,7 @@ function renderHead() {
   document.title = `${s.name} · Study App`;
   $("crumbName").textContent = s.short_name;
   const semesters = [1, 2, 3, 4].flatMap((y) => [1, 2].map((t) => `Year ${y} · Sem ${t}`));
+  $("head").style.setProperty("--c", color);
   $("head").innerHTML = `
     <div class="eyebrow" style="--c:${color}">${esc(s.lane_name.toUpperCase())} · TIER ${s.tier + 1}${s.kind === "gap_filler" ? " · MIT GAP-FILLER" : ""}${s.mit_code ? ` · MIT ${esc(s.mit_code)}` : ""}</div>
     <div class="title-row"><span class="lvl" title="Level ${m.level} of 5"><small>LV</small><b>${m.level}</b></span><h1>${esc(s.name)}</h1></div>

@@ -72,7 +72,7 @@ function renderPlan() {
   const done = data.plan.filter((i) => i.done);
   const [next, ...rest] = open;
   $("upNext").innerHTML = next ? `
-    <article class="hero" aria-label="Up next">
+    <article class="hero k-${next.kind}" aria-label="Up next">
       <div class="hero-text">
         <span class="hero-label">Up next · ${KIND_LABEL[next.kind]} · ${next.minutes} min</span>
         <span class="hero-title">${esc(next.title)}</span>
@@ -90,7 +90,7 @@ function renderPlan() {
 
   $("thenHead").hidden = !rest.length;
   $("plan").innerHTML = rest.map((i) => `
-    <li class="item">
+    <li class="item k-${i.kind}">
       <input type="checkbox" id="tick-${esc(i.key)}" data-tick="${esc(i.key)}">
       <label for="tick-${esc(i.key)}" class="item-text">
         <span class="item-title">${esc(i.title)}</span>

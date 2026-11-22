@@ -1,41 +1,59 @@
 /* Layout: tech-tree canvas (rows = subject families, columns = prerequisite depth) beside a sticky detail panel */
-/* Design: "Engineering notebook" light theme (graph paper, ink, drafting blue, mono labels)
-   and "Night lab" dark theme (deep navy, soft subject colours). One type family: IBM Plex. */
+/* Design: "Colour editorial". The app reads like a daily paper printed in colour: newsprint ground,
+   Newsreader serif headlines, Inter for the interface, square corners, and five inks (cobalt, tomato,
+   teal, plum, sunflower). Each page's lead story sits on a colour block. Dark mode is the same paper at
+   night. Component treatments live in editorial.css, loaded last on every page. */
 :root {
-  --bg: #f6f8fb; --surface: #ffffff; --surface-2: #eef2f7; --ink: #1b2a41; --muted: #55647a;
-  --line: #d5dde8; --edge: #a9b5c6; --focus: #1b2a41; --grid: #e6ecf3;
-  --paper: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
-  --accent: #1f5fbf; --on-accent: #ffffff;
-  --math: #1f5fbf; --ai: #c0412b; --data: #a9466f; --prog: #2e7d4f; --sys: #5d55a8; --se: #19817f; --hw: #a8691a; --gap: #46515d;
-  --on-lane: #ffffff; --good: #2e7d4f; --warn: #9a5f12; --info: #1f5fbf; --bad: #b3261e;
-  --highlight-bg: #ffe36e; --highlight-ink: #1b2a41; --streak: #c2410c;
-  --calm-bg: #eef5f3; --calm-surface: #ffffff; --calm-ink: #1d2b2a; --calm-muted: #556664; --calm-accent: #0f766e; --calm-on: #ffffff; --calm-soft: #dff0ec;
-  --r-card: 6px; --r-ctl: 4px;
-  --f-display: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --f-body: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --bg: #fbf8f1; --surface: #ffffff; --surface-2: #f3efe6; --ink: #16150f; --muted: #5f5b52;
+  --line: #ddd6c8; --edge: #b9b3a6; --focus: #16150f; --grid: transparent; --paper: none;
+  --accent: #2a4bd7; --on-accent: #ffffff;
+  --math: #2a4bd7; --ai: #c8402a; --data: #7d2e7b; --prog: #17786a; --sys: #4b3fb0; --se: #0f6f88; --hw: #a65a0c; --gap: #5f5b52;
+  --on-lane: #ffffff; --good: #17786a; --warn: #8a5a00; --info: #2a4bd7; --bad: #c8402a;
+  --highlight-bg: #fdefc4; --highlight-ink: #16150f; --streak: #16150f;
+  /* Editorial colour: five inks, their tints, and the block that carries each page's lead story */
+  --cobalt: #2a4bd7; --tomato: #c8402a; --teal: #17786a; --plum: #7d2e7b; --sun: #f4b73a; --on-sun: #16150f;
+  --t-cobalt: #dfe6ff; --t-tomato: #fbe0d6; --t-teal: #d6efe9; --t-plum: #efdcef; --t-sun: #fdefc4;
+  --block: #2a4bd7; --block-red: #c8402a; --on-block: #ffffff; --on-block-soft: #e9edff;
+  --head-mix: 100%; --head-base: #000000; --on-head: #ffffff; --on-head-soft: rgb(255 255 255 / 0.86);
+  /* Focus mode: one hue, cobalt, from deep shade to pale tint */
+  --calm-bg: #132261; --calm-band: #1b318c; --calm-surface: transparent; --calm-ink: #eaedfb; --calm-muted: #c3cdf4;
+  --calm-accent: #9faeed; --calm-on: #132261; --calm-soft: #2038a1; --calm-rule: #8a9ce9;
+  --r-card: 0; --r-ctl: 0;
+  --f-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --f-body: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0f1420; --surface: #171d2b; --surface-2: #1e2638; --ink: #e6e9f2; --muted: #a3acc0;
-    --line: #2a3349; --edge: #3d4862; --focus: #e6e9f2; --grid: transparent; --paper: none;
-    --accent: #9cc2ff; --on-accent: #0f1420;
-    --math: #9cc2ff; --ai: #ffa08c; --data: #f0a6c8; --prog: #86d9ae; --sys: #b9b0ff; --se: #7fd6d0; --hw: #f2c27b; --gap: #c3cad8;
-    --on-lane: #0f1420; --good: #86d9ae; --warn: #f2c27b; --info: #9cc2ff; --bad: #ff8a80;
-    --highlight-bg: rgba(255, 209, 102, 0.2); --highlight-ink: #ffd166; --streak: #ffa66b;
-    --calm-bg: #0e1d1b; --calm-surface: #152926; --calm-ink: #e3efec; --calm-muted: #9fb8b3; --calm-accent: #5cc8b8; --calm-on: #0e1d1b; --calm-soft: #1d3a35;
+    --bg: #15140f; --surface: #1e1d18; --surface-2: #27251f; --ink: #f2eee4; --muted: #b3ad9f;
+    --line: #3a372f; --edge: #57534a; --focus: #f2eee4; --grid: transparent; --paper: none;
+    --accent: #8ea2ff; --on-accent: #15140f;
+    --math: #8ea2ff; --ai: #ff9a85; --data: #e6a3e3; --prog: #6fd3bf; --sys: #b3a9ff; --se: #7fd0e6; --hw: #f2b46b; --gap: #b3ad9f;
+    --on-lane: #15140f; --good: #6fd3bf; --warn: #f2c27b; --info: #8ea2ff; --bad: #ff9a85;
+    --highlight-bg: rgb(244 183 58 / 0.22); --highlight-ink: #f4d58a; --streak: #15140f;
+    --cobalt: #8ea2ff; --tomato: #ff9a85; --teal: #6fd3bf; --plum: #e6a3e3; --sun: #f4b73a; --on-sun: #15140f;
+    --t-cobalt: #1f2747; --t-tomato: #3a221c; --t-teal: #16302b; --t-plum: #33213a; --t-sun: #3a3120;
+    --block: #1f37a8; --block-red: #93301c; --on-block: #ffffff; --on-block-soft: #dfe4ff;
+    --head-mix: 26%; --head-base: #15140f; --on-head: #f2eee4; --on-head-soft: #cfc9bb;
+    --calm-bg: #0c1640; --calm-band: #132261; --calm-surface: transparent; --calm-ink: #e3e7fa; --calm-muted: #b3bfee;
+    --calm-accent: #8a9ce9; --calm-on: #0c1640; --calm-soft: #1b318c; --calm-rule: #6f84dc;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #0f1420; --surface: #171d2b; --surface-2: #1e2638; --ink: #e6e9f2; --muted: #a3acc0;
-  --line: #2a3349; --edge: #3d4862; --focus: #e6e9f2; --grid: transparent; --paper: none;
-  --accent: #9cc2ff; --on-accent: #0f1420;
-  --math: #9cc2ff; --ai: #ffa08c; --data: #f0a6c8; --prog: #86d9ae; --sys: #b9b0ff; --se: #7fd6d0; --hw: #f2c27b; --gap: #c3cad8;
-  --on-lane: #0f1420; --good: #86d9ae; --warn: #f2c27b; --info: #9cc2ff; --bad: #ff8a80;
-  --highlight-bg: rgba(255, 209, 102, 0.2); --highlight-ink: #ffd166; --streak: #ffa66b;
-  --calm-bg: #0e1d1b; --calm-surface: #152926; --calm-ink: #e3efec; --calm-muted: #9fb8b3; --calm-accent: #5cc8b8; --calm-on: #0e1d1b; --calm-soft: #1d3a35;
+  --bg: #15140f; --surface: #1e1d18; --surface-2: #27251f; --ink: #f2eee4; --muted: #b3ad9f;
+  --line: #3a372f; --edge: #57534a; --focus: #f2eee4; --grid: transparent; --paper: none;
+  --accent: #8ea2ff; --on-accent: #15140f;
+  --math: #8ea2ff; --ai: #ff9a85; --data: #e6a3e3; --prog: #6fd3bf; --sys: #b3a9ff; --se: #7fd0e6; --hw: #f2b46b; --gap: #b3ad9f;
+  --on-lane: #15140f; --good: #6fd3bf; --warn: #f2c27b; --info: #8ea2ff; --bad: #ff9a85;
+  --highlight-bg: rgb(244 183 58 / 0.22); --highlight-ink: #f4d58a; --streak: #15140f;
+  --cobalt: #8ea2ff; --tomato: #ff9a85; --teal: #6fd3bf; --plum: #e6a3e3; --sun: #f4b73a; --on-sun: #15140f;
+  --t-cobalt: #1f2747; --t-tomato: #3a221c; --t-teal: #16302b; --t-plum: #33213a; --t-sun: #3a3120;
+  --block: #1f37a8; --block-red: #93301c; --on-block: #ffffff; --on-block-soft: #dfe4ff;
+  --head-mix: 26%; --head-base: #15140f; --on-head: #f2eee4; --on-head-soft: #cfc9bb;
+  --calm-bg: #0c1640; --calm-band: #132261; --calm-surface: transparent; --calm-ink: #e3e7fa; --calm-muted: #b3bfee;
+  --calm-accent: #8a9ce9; --calm-on: #0c1640; --calm-soft: #1b318c; --calm-rule: #6f84dc;
   color-scheme: dark;
 }
 

@@ -2,7 +2,7 @@
 
 A personal study app built alongside a Bachelor of IT, aimed at graduate study in AI and Computer Science.
 
-Four pages, with a light "engineering notebook" theme and a dark "night lab" theme (switch with the Auto / Light / Dark button in the menu; Auto follows your device):
+Four pages in a "colour editorial" style: each page reads like a daily paper printed in colour, with serif headlines (Newsreader), a five-ink palette (cobalt, tomato, teal, plum, sunflower), and the lead item on a block of colour. There is a light and a dark version; switch with the Auto / Light / Dark button in the menu (Auto follows your device). Colours are tokens at the top of `static/css/app.css`; the editorial treatments are in `static/css/editorial.css`.
 
 - **Today** (home page): a short plan picked once each day: a review session for subjects with topics due, exam prep in the week before an exam, a past paper, due flashcards, the topic that most needs attention, and new topics when there's little else. Ticking an item does the real thing (marks the topics studied, ticks the past paper off), and doing the thing elsewhere ticks the item. Set **Time today** and the plan fits it, in priority order; add more when you finish early. Also your streak, this week's study time, exam countdowns and subject levels (1 to 5, from topic mastery).
 - **Skill tree**: all 43 degree subjects plus 7 MIT gap-fillers, arranged by prerequisite. Select a subject to see its level and what to do next. The comparison with MIT Course 6-3 is folded away under the tree.
@@ -90,7 +90,7 @@ GitHub Pages can't run this app, because it needs its Python server and database
 | `app/backup.py` | Exports everything you've recorded as JSON, and restores it in one transaction. |
 | `app/main.py` | Creates the FastAPI app and serves the web pages. |
 | `app/routes/` | The API: `tree.py` (skill tree, progress, overview, semester plan and grades), `subjects.py` (dashboard, exam dates, past papers, review sessions, flashcard practice), `topics.py` (mastery, notes, sessions, flashcards, resources), `today.py` (the Today plan, its ticks, and settings such as the daily time budget), `backup.py` (download and restore). |
-| `static/` | The pages (`index.html` is Today, `tree.html`, `subjects.html`, `subject.html`), their CSS (theme colours live at the top of `css/app.css`) and JavaScript: `nav.js` (menu and theme switch), `timer.js` (timer, focus mode and the after-session question), `review.js` (review sessions), `paper-result.js` (past paper results), `planning.js` (semester plan and grades tabs), `practice.js` (flashcard practice), one script per page. No build step. |
+| `static/` | The pages (`index.html` is Today, `tree.html`, `subjects.html`, `subject.html`), their CSS (colour and font tokens at the top of `css/app.css`, the editorial look in `css/editorial.css`) and JavaScript: `nav.js` (menu and theme switch), `timer.js` (timer, focus mode and the after-session question), `review.js` (review sessions), `paper-result.js` (past paper results), `planning.js` (semester plan and grades tabs), `practice.js` (flashcard practice), one script per page. No build step. |
 | `tests/` | Tests for the data, the rules and the API. |
 
 ### Database tables
