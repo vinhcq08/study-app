@@ -17,6 +17,11 @@ let data = null;
 const $ = (id) => document.getElementById(id);
 const subjectUrl = (i) => `subject.html?id=${encodeURIComponent(i.subject_id)}`;
 
+// The first open lecture for the item's topic, if one is linked.
+const lectureLink = (i) => i.lecture
+  ? `<a class="sub-link" href="${esc(i.lecture.url)}" target="_blank" rel="noopener" title="${esc(i.lecture.course_title)}: ${esc(i.lecture.title)}">${i.lecture.kind === "video" ? "Watch lecture" : "Lecture notes"}</a>`
+  : "";
+
 function actionsFor(i, primary) {
   const cls = primary ? "btn hero-btn" : "btn";
   if (TIMED.has(i.kind)) {
@@ -80,6 +85,7 @@ function renderPlan() {
       </div>
       <div class="hero-actions">
         ${actionsFor(next, true)}
+        ${lectureLink(next)}
         <label class="hero-tick"><input type="checkbox" data-tick="${esc(next.key)}"> ${next.kind === "practice" ? "Mark paper done" : "Mark done"}</label>
       </div>
     </article>` : `<article class="hero calm"><span class="hero-title">Nothing left in today's plan.</span>
@@ -97,7 +103,7 @@ function renderPlan() {
         <small><span class="kind-tag">${KIND_LABEL[i.kind]}</span> ${esc(i.subject_name)} · ${esc(i.detail)}</small>
       </label>
       <span class="item-min">${i.minutes} min</span>
-      <span class="item-actions">${actionsFor(i, false)}</span>
+      <span class="item-actions">${actionsFor(i, false)}${lectureLink(i)}</span>
     </li>`).join("");
 
   const doneRows = done.map((i) => `

@@ -13,6 +13,7 @@ Four pages in a "colour editorial" style: each page reads like a daily paper pri
   Also where you download and restore a backup.
 - **Subject dashboard** (one per subject): set its status, semester and grade at the top, then:
   - **Topics**: 710 topics grouped into units, each with a five-level mastery scale, notes, flashcards, resources and links to related topics in other subjects.
+  - **Lectures**: 568 topics link to the open lecture that teaches them (431 lectures from 34 courses: MIT OpenCourseWare, MIT's Introduction to Deep Learning and Harvard CS50). A Lecture button on each topic opens the video or lecture notes; Today's plan and review sessions link them too. The subject header names the courses it draws on.
   - **Review session**: spaced repetition. Topics come due 2 to 30 days after you study them; "Start review" steps through the due ones and you rate each from 1 to 4.
   - **Your exam dates**: a countdown and a readiness score (average mastery of the units the exam covers). In the 21 days before an exam, its weaker topics come up in Today's plan.
   - **Past papers**: 131 exams that MIT, Berkeley, Stanford, CMU and others publish openly, mapped to the units they cover. Tick each one off when done, then note your score, the time it took and the units that went badly. Finals are marked as end-of-subject exams.
@@ -74,6 +75,7 @@ GitHub Pages can't run this app, because it needs its Python server and database
 | Path | What it does |
 |---|---|
 | `data/practice_exams.json` | Past papers per subject: link, school, course, kind (quiz, midterm, final, practice) and the units each covers. Restart to load changes; your ticks are kept. |
+| `data/lectures.json` | Open lectures linked to topics, built by `scripts/match_lectures.py` from `data/lecture_catalog.json` (collected from the course sites by `scripts/fetch_lectures.py`). Correct a link in `data/lecture_overrides.json` and run the match script again. |
 | `data/topic_links.json` | Links between topics in different subjects, with a one-line reason. |
 | `data/topics.json` | Units and topics for every subject. A leading `*` marks a topic that is key for AI. Edit it to match your real syllabus, then restart. |
 | `data/curriculum.json` | The subjects, their tree position, prerequisites and MIT matches. Edit this to change the curriculum, then restart the server. |
@@ -87,6 +89,7 @@ GitHub Pages can't run this app, because it needs its Python server and database
 | `app/clock.py` | The app's idea of "today"; tests replace it. |
 | `app/logic.py` | The rules: which subjects are ready or locked, what a change unlocks, a cycle check, topic mastery percentages and review scheduling. |
 | `app/planning.py` | Grades (GPA by area) and the semester plan with its prerequisite-order warnings. |
+| `app/lectures.py` | Reads the lecture links for topics and subjects. |
 | `app/backup.py` | Exports everything you've recorded as JSON, and restores it in one transaction. |
 | `app/main.py` | Creates the FastAPI app and serves the web pages. |
 | `app/routes/` | The API: `tree.py` (skill tree, progress, overview, semester plan and grades), `subjects.py` (dashboard, exam dates, past papers, review sessions, flashcard practice), `topics.py` (mastery, notes, sessions, flashcards, resources), `today.py` (the Today plan, its ticks, and settings such as the daily time budget), `backup.py` (download and restore). |
@@ -122,3 +125,7 @@ The links were found by web search in November 2026 and point to official course
 ### Adding a subject
 
 Add an entry to `data/curriculum.json` with a free `tier` and `row` cell, list its `prereqs`, and restart. The tests check that every link points to a real subject, that no two subjects share a cell, and that prerequisites have no cycles.
+
+### Lecture links
+
+`scripts/fetch_lectures.py` reads each course's lecture list from its site (titles and links exactly as published) into `data/lecture_catalog.json`. `scripts/match_lectures.py` links lectures to topics by the words they share, nudged by position in the course, and leaves a topic unlinked when nothing matches well enough. Every subject's matches were then checked by hand; corrections live in `data/lecture_overrides.json` as `"COURSE|part of the lecture title"`, and an empty list means no lecture. Topics no open course teaches (most project and process topics) have no link; add your own course's lecture to those as a resource.

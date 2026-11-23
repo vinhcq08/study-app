@@ -48,6 +48,7 @@ function render() {
       <p class="pc-front">${esc(t.name)}</p>
       ${t.notes ? `<div class="rv-notes"><span class="pc-topic">Your notes</span><p>${esc(t.notes)}</p></div>`
         : '<p class="none">Explain the main ideas to yourself, or work one example, before you answer.</p>'}
+      ${t.lectures?.length ? `<p class="rv-lecture">Unsure? ${t.lectures.map((l) => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.title)}</a> <small>(${esc(l.course_title.split(" (")[0])})</small>`).join(" or ")}</p>` : ""}
     </div>
     <p class="rv-q">How well do you know it now?</p>
     <div class="rv-levels" role="group" aria-label="How well do you know it now?">

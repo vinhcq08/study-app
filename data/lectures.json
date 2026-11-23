@@ -1,0 +1,5177 @@
+{
+ "_about": "Open lectures linked to topics. Built by scripts/match_lectures.py from data/lecture_catalog.json; pin or remove links by hand in data/lecture_overrides.json.",
+ "courses": {
+  "18.01": {
+   "title": "MIT 18.01 Single Variable Calculus (Fall 2006)",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/"
+  },
+  "18.02": {
+   "title": "MIT 18.02 Multivariable Calculus (Fall 2007)",
+   "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/"
+  },
+  "18.03": {
+   "title": "MIT 18.03 Differential Equations (Spring 2010)",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/"
+  },
+  "18.06": {
+   "title": "MIT 18.06 Linear Algebra (Spring 2010)",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/"
+  },
+  "18.065": {
+   "title": "MIT 18.065 Matrix Methods in Data Analysis, Signal Processing, and Machine Learning (Spring 2018)",
+   "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/"
+  },
+  "18.404": {
+   "title": "MIT 18.404J Theory of Computation (Fall 2020)",
+   "url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/"
+  },
+  "6.042": {
+   "title": "MIT 6.042J Mathematics for Computer Science (Fall 2010)",
+   "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/"
+  },
+  "6.041": {
+   "title": "MIT 6.041 Probabilistic Systems Analysis and Applied Probability (Fall 2010)",
+   "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/"
+  },
+  "6.046": {
+   "title": "MIT 6.046J Design and Analysis of Algorithms (Spring 2015)",
+   "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/"
+  },
+  "6.006": {
+   "title": "MIT 6.006 Introduction to Algorithms (Spring 2020)",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/"
+  },
+  "6.034": {
+   "title": "MIT 6.034 Artificial Intelligence (Fall 2010)",
+   "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/"
+  },
+  "6.867": {
+   "title": "MIT 6.867 Machine Learning (Fall 2006)",
+   "url": "https://ocw.mit.edu/courses/6-867-machine-learning-fall-2006/"
+  },
+  "6.S191": {
+   "title": "MIT 6.S191 Introduction to Deep Learning (2026)",
+   "url": "https://introtodeeplearning.com/"
+  },
+  "CS50": {
+   "title": "Harvard CS50x Introduction to Computer Science (2026)",
+   "url": "https://cs50.harvard.edu/x/"
+  },
+  "6.837": {
+   "title": "MIT 6.837 Computer Graphics (Fall 2012)",
+   "url": "https://ocw.mit.edu/courses/6-837-computer-graphics-fall-2012/"
+  },
+  "6.801": {
+   "title": "MIT 6.801 Machine Vision (Fall 2020)",
+   "url": "https://ocw.mit.edu/courses/6-801-machine-vision-fall-2020/"
+  },
+  "6.0002": {
+   "title": "MIT 6.0002 Introduction to Computational Thinking and Data Science (Fall 2016)",
+   "url": "https://ocw.mit.edu/courses/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/"
+  },
+  "6.0001": {
+   "title": "MIT 6.0001 Introduction to Computer Science and Programming in Python (Fall 2016)",
+   "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/"
+  },
+  "6.830": {
+   "title": "MIT 6.830 Database Systems (Fall 2010)",
+   "url": "https://ocw.mit.edu/courses/6-830-database-systems-fall-2010/"
+  },
+  "6.087": {
+   "title": "MIT 6.087 Practical Programming in C (IAP 2010)",
+   "url": "https://ocw.mit.edu/courses/6-087-practical-programming-in-c-january-iap-2010/"
+  },
+  "6.S096": {
+   "title": "MIT 6.S096 Effective Programming in C and C++ (IAP 2014)",
+   "url": "https://ocw.mit.edu/courses/6-s096-effective-programming-in-c-and-c-january-iap-2014/"
+  },
+  "6.035": {
+   "title": "MIT 6.035 Computer Language Engineering (Spring 2010)",
+   "url": "https://ocw.mit.edu/courses/6-035-computer-language-engineering-spring-2010/"
+  },
+  "6.005": {
+   "title": "MIT 6.005 Software Construction (Spring 2016)",
+   "url": "https://ocw.mit.edu/courses/6-005-software-construction-spring-2016/"
+  },
+  "6.004": {
+   "title": "MIT 6.004 Computation Structures (Spring 2017)",
+   "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/"
+  },
+  "6.828": {
+   "title": "MIT 6.828 Operating System Engineering (Fall 2012)",
+   "url": "https://ocw.mit.edu/courses/6-828-operating-system-engineering-fall-2012/"
+  },
+  "6.858": {
+   "title": "MIT 6.858 Computer Systems Security (Fall 2014)",
+   "url": "https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/"
+  },
+  "MAS.S62": {
+   "title": "MIT MAS.S62 Cryptocurrency Engineering and Design (Spring 2018)",
+   "url": "https://ocw.mit.edu/courses/mas-s62-cryptocurrency-engineering-and-design-spring-2018/"
+  },
+  "6.829": {
+   "title": "MIT 6.829 Computer Networks (Fall 2002)",
+   "url": "https://ocw.mit.edu/courses/6-829-computer-networks-fall-2002/"
+  },
+  "6.033": {
+   "title": "MIT 6.033 Computer System Engineering (Spring 2018)",
+   "url": "https://ocw.mit.edu/courses/6-033-computer-system-engineering-spring-2018/"
+  },
+  "6.170": {
+   "title": "MIT 6.170 Software Studio (Spring 2013)",
+   "url": "https://ocw.mit.edu/courses/6-170-software-studio-spring-2013/"
+  },
+  "8.01": {
+   "title": "MIT 8.01SC Classical Mechanics (Fall 2016)",
+   "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/"
+  },
+  "6.002": {
+   "title": "MIT 6.002 Circuits and Electronics (Spring 2007)",
+   "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/"
+  },
+  "6.003": {
+   "title": "MIT 6.003 Signals and Systems (Fall 2011)",
+   "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/"
+  },
+  "6.02": {
+   "title": "MIT 6.02 Introduction to EECS II: Digital Communication Systems (Fall 2012)",
+   "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/"
+  }
+ },
+ "subject_courses": {
+  "calc1": [
+   "18.01"
+  ],
+  "calc2": [
+   "18.01",
+   "18.02"
+  ],
+  "mvc": [
+   "18.02"
+  ],
+  "opt": [
+   "18.065"
+  ],
+  "linalg": [
+   "18.06",
+   "18.065"
+  ],
+  "de": [
+   "18.03"
+  ],
+  "toc": [
+   "18.404"
+  ],
+  "discrete": [
+   "6.042"
+  ],
+  "prob": [
+   "6.041"
+  ],
+  "daa": [
+   "6.046",
+   "6.006"
+  ],
+  "ai": [
+   "6.034",
+   "CS50"
+  ],
+  "ml": [
+   "6.867",
+   "6.034",
+   "6.S191"
+  ],
+  "dl": [
+   "6.S191",
+   "6.867"
+  ],
+  "genai": [
+   "6.S191"
+  ],
+  "gfx": [
+   "6.837"
+  ],
+  "cv": [
+   "6.801",
+   "6.S191"
+  ],
+  "sci": [
+   "6.0002",
+   "18.065"
+  ],
+  "ds": [
+   "6.0002",
+   "CS50"
+  ],
+  "db": [
+   "6.830",
+   "CS50"
+  ],
+  "dbadmin": [
+   "6.830"
+  ],
+  "dblab": [
+   "6.830",
+   "CS50"
+  ],
+  "cintro": [
+   "CS50",
+   "6.087"
+  ],
+  "clang": [
+   "6.087",
+   "6.S096",
+   "CS50"
+  ],
+  "dsa": [
+   "6.006",
+   "CS50"
+  ],
+  "compilers": [
+   "6.035"
+  ],
+  "python": [
+   "6.0001",
+   "CS50"
+  ],
+  "oop": [
+   "6.0001",
+   "6.005"
+  ],
+  "swc": [
+   "6.005"
+  ],
+  "ict": [
+   "CS50",
+   "6.033"
+  ],
+  "arch": [
+   "6.004"
+  ],
+  "os": [
+   "6.828",
+   "6.033"
+  ],
+  "sec": [
+   "6.858",
+   "6.033"
+  ],
+  "chain": [
+   "MAS.S62"
+  ],
+  "archlab": [
+   "6.004"
+  ],
+  "net": [
+   "6.02",
+   "6.033",
+   "6.829"
+  ],
+  "csys": [
+   "6.033"
+  ],
+  "se": [
+   "6.005",
+   "6.170"
+  ],
+  "sad": [
+   "6.170",
+   "6.005"
+  ],
+  "sdm": [
+   "6.005"
+  ],
+  "web": [
+   "6.170",
+   "CS50"
+  ],
+  "phys1": [
+   "8.01"
+  ],
+  "elec": [
+   "6.002"
+  ],
+  "dsp": [
+   "6.003"
+  ],
+  "comm": [
+   "6.02"
+  ],
+  "eleclab": [
+   "6.002"
+  ],
+  "embedded": [
+   "6.004",
+   "6.002"
+  ],
+  "iot": [
+   "6.02",
+   "6.033"
+  ]
+ },
+ "lectures": [
+  {
+   "id": "18.01#1",
+   "course": "18.01",
+   "title": "Lecture 1: Rate of Change",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-1-derivatives/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#2",
+   "course": "18.01",
+   "title": "Lecture 2: Limits",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-2-limits/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#3",
+   "course": "18.01",
+   "title": "Lecture 3: Derivatives",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-3-derivatives/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#4",
+   "course": "18.01",
+   "title": "Lecture 4: Chain Rule",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-4-chain-rule/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#5",
+   "course": "18.01",
+   "title": "Lecture 5: Implicit Differentiation",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-5-implicit-differentiation/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#6",
+   "course": "18.01",
+   "title": "Lecture 6: Exponential and Log",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-6-exponential-and-log/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#9",
+   "course": "18.01",
+   "title": "Lecture 10: Curve Sketching",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-10-curve-sketching/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#10",
+   "course": "18.01",
+   "title": "Lecture 11: Max-min",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-11-max-min/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#11",
+   "course": "18.01",
+   "title": "Lecture 12: Related Rates",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-12-related-rates/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#12",
+   "course": "18.01",
+   "title": "Lecture 13: Newton's Method",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-13-newtons-method/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#14",
+   "course": "18.01",
+   "title": "Lecture 15: Antiderivatives",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-15-antiderivatives/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#15",
+   "course": "18.01",
+   "title": "Lecture 16: Differential Equations",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-16-differential-equations/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#16",
+   "course": "18.01",
+   "title": "Lecture 18: Definite Integrals",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-18-definite-integrals/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#17",
+   "course": "18.01",
+   "title": "Lecture 19: First Fundamental Theorem",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-19-first-fundamental-theorem/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#18",
+   "course": "18.01",
+   "title": "Lecture 20: Second Fundamental Theorem",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-20-second-fundamental-theorem/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#19",
+   "course": "18.01",
+   "title": "Lecture 21: Applications to Logarithms",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-21-applications-to-logarithms/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#20",
+   "course": "18.01",
+   "title": "Lecture 22: Volumes",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-22-volumes/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#21",
+   "course": "18.01",
+   "title": "Lecture 23: Work, Probability",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-23-work/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#22",
+   "course": "18.01",
+   "title": "Lecture 24: Numerical Integration",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-24-numerical-integration/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#24",
+   "course": "18.01",
+   "title": "Lecture 27: Trig Integrals",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-27-trig-integrals/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#25",
+   "course": "18.01",
+   "title": "Lecture 28: Inverse Substitution",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-28-inverse-substitution/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#26",
+   "course": "18.01",
+   "title": "Lecture 29: Partial Fractions",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-29-partial-fractions/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#27",
+   "course": "18.01",
+   "title": "Lecture 30: Integration by Parts",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-30-integration-by-parts/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#28",
+   "course": "18.01",
+   "title": "Lecture 31: Parametric Equations",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-31-parametric-equations/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#29",
+   "course": "18.01",
+   "title": "Lecture 32: Polar Coordinates",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-32-polar-coordinates/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#31",
+   "course": "18.01",
+   "title": "Lecture 35: Indeterminate Forms",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-35-indeterminate-forms/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#32",
+   "course": "18.01",
+   "title": "Lecture 36: Improper Integrals",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-36-improper-integrals/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#33",
+   "course": "18.01",
+   "title": "Lecture 37: Infinite Series",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-37-infinite-series/",
+   "kind": "video"
+  },
+  {
+   "id": "18.01#34",
+   "course": "18.01",
+   "title": "Lecture 38: Taylor's Series",
+   "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/resources/lecture-38-taylors-series/",
+   "kind": "video"
+  },
+  {
+   "id": "18.02#1",
+   "course": "18.02",
+   "title": "Lecture 1: Dot Product",
+   "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/resources/lecture-1-dot-product/",
+   "kind": "video"
+  },
+  {
+   "id": "18.02#4",
+   "course": "18.02",
+   "title": "Lecture 4: Square Systems",
+   "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/resources/lecture-4-square-systems/",
+   "kind": "video"
+  },
+  {
+   "id": "18.02#5",
+   "course": "18.02",
+   "title": "Lecture 5: Parametric Equations",
+   "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/resources/lecture-5-parametric-equations/",
+   "kind": "video"
+  },
+  {
+   "id": "18.02#8",
+   "course": "18.02",
+   "title": "Lecture 8: Partial Derivatives",
+   "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/resources/lecture-8-partial-derivatives/",
+   "kind": "video"
+  },
+  {
+   "id": "18.02#10",
+   "course": "18.02",
+   "title": "Lecture 10: Second Derivative Test",
+   "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/resources/lecture-10-second-derivative-test/",
+   "kind": "video"
+  },
+  {
+   "id": "18.02#11",
+   "course": "18.02",
+   "title": "Lecture 11: Chain Rule",
+   "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/resources/lecture-11-chain-rule/",
+   "kind": "video"
+  },
+  {
+   "id": "18.02#12",
+   "course": "18.02",
+   "title": "Lecture 12: Gradient",
+   "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/resources/lecture-12-gradient/",
+   "kind": "video"
+  },
+  {
+   "id": "18.02#13",
+   "course": "18.02",
+   "title": "Lecture 13: Lagrange Multipliers",
+   "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/resources/lecture-13-lagrange-multipliers/",
+   "kind": "video"
+  },
+  {
+   "id": "18.02#16",
+   "course": "18.02",
+   "title": "Lecture 16: Double Integrals",
+   "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/resources/lecture-16-double-integrals/",
+   "kind": "video"
+  },
+  {
+   "id": "18.02#17",
+   "course": "18.02",
+   "title": "Lecture 17: Polar Coordinates",
+   "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/resources/lecture-17-polar-coordinates/",
+   "kind": "video"
+  },
+  {
+   "id": "18.02#18",
+   "course": "18.02",
+   "title": "Lecture 18: Change of Variables",
+   "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/resources/lecture-18-change-of-variables/",
+   "kind": "video"
+  },
+  {
+   "id": "18.02#22",
+   "course": "18.02",
+   "title": "Lecture 22: Green's Theorem",
+   "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/resources/lecture-22-greens-theorem/",
+   "kind": "video"
+  },
+  {
+   "id": "18.02#25",
+   "course": "18.02",
+   "title": "Lecture 25: Triple Integrals",
+   "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/resources/lecture-25-triple-integrals/",
+   "kind": "video"
+  },
+  {
+   "id": "18.02#28",
+   "course": "18.02",
+   "title": "Lecture 28: Divergence Theorem",
+   "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/resources/lecture-28-divergence-theorem/",
+   "kind": "video"
+  },
+  {
+   "id": "18.02#30",
+   "course": "18.02",
+   "title": "Lecture 30: Line Integrals",
+   "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/resources/lecture-30-line-integrals/",
+   "kind": "video"
+  },
+  {
+   "id": "18.02#31",
+   "course": "18.02",
+   "title": "Lecture 31: Stokes' Theorem",
+   "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/resources/lecture-31-stokes-theorem/",
+   "kind": "video"
+  },
+  {
+   "id": "18.02#32",
+   "course": "18.02",
+   "title": "Lecture 32: Stokes' Theorem (cont.)",
+   "url": "https://ocw.mit.edu/courses/18-02-multivariable-calculus-fall-2007/resources/lecture-32-stokes-theorem-cont/",
+   "kind": "video"
+  },
+  {
+   "id": "18.03#1",
+   "course": "18.03",
+   "title": "Lecture 1: The Geometrical View of y'= f(x,y)",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-1-the-geometrical-view-of-y-f-x-y/",
+   "kind": "video"
+  },
+  {
+   "id": "18.03#2",
+   "course": "18.03",
+   "title": "Lecture 2: Euler's Numerical Method for y'=f(x,y)",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-2-eulers-numerical-method-for-y-f-x-y/",
+   "kind": "video"
+  },
+  {
+   "id": "18.03#3",
+   "course": "18.03",
+   "title": "Lecture 3: Solving First-order Linear ODEs",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-3-solving-first-order-linear-odes/",
+   "kind": "video"
+  },
+  {
+   "id": "18.03#5",
+   "course": "18.03",
+   "title": "Lecture 5: First-order Autonomous ODEs",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-5-first-order-autonomous-odes/",
+   "kind": "video"
+  },
+  {
+   "id": "18.03#7",
+   "course": "18.03",
+   "title": "Lecture 7: First-order Linear with Constant Coefficients",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-7-first-order-linear-with-constant-coefficients/",
+   "kind": "video"
+  },
+  {
+   "id": "18.03#9",
+   "course": "18.03",
+   "title": "Lecture 9: Solving Second-order Linear ODE's with Constant Coefficients",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-9-solving-second-order-linear-odes-with-constant-coefficients/",
+   "kind": "video"
+  },
+  {
+   "id": "18.03#10",
+   "course": "18.03",
+   "title": "Lecture 10: Continuation: Complex Characteristic Roots",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-10-continuation-complex-characteristic-roots/",
+   "kind": "video"
+  },
+  {
+   "id": "18.03#12",
+   "course": "18.03",
+   "title": "Lecture 12: Continuation: General Theory for Inhomogeneous ODEs",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-12-continuation-general-theory-for-inhomogeneous-odes/",
+   "kind": "video"
+  },
+  {
+   "id": "18.03#13",
+   "course": "18.03",
+   "title": "Lecture 13: Finding Particular Solutions to Inhomogeneous ODEs",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-13-finding-particular-sto-inhomogeneous-odes/",
+   "kind": "video"
+  },
+  {
+   "id": "18.03#14",
+   "course": "18.03",
+   "title": "Lecture 14: Interpretation of the Exceptional Case: Resonance",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-14-interpretation-of-the-exceptional-case-resonance/",
+   "kind": "video"
+  },
+  {
+   "id": "18.03#15",
+   "course": "18.03",
+   "title": "Lecture 15: Introduction to Fourier Series",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-15-introduction-to-fourier-series/",
+   "kind": "video"
+  },
+  {
+   "id": "18.03#18",
+   "course": "18.03",
+   "title": "Lecture 19: Introduction to the Laplace Transform",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-19-introduction-to-the-laplace-transform/",
+   "kind": "video"
+  },
+  {
+   "id": "18.03#21",
+   "course": "18.03",
+   "title": "Lecture 22: Using Laplace Transform to Solve ODEs with Discontinuous Inputs",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-22-using-laplace-transform-to-solve-odes-with-discontinuous-inputs/",
+   "kind": "video"
+  },
+  {
+   "id": "18.03#22",
+   "course": "18.03",
+   "title": "Lecture 23: Use with Impulse Inputs",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-23-use-with-impulse-inputs/",
+   "kind": "video"
+  },
+  {
+   "id": "18.03#23",
+   "course": "18.03",
+   "title": "Lecture 24: Introduction to First-order Systems of ODEs",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-24-introduction-to-first-order-systems-of-odes/",
+   "kind": "video"
+  },
+  {
+   "id": "18.03#24",
+   "course": "18.03",
+   "title": "Lecture 25: Homogeneous Linear Systems with Constant Coefficients",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-25-homogeneous-linear-systems-with-constant-coefficients/",
+   "kind": "video"
+  },
+  {
+   "id": "18.03#26",
+   "course": "18.03",
+   "title": "Lecture 27: Sketching Solutions of 2x2 Homogeneous Linear System with Constant Coefficients",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-27-sketching-solutions-of-2x2-homogeneous-linear-system-with-constant-coefficients/",
+   "kind": "video"
+  },
+  {
+   "id": "18.03#30",
+   "course": "18.03",
+   "title": "Lecture 31: Non-linear Autonomous Systems",
+   "url": "https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-31-non-linear-autonomous-systems/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#1",
+   "course": "18.06",
+   "title": "Lecture 1: The geometry of linear equations",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-1-the-geometry-of-linear-equations/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#2",
+   "course": "18.06",
+   "title": "Lecture 2: Elimination with matrices",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-2-elimination-with-matrices/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#3",
+   "course": "18.06",
+   "title": "Lecture 3: Multiplication and inverse matrices",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-3-multiplication-and-inverse-matrices/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#4",
+   "course": "18.06",
+   "title": "Lecture 4: Factorization into A = LU",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-4-factorization-into-a-lu/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#6",
+   "course": "18.06",
+   "title": "Lecture 6: Column space and nullspace",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-6-column-space-and-nullspace/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#7",
+   "course": "18.06",
+   "title": "Lecture 7: Solving Ax = 0: pivot variables, special solutions",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-7-solving-ax-0-pivot-variables-special-solutions/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#8",
+   "course": "18.06",
+   "title": "Lecture 8: Solving Ax = b: row reduced form R",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-8-solving-ax-b-row-reduced-form-r/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#9",
+   "course": "18.06",
+   "title": "Lecture 9: Independence, basis, and dimension",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-9-independence-basis-and-dimension/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#15",
+   "course": "18.06",
+   "title": "Lecture 15: Projections onto subspaces",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-15-projections-onto-subspaces/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#16",
+   "course": "18.06",
+   "title": "Lecture 16: Projection matrices and least squares",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-16-projection-matrices-and-least-squares/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#17",
+   "course": "18.06",
+   "title": "Lecture 17: Orthogonal matrices and Gram-Schmidt",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-17-orthogonal-matrices-and-gram-schmidt/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#18",
+   "course": "18.06",
+   "title": "Lecture 18: Properties of determinants",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-18-properties-of-determinants/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#21",
+   "course": "18.06",
+   "title": "Lecture 21: Eigenvalues and eigenvectors",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-21-eigenvalues-and-eigenvectors/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#22",
+   "course": "18.06",
+   "title": "Lecture 22: Diagonalization and powers of A",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-22-diagonalization-and-powers-of-a/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#26",
+   "course": "18.06",
+   "title": "Lecture 25: Symmetric matrices and positive definiteness",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-25-symmetric-matrices-and-positive-definiteness/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#27",
+   "course": "18.06",
+   "title": "Lecture 26: Complex matrices; fast fourier transform",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-26-complex-matrices-fast-fourier-transform/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#28",
+   "course": "18.06",
+   "title": "Lecture 27: Positive definite matrices and minima",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-27-positive-definite-matrices-and-minima/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#30",
+   "course": "18.06",
+   "title": "Lecture 29: Singular value decomposition",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-29-singular-value-decomposition/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#31",
+   "course": "18.06",
+   "title": "Lecture 30: Linear transformations and their matrices",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-30-linear-transformations-and-their-matrices/",
+   "kind": "video"
+  },
+  {
+   "id": "18.06#32",
+   "course": "18.06",
+   "title": "Lecture 31: Change of basis; image compression",
+   "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-31-change-of-basis-image-compression/",
+   "kind": "video"
+  },
+  {
+   "id": "18.065#4",
+   "course": "18.065",
+   "title": "Lecture 4: Eigenvalues and Eigenvectors",
+   "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-4-eigenvalues-and-eigenvectors/",
+   "kind": "video"
+  },
+  {
+   "id": "18.065#6",
+   "course": "18.065",
+   "title": "Lecture 6: Singular Value Decomposition (SVD)",
+   "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-6-singular-value-decomposition-svd/",
+   "kind": "video"
+  },
+  {
+   "id": "18.065#7",
+   "course": "18.065",
+   "title": "Lecture 7: Eckart-Young: The Closest Rank k Matrix to A",
+   "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-7-eckart-young-the-closest-rank-k-matrix-to-a/",
+   "kind": "video"
+  },
+  {
+   "id": "18.065#8",
+   "course": "18.065",
+   "title": "Lecture 8: Norms of Vectors and Matrices",
+   "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-8-norms-of-vectors-and-matrices/",
+   "kind": "video"
+  },
+  {
+   "id": "18.065#9",
+   "course": "18.065",
+   "title": "Lecture 9: Four Ways to Solve Least Squares Problems",
+   "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-9-four-ways-to-solve-least-squares-problems/",
+   "kind": "video"
+  },
+  {
+   "id": "18.065#10",
+   "course": "18.065",
+   "title": "Lecture 10: Survey of Difficulties with Ax = b",
+   "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-10-survey-of-difficulties-with-ax-b/",
+   "kind": "video"
+  },
+  {
+   "id": "18.065#11",
+   "course": "18.065",
+   "title": "Lecture 11: Minimizing ‖x‖ Subject to Ax = b",
+   "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-11-minimizing-2016x2016-subject-to-ax-b/",
+   "kind": "video"
+  },
+  {
+   "id": "18.065#21",
+   "course": "18.065",
+   "title": "Lecture 21: Minimizing a Function Step by Step",
+   "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-21-minimizing-a-function-step-by-step/",
+   "kind": "video"
+  },
+  {
+   "id": "18.065#22",
+   "course": "18.065",
+   "title": "Lecture 22: Gradient Descent: Downhill to a Minimum",
+   "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-22-gradient-descent-downhill-to-a-minimum/",
+   "kind": "video"
+  },
+  {
+   "id": "18.065#23",
+   "course": "18.065",
+   "title": "Lecture 23: Accelerating Gradient Descent (Use Momentum)",
+   "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-23-accelerating-gradient-descent-use-momentum/",
+   "kind": "video"
+  },
+  {
+   "id": "18.065#24",
+   "course": "18.065",
+   "title": "Lecture 24: Linear Programming and Two-Person Games",
+   "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-24-linear-programming-and-two-person-games/",
+   "kind": "video"
+  },
+  {
+   "id": "18.065#25",
+   "course": "18.065",
+   "title": "Lecture 25: Stochastic Gradient Descent",
+   "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-25-stochastic-gradient-descent/",
+   "kind": "video"
+  },
+  {
+   "id": "18.065#26",
+   "course": "18.065",
+   "title": "Lecture 26: Structure of Neural Nets for Deep Learning",
+   "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-26-structure-of-neural-nets-for-deep-learning/",
+   "kind": "video"
+  },
+  {
+   "id": "18.065#27",
+   "course": "18.065",
+   "title": "Lecture 27: Backpropagation: Find Partial Derivatives",
+   "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-27-backpropagation-find-partial-derivatives/",
+   "kind": "video"
+  },
+  {
+   "id": "18.065#30",
+   "course": "18.065",
+   "title": "Lecture 32: ImageNet is a Convolutional Neural Network (CNN), The Convolution Rule",
+   "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/resources/lecture-32-imagenet-is-a-cnn-the-convolution-rule/",
+   "kind": "video"
+  },
+  {
+   "id": "18.404#1",
+   "course": "18.404",
+   "title": "Lecture 1: Introduction, Finite Automata, Regular Expressions",
+   "url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/introduction-finite-automata-regular-expressions/",
+   "kind": "video"
+  },
+  {
+   "id": "18.404#2",
+   "course": "18.404",
+   "title": "Lecture 2: Nondeterminism, Closure Properties, Regular Expressions → Finite Automata",
+   "url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/nondeterminism-closure-properties-regular-expressions-2192-finite-automata/",
+   "kind": "video"
+  },
+  {
+   "id": "18.404#3",
+   "course": "18.404",
+   "title": "Lecture 3: Regular Pumping Lemma, Finite Automata → Regular Expressions, CFGs",
+   "url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/regular-pumping-lemma-finite-automata-2192-regular-expressions-cfgs/",
+   "kind": "video"
+  },
+  {
+   "id": "18.404#4",
+   "course": "18.404",
+   "title": "Lecture 4: Pushdown Automata, CFG ↔ PDA",
+   "url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/pushdown-automata-cfg-2194-pda/",
+   "kind": "video"
+  },
+  {
+   "id": "18.404#5",
+   "course": "18.404",
+   "title": "Lecture 5: CF Pumping Lemma, Turing Machines",
+   "url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/cf-pumping-lemma-turing-machines/",
+   "kind": "video"
+  },
+  {
+   "id": "18.404#6",
+   "course": "18.404",
+   "title": "Lecture 6: TM Variants, Church-Turing Thesis",
+   "url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/tm-variants-church-turing-thesis/",
+   "kind": "video"
+  },
+  {
+   "id": "18.404#7",
+   "course": "18.404",
+   "title": "Lecture 7: Decision Problems for Automata and Grammars",
+   "url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/decision-problems-for-automata-and-grammars/",
+   "kind": "video"
+  },
+  {
+   "id": "18.404#8",
+   "course": "18.404",
+   "title": "Lecture 8: Undecidability",
+   "url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/lecture-8-undecidability/",
+   "kind": "video"
+  },
+  {
+   "id": "18.404#9",
+   "course": "18.404",
+   "title": "Lecture 9: Reducibility",
+   "url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/lecture-9-reducibility/",
+   "kind": "video"
+  },
+  {
+   "id": "18.404#12",
+   "course": "18.404",
+   "title": "Lecture 12: Time Complexity",
+   "url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/lecture-12-time-complexity/",
+   "kind": "video"
+  },
+  {
+   "id": "18.404#13",
+   "course": "18.404",
+   "title": "Lecture 14: P and NP, SAT, Poly-Time Reducibility",
+   "url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/lecture-14-p-and-np-sat-poly-time-reducibility/",
+   "kind": "video"
+  },
+  {
+   "id": "18.404#14",
+   "course": "18.404",
+   "title": "Lecture 15: NP-Completeness",
+   "url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/lecture-15-np-completeness/",
+   "kind": "video"
+  },
+  {
+   "id": "18.404#15",
+   "course": "18.404",
+   "title": "Lecture 16: Cook-Levin Theorem",
+   "url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/lecture-16-cook-levin-theorem/",
+   "kind": "video"
+  },
+  {
+   "id": "18.404#16",
+   "course": "18.404",
+   "title": "Lecture 17: Space Complexity, PSPACE, Savitch's Theorem",
+   "url": "https://ocw.mit.edu/courses/18-404j-theory-of-computation-fall-2020/resources/lecture-17-space-complexity-pspace-savitchs-theorem/",
+   "kind": "video"
+  },
+  {
+   "id": "6.042#1",
+   "course": "6.042",
+   "title": "Lecture 1: Introduction and Proofs",
+   "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/resources/lecture-1-introduction-and-proofs/",
+   "kind": "video"
+  },
+  {
+   "id": "6.042#2",
+   "course": "6.042",
+   "title": "Lecture 2: Induction",
+   "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/resources/lecture-2-induction/",
+   "kind": "video"
+  },
+  {
+   "id": "6.042#4",
+   "course": "6.042",
+   "title": "Lecture 4: Number Theory I",
+   "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/resources/lecture-4-number-theory-i/",
+   "kind": "video"
+  },
+  {
+   "id": "6.042#5",
+   "course": "6.042",
+   "title": "Lecture 5: Number Theory II",
+   "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/resources/lecture-5-number-theory-ii/",
+   "kind": "video"
+  },
+  {
+   "id": "6.042#6",
+   "course": "6.042",
+   "title": "Lecture 6: Graph Theory and Coloring",
+   "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/resources/lecture-6-graph-theory-and-coloring/",
+   "kind": "video"
+  },
+  {
+   "id": "6.042#8",
+   "course": "6.042",
+   "title": "Lecture 8: Graph Theory II: Minimum Spanning Trees",
+   "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/resources/lecture-8-graph-theory-ii-minimum-spanning-trees/",
+   "kind": "video"
+  },
+  {
+   "id": "6.042#10",
+   "course": "6.042",
+   "title": "Lecture 10: Graph Theory III",
+   "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/resources/lecture-10-graph-theory-iii/",
+   "kind": "video"
+  },
+  {
+   "id": "6.042#11",
+   "course": "6.042",
+   "title": "Lecture 11: Relations, Partial Orders, and Scheduling",
+   "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/resources/lecture-11-relations-partial-orders-and-scheduling/",
+   "kind": "video"
+  },
+  {
+   "id": "6.042#14",
+   "course": "6.042",
+   "title": "Lecture 14: Divide and Conquer Recurrences",
+   "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/resources/lecture-14-divide-and-conquer-recurrences/",
+   "kind": "video"
+  },
+  {
+   "id": "6.042#15",
+   "course": "6.042",
+   "title": "Lecture 15: Linear Recurrences",
+   "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/resources/lecture-15-linear-recurrences/",
+   "kind": "video"
+  },
+  {
+   "id": "6.042#16",
+   "course": "6.042",
+   "title": "Lecture 16: Counting Rules I",
+   "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/resources/lecture-16-counting-rules-i/",
+   "kind": "video"
+  },
+  {
+   "id": "6.042#17",
+   "course": "6.042",
+   "title": "Lecture 17: Counting Rules II",
+   "url": "https://ocw.mit.edu/courses/6-042j-mathematics-for-computer-science-fall-2010/resources/lecture-17-counting-rules-ii/",
+   "kind": "video"
+  },
+  {
+   "id": "6.041#1",
+   "course": "6.041",
+   "title": "Lecture 1: Probability Models and Axioms",
+   "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/resources/lecture-1-probability-models-and-axioms/",
+   "kind": "video"
+  },
+  {
+   "id": "6.041#2",
+   "course": "6.041",
+   "title": "Lecture 2: Conditioning and Bayes' Rule",
+   "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/resources/lecture-2-conditioning-and-bayes-rule/",
+   "kind": "video"
+  },
+  {
+   "id": "6.041#3",
+   "course": "6.041",
+   "title": "Lecture 3: Independence",
+   "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/resources/lecture-3-independence/",
+   "kind": "video"
+  },
+  {
+   "id": "6.041#5",
+   "course": "6.041",
+   "title": "Lecture 5: Discrete Random Variables; Probability Mass Functions; Expectations",
+   "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/resources/lecture-5-discrete-variables-probability-expectations/",
+   "kind": "video"
+  },
+  {
+   "id": "6.041#6",
+   "course": "6.041",
+   "title": "Lecture 6: Discrete Random Variable Examples; Joint PMFs",
+   "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/resources/lecture-6-discrete-random-variable-examples-joint-pmfs/",
+   "kind": "video"
+  },
+  {
+   "id": "6.041#8",
+   "course": "6.041",
+   "title": "Lecture 8: Continuous Random Variables",
+   "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/resources/lecture-8-continuous-random-variables/",
+   "kind": "video"
+  },
+  {
+   "id": "6.041#9",
+   "course": "6.041",
+   "title": "Lecture 9: Multiple Continuous Random Variables",
+   "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/resources/lecture-9-multiple-continuous-random-variables/",
+   "kind": "video"
+  },
+  {
+   "id": "6.041#11",
+   "course": "6.041",
+   "title": "Lecture 11: Derived Distributions; Convolution; Covariance and Correlation",
+   "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/resources/lecture-11-derived-distributions-convolution-correlation/",
+   "kind": "video"
+  },
+  {
+   "id": "6.041#13",
+   "course": "6.041",
+   "title": "Lecture 13: Bernoulli Process",
+   "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/resources/lecture-13-bernoulli-process/",
+   "kind": "video"
+  },
+  {
+   "id": "6.041#14",
+   "course": "6.041",
+   "title": "Lecture 14: Poisson Process I",
+   "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/resources/lecture-14-poisson-process-i/",
+   "kind": "video"
+  },
+  {
+   "id": "6.041#15",
+   "course": "6.041",
+   "title": "Lecture 15: Poisson Process II",
+   "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/resources/lecture-15-poisson-process-ii/",
+   "kind": "video"
+  },
+  {
+   "id": "6.041#19",
+   "course": "6.041",
+   "title": "Lecture 19: Weak Law of Large Numbers",
+   "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/resources/lecture-19-weak-law-of-large-numbers/",
+   "kind": "video"
+  },
+  {
+   "id": "6.041#20",
+   "course": "6.041",
+   "title": "Lecture 20: Central Limit Theorem",
+   "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/resources/lecture-20-the-central-limit-theorem/",
+   "kind": "video"
+  },
+  {
+   "id": "6.041#23",
+   "course": "6.041",
+   "title": "Lecture 23: Classical Statistical Inference I",
+   "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/resources/lecture-23-classical-statistical-inference-i/",
+   "kind": "video"
+  },
+  {
+   "id": "6.041#24",
+   "course": "6.041",
+   "title": "Lecture 24: Classical Inference II",
+   "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/resources/lecture-24-classical-inference-ii/",
+   "kind": "video"
+  },
+  {
+   "id": "6.041#25",
+   "course": "6.041",
+   "title": "Lecture 25: Classical Inference III; Course Overview",
+   "url": "https://ocw.mit.edu/courses/6-041-probabilistic-systems-analysis-and-applied-probability-fall-2010/resources/lecture-25-classical-inference-iii-course-overview/",
+   "kind": "video"
+  },
+  {
+   "id": "6.046#2",
+   "course": "6.046",
+   "title": "Lecture 2: Divide & Conquer: Convex Hull, Median Finding",
+   "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/resources/lecture-2-divide-conquer-convex-hull-median-finding/",
+   "kind": "video"
+  },
+  {
+   "id": "6.046#3",
+   "course": "6.046",
+   "title": "Lecture 3: Divide & Conquer: FFT",
+   "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/resources/lecture-3-divide-conquer-fft/",
+   "kind": "video"
+  },
+  {
+   "id": "6.046#5",
+   "course": "6.046",
+   "title": "Lecture 5: Amortization: Amortized Analysis",
+   "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/resources/lecture-5-amortization-amortized-analysis/",
+   "kind": "video"
+  },
+  {
+   "id": "6.046#6",
+   "course": "6.046",
+   "title": "Lecture 6: Randomization: Matrix Multiply, Quicksort",
+   "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/resources/lecture-6-randomization-matrix-multiply-quicksort/",
+   "kind": "video"
+  },
+  {
+   "id": "6.046#7",
+   "course": "6.046",
+   "title": "Lecture 7: Randomization: Skip Lists",
+   "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/resources/lecture-7-randomization-skip-lists/",
+   "kind": "video"
+  },
+  {
+   "id": "6.046#10",
+   "course": "6.046",
+   "title": "Lecture 10: Dynamic Programming: Advanced DP",
+   "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/resources/lecture-10-dynamic-programming-advanced-dp/",
+   "kind": "video"
+  },
+  {
+   "id": "6.046#12",
+   "course": "6.046",
+   "title": "Lecture 12: Greedy Algorithms: Minimum Spanning Tree",
+   "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/resources/lecture-12-greedy-algorithms-minimum-spanning-tree/",
+   "kind": "video"
+  },
+  {
+   "id": "6.046#13",
+   "course": "6.046",
+   "title": "Lecture 13: Incremental Improvement: Max Flow, Min Cut",
+   "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/resources/lecture-13-incremental-improvement-max-flow-min-cut/",
+   "kind": "video"
+  },
+  {
+   "id": "6.046#15",
+   "course": "6.046",
+   "title": "Lecture 15: Linear Programming: LP, reductions, Simplex",
+   "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/resources/lecture-15-linear-programming-lp-reductions-simplex/",
+   "kind": "video"
+  },
+  {
+   "id": "6.046#16",
+   "course": "6.046",
+   "title": "Lecture 16: Complexity: P, NP, NP-completeness, Reductions",
+   "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/resources/lecture-16-complexity-p-np-np-completeness-reductions/",
+   "kind": "video"
+  },
+  {
+   "id": "6.046#17",
+   "course": "6.046",
+   "title": "Lecture 17: Complexity: Approximation Algorithms",
+   "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/resources/lecture-17-complexity-approximation-algorithms/",
+   "kind": "video"
+  },
+  {
+   "id": "6.046#21",
+   "course": "6.046",
+   "title": "Lecture 21: Cryptography: Hash Functions",
+   "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/resources/lecture-21-cryptography-hash-functions/",
+   "kind": "video"
+  },
+  {
+   "id": "6.046#22",
+   "course": "6.046",
+   "title": "Lecture 22: Cryptography: Encryption",
+   "url": "https://ocw.mit.edu/courses/6-046j-design-and-analysis-of-algorithms-spring-2015/resources/lecture-22-cryptography-encryption/",
+   "kind": "video"
+  },
+  {
+   "id": "6.006#1",
+   "course": "6.006",
+   "title": "Lecture 1: Algorithms and Computation",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-1-algorithms-and-computation/",
+   "kind": "video"
+  },
+  {
+   "id": "6.006#2",
+   "course": "6.006",
+   "title": "Lecture 2: Data Structures and Dynamic Arrays",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-2-data-structures-and-dynamic-arrays/",
+   "kind": "video"
+  },
+  {
+   "id": "6.006#4",
+   "course": "6.006",
+   "title": "Lecture 3: Sets and Sorting",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-3-sets-and-sorting/",
+   "kind": "video"
+  },
+  {
+   "id": "6.006#5",
+   "course": "6.006",
+   "title": "Lecture 4: Hashing",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-4-hashing/",
+   "kind": "video"
+  },
+  {
+   "id": "6.006#7",
+   "course": "6.006",
+   "title": "Lecture 5: Linear Sorting",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-5-linear-sorting/",
+   "kind": "video"
+  },
+  {
+   "id": "6.006#9",
+   "course": "6.006",
+   "title": "Lecture 6: Binary Trees, Part 1",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-6-binary-trees-part-1/",
+   "kind": "video"
+  },
+  {
+   "id": "6.006#10",
+   "course": "6.006",
+   "title": "Lecture 7: Binary Trees, Part 2: AVL",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-7-binary-trees-part-2-avl/",
+   "kind": "video"
+  },
+  {
+   "id": "6.006#12",
+   "course": "6.006",
+   "title": "Lecture 8: Binary Heaps",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-8-binary-heaps/",
+   "kind": "video"
+  },
+  {
+   "id": "6.006#13",
+   "course": "6.006",
+   "title": "Lecture 9: Breadth-First Search",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-9-breadth-first-search/",
+   "kind": "video"
+  },
+  {
+   "id": "6.006#15",
+   "course": "6.006",
+   "title": "Lecture 10: Depth-First Search",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-10-depth-first-search/",
+   "kind": "video"
+  },
+  {
+   "id": "6.006#16",
+   "course": "6.006",
+   "title": "Lecture 11: Weighted Shortest Paths",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-11-weighted-shortest-paths/",
+   "kind": "video"
+  },
+  {
+   "id": "6.006#18",
+   "course": "6.006",
+   "title": "Lecture 12: Bellman-Ford",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-12-bellman-ford/",
+   "kind": "video"
+  },
+  {
+   "id": "6.006#19",
+   "course": "6.006",
+   "title": "Lecture 13: Dijkstra",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-13-dijkstra/",
+   "kind": "video"
+  },
+  {
+   "id": "6.006#23",
+   "course": "6.006",
+   "title": "Lecture 15: Dynamic Programming, Part 1: SRTBOT, Fib, DAGs, Bowling",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-15-dynamic-programming-part-1-srtbot-fib-dags-bowling/",
+   "kind": "video"
+  },
+  {
+   "id": "6.006#24",
+   "course": "6.006",
+   "title": "Lecture 16: Dynamic Programming, Part 2: LCS, LIS, Coins",
+   "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/lecture-16-dynamic-programming-part-2-lcs-lis-coins/",
+   "kind": "video"
+  },
+  {
+   "id": "6.034#1",
+   "course": "6.034",
+   "title": "Lecture 1: Introduction and Scope",
+   "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-1-introduction-and-scope/",
+   "kind": "video"
+  },
+  {
+   "id": "6.034#2",
+   "course": "6.034",
+   "title": "Lecture 2: Reasoning: Goal Trees and Problem Solving",
+   "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-2-reasoning-goal-trees-and-problem-solving/",
+   "kind": "video"
+  },
+  {
+   "id": "6.034#4",
+   "course": "6.034",
+   "title": "Lecture 4: Search: Depth-First, Hill Climbing, Beam",
+   "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-4-search-depth-first-hill-climbing-beam/",
+   "kind": "video"
+  },
+  {
+   "id": "6.034#5",
+   "course": "6.034",
+   "title": "Lecture 5: Search: Optimal, Branch and Bound, A*",
+   "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-5-search-optimal-branch-and-bound-a/",
+   "kind": "video"
+  },
+  {
+   "id": "6.034#6",
+   "course": "6.034",
+   "title": "Lecture 6: Search: Games, Minimax, and Alpha-Beta",
+   "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-6-search-games-minimax-and-alpha-beta/",
+   "kind": "video"
+  },
+  {
+   "id": "6.034#7",
+   "course": "6.034",
+   "title": "Lecture 7: Constraints: Interpreting Line Drawings",
+   "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-7-constraints-interpreting-line-drawings/",
+   "kind": "video"
+  },
+  {
+   "id": "6.034#8",
+   "course": "6.034",
+   "title": "Lecture 8: Constraints: Search, Domain Reduction",
+   "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-8-constraints-search-domain-reduction/",
+   "kind": "video"
+  },
+  {
+   "id": "6.034#10",
+   "course": "6.034",
+   "title": "Lecture 10: Introduction to Learning, Nearest Neighbors",
+   "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-10-introduction-to-learning-nearest-neighbors/",
+   "kind": "video"
+  },
+  {
+   "id": "6.034#11",
+   "course": "6.034",
+   "title": "Lecture 11: Learning: Identification Trees, Disorder",
+   "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-11-learning-identification-trees-disorder/",
+   "kind": "video"
+  },
+  {
+   "id": "6.034#12",
+   "course": "6.034",
+   "title": "Lecture 12A: Neural Nets",
+   "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-12a-neural-nets/",
+   "kind": "video"
+  },
+  {
+   "id": "6.034#13",
+   "course": "6.034",
+   "title": "Lecture 12B: Deep Neural Nets",
+   "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-12b-deep-neural-nets/",
+   "kind": "video"
+  },
+  {
+   "id": "6.034#17",
+   "course": "6.034",
+   "title": "Lecture 16: Learning: Support Vector Machines",
+   "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-16-learning-support-vector-machines/",
+   "kind": "video"
+  },
+  {
+   "id": "6.034#21",
+   "course": "6.034",
+   "title": "Lecture 21: Probabilistic Inference I",
+   "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-21-probabilistic-inference-i/",
+   "kind": "video"
+  },
+  {
+   "id": "6.034#22",
+   "course": "6.034",
+   "title": "Lecture 22: Probabilistic Inference II",
+   "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/resources/lecture-22-probabilistic-inference-ii/",
+   "kind": "video"
+  },
+  {
+   "id": "6.867#4",
+   "course": "6.867",
+   "title": "Classification errors, regularization, logistic regression",
+   "url": "https://ocw.mit.edu/courses/6-867-machine-learning-fall-2006/resources/lec4/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.867#5",
+   "course": "6.867",
+   "title": "Linear regression, estimator bias and variance, active learning",
+   "url": "https://ocw.mit.edu/courses/6-867-machine-learning-fall-2006/resources/lec5/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.867#6",
+   "course": "6.867",
+   "title": "Active learning (cont.), non-linear predictions, kernals",
+   "url": "https://ocw.mit.edu/courses/6-867-machine-learning-fall-2006/resources/lec6/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.867#8",
+   "course": "6.867",
+   "title": "Support vector machine (SVM) and kernels, kernel optimization",
+   "url": "https://ocw.mit.edu/courses/6-867-machine-learning-fall-2006/resources/lec8/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.867#9",
+   "course": "6.867",
+   "title": "Model selection",
+   "url": "https://ocw.mit.edu/courses/6-867-machine-learning-fall-2006/resources/lec9/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.867#11",
+   "course": "6.867",
+   "title": "Description length, feature selection",
+   "url": "https://ocw.mit.edu/courses/6-867-machine-learning-fall-2006/resources/lec11/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.867#12",
+   "course": "6.867",
+   "title": "Combining classifiers, boosting",
+   "url": "https://ocw.mit.edu/courses/6-867-machine-learning-fall-2006/resources/lec12/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.867#17",
+   "course": "6.867",
+   "title": "Clustering",
+   "url": "https://ocw.mit.edu/courses/6-867-machine-learning-fall-2006/resources/lec17/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.S191#1",
+   "course": "6.S191",
+   "title": "Intro to Deep Learning",
+   "url": "https://www.youtube.com/watch?v=II4giR4vOOo&list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI",
+   "kind": "video"
+  },
+  {
+   "id": "6.S191#2",
+   "course": "6.S191",
+   "title": "Deep Sequence Modeling",
+   "url": "https://www.youtube.com/watch?v=d02VkQ9MP44&list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI",
+   "kind": "video"
+  },
+  {
+   "id": "6.S191#3",
+   "course": "6.S191",
+   "title": "Deep Computer Vision",
+   "url": "https://www.youtube.com/watch?v=pqIcoskUuWs&list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI",
+   "kind": "video"
+  },
+  {
+   "id": "6.S191#4",
+   "course": "6.S191",
+   "title": "Deep Generative Modeling",
+   "url": "https://www.youtube.com/watch?v=R8V8CbuxryI&list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI&index=4",
+   "kind": "video"
+  },
+  {
+   "id": "6.S191#5",
+   "course": "6.S191",
+   "title": "Deep Reinforcement Learning",
+   "url": "https://www.youtube.com/watch?v=1ij3dweHu-0&list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI",
+   "kind": "video"
+  },
+  {
+   "id": "6.S191#9",
+   "course": "6.S191",
+   "title": "Secrets to Massively Parallel Training",
+   "url": "https://www.youtube.com/watch?v=UZZD9d9YqnQ&list=PLtBw6njQRU-rwp5__7C0oIVt26ZgjG9NI",
+   "kind": "video"
+  },
+  {
+   "id": "CS50#1",
+   "course": "CS50",
+   "title": "Scratch",
+   "url": "https://cs50.harvard.edu/x/weeks/0/",
+   "kind": "video"
+  },
+  {
+   "id": "CS50#2",
+   "course": "CS50",
+   "title": "C",
+   "url": "https://cs50.harvard.edu/x/weeks/1/",
+   "kind": "video"
+  },
+  {
+   "id": "CS50#3",
+   "course": "CS50",
+   "title": "Arrays",
+   "url": "https://cs50.harvard.edu/x/weeks/2/",
+   "kind": "video"
+  },
+  {
+   "id": "CS50#4",
+   "course": "CS50",
+   "title": "Algorithms",
+   "url": "https://cs50.harvard.edu/x/weeks/3/",
+   "kind": "video"
+  },
+  {
+   "id": "CS50#5",
+   "course": "CS50",
+   "title": "Memory",
+   "url": "https://cs50.harvard.edu/x/weeks/4/",
+   "kind": "video"
+  },
+  {
+   "id": "CS50#6",
+   "course": "CS50",
+   "title": "Data Structures",
+   "url": "https://cs50.harvard.edu/x/weeks/5/",
+   "kind": "video"
+  },
+  {
+   "id": "CS50#7",
+   "course": "CS50",
+   "title": "Python",
+   "url": "https://cs50.harvard.edu/x/weeks/6/",
+   "kind": "video"
+  },
+  {
+   "id": "CS50#8",
+   "course": "CS50",
+   "title": "SQL",
+   "url": "https://cs50.harvard.edu/x/weeks/7/",
+   "kind": "video"
+  },
+  {
+   "id": "CS50#9",
+   "course": "CS50",
+   "title": "Artificial Intelligence",
+   "url": "https://cs50.harvard.edu/x/weeks/ai/",
+   "kind": "video"
+  },
+  {
+   "id": "CS50#10",
+   "course": "CS50",
+   "title": "HTML, CSS, JavaScript",
+   "url": "https://cs50.harvard.edu/x/weeks/8/",
+   "kind": "video"
+  },
+  {
+   "id": "CS50#11",
+   "course": "CS50",
+   "title": "Flask",
+   "url": "https://cs50.harvard.edu/x/weeks/9/",
+   "kind": "video"
+  },
+  {
+   "id": "6.837#2",
+   "course": "6.837",
+   "title": "Bezier Curves and Splines",
+   "url": "https://ocw.mit.edu/courses/6-837-computer-graphics-fall-2012/resources/mit6_837f12_lec01/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.837#4",
+   "course": "6.837",
+   "title": "Coordinates and Transformations",
+   "url": "https://ocw.mit.edu/courses/6-837-computer-graphics-fall-2012/resources/mit6_837f12_lec03/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.837#7",
+   "course": "6.837",
+   "title": "Basics of Computer Animation—Skinning/Enveloping",
+   "url": "https://ocw.mit.edu/courses/6-837-computer-graphics-fall-2012/resources/mit6_837f12_lec06/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.837#8",
+   "course": "6.837",
+   "title": "Particle Systems and ODEs",
+   "url": "https://ocw.mit.edu/courses/6-837-computer-graphics-fall-2012/resources/mit6_837f12_lec07/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.837#11",
+   "course": "6.837",
+   "title": "Collision Detection and Response",
+   "url": "https://ocw.mit.edu/courses/6-837-computer-graphics-fall-2012/resources/mit6_837f12_lec10/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.837#12",
+   "course": "6.837",
+   "title": "Ray Casting and Rendering",
+   "url": "https://ocw.mit.edu/courses/6-837-computer-graphics-fall-2012/resources/mit6_837f12_lec11/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.837#14",
+   "course": "6.837",
+   "title": "Ray Tracing",
+   "url": "https://ocw.mit.edu/courses/6-837-computer-graphics-fall-2012/resources/mit6_837f12_lec13/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.837#16",
+   "course": "6.837",
+   "title": "Shading and Material Appearance",
+   "url": "https://ocw.mit.edu/courses/6-837-computer-graphics-fall-2012/resources/mit6_837f12_lec15/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.837#17",
+   "course": "6.837",
+   "title": "Texture Mapping and Shaders",
+   "url": "https://ocw.mit.edu/courses/6-837-computer-graphics-fall-2012/resources/mit6_837f12_lec16/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.837#19",
+   "course": "6.837",
+   "title": "Global Illumination and Monte Carlo",
+   "url": "https://ocw.mit.edu/courses/6-837-computer-graphics-fall-2012/resources/mit6_837f12_lec18/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.837#20",
+   "course": "6.837",
+   "title": "Graphics Pipeline and Rasterization",
+   "url": "https://ocw.mit.edu/courses/6-837-computer-graphics-fall-2012/resources/mit6_837f12_lec21/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.837#21",
+   "course": "6.837",
+   "title": "Graphics Pipeline and Rasterization II",
+   "url": "https://ocw.mit.edu/courses/6-837-computer-graphics-fall-2012/resources/mit6_837f12_lec22/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.801#1",
+   "course": "6.801",
+   "title": "Image Formation, Perspective Projection, Time Derivative, Motion Field",
+   "url": "https://ocw.mit.edu/courses/6-801-machine-vision-fall-2020/resources/mit6_801f20_lec2/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.801#3",
+   "course": "6.801",
+   "title": "Fixed Optical Flow, Optical Mouse, Constant Brightness Assumption, Closed Form Solution",
+   "url": "https://ocw.mit.edu/courses/6-801-machine-vision-fall-2020/resources/mit6_801f20_lec4/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.801#4",
+   "course": "6.801",
+   "title": "TTC and FOR MontiVision Demos, Vanishing Point, Use of VPs in Camera Calibration",
+   "url": "https://ocw.mit.edu/courses/6-801-machine-vision-fall-2020/resources/mit6_801f20_lec5/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.801#10",
+   "course": "6.801",
+   "title": "Edge Detection, Subpixel Position, CORDIC, Line Detection (US 6,408,109)",
+   "url": "https://ocw.mit.edu/courses/6-801-machine-vision-fall-2020/resources/mit6_801f20_lec11/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.801#15",
+   "course": "6.801",
+   "title": "Fast Convolution, Low Pass Filter Approximations, Integral Images (US 6,457,032)",
+   "url": "https://ocw.mit.edu/courses/6-801-machine-vision-fall-2020/resources/mit6_801f20_lec16/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.801#17",
+   "course": "6.801",
+   "title": "Rotation and How to Represent It, Unit Quaternions, the Space of Rotations",
+   "url": "https://ocw.mit.edu/courses/6-801-machine-vision-fall-2020/resources/mit6_801f20_lec18/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.801#19",
+   "course": "6.801",
+   "title": "Space of Rotations, Regular Tessellations, Critical Surfaces in Motion Vision and Binocular Stereo",
+   "url": "https://ocw.mit.edu/courses/6-801-machine-vision-fall-2020/resources/mit6_801f20_lec20/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.0002#1",
+   "course": "6.0002",
+   "title": "Lecture 1: Introduction and Optimization Problems",
+   "url": "https://ocw.mit.edu/courses/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/resources/lecture-1-introduction-and-optimization-problems/",
+   "kind": "video"
+  },
+  {
+   "id": "6.0002#2",
+   "course": "6.0002",
+   "title": "Lecture 2: Optimization Problems",
+   "url": "https://ocw.mit.edu/courses/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/resources/lecture-2-optimization-problems/",
+   "kind": "video"
+  },
+  {
+   "id": "6.0002#6",
+   "course": "6.0002",
+   "title": "Lecture 6: Monte Carlo Simulation",
+   "url": "https://ocw.mit.edu/courses/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/resources/lecture-6-monte-carlo-simulation/",
+   "kind": "video"
+  },
+  {
+   "id": "6.0002#8",
+   "course": "6.0002",
+   "title": "Lecture 8: Sampling and Standard Error",
+   "url": "https://ocw.mit.edu/courses/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/resources/lecture-8-sampling-and-standard-error/",
+   "kind": "video"
+  },
+  {
+   "id": "6.0002#9",
+   "course": "6.0002",
+   "title": "Lecture 9: Understanding Experimental Data",
+   "url": "https://ocw.mit.edu/courses/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/resources/lecture-9-understanding-experimental-data/",
+   "kind": "video"
+  },
+  {
+   "id": "6.0002#11",
+   "course": "6.0002",
+   "title": "Lecture 11: Introduction to Machine Learning",
+   "url": "https://ocw.mit.edu/courses/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/resources/lecture-11-introduction-to-machine-learning/",
+   "kind": "video"
+  },
+  {
+   "id": "6.0002#13",
+   "course": "6.0002",
+   "title": "Lecture 13: Classification",
+   "url": "https://ocw.mit.edu/courses/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/resources/lecture-13-classification/",
+   "kind": "video"
+  },
+  {
+   "id": "6.0002#14",
+   "course": "6.0002",
+   "title": "Lecture 14: Classification and Statistical Sins",
+   "url": "https://ocw.mit.edu/courses/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/resources/lecture-14-classification-and-statistical-sins/",
+   "kind": "video"
+  },
+  {
+   "id": "6.0002#15",
+   "course": "6.0002",
+   "title": "Lecture 15: Statistical Sins and Wrap Up",
+   "url": "https://ocw.mit.edu/courses/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/resources/lecture-15-statistical-sins-and-wrap-up/",
+   "kind": "video"
+  },
+  {
+   "id": "6.0001#1",
+   "course": "6.0001",
+   "title": "Lecture 1: What is Computation?",
+   "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/resources/lecture-1-what-is-computation/",
+   "kind": "video"
+  },
+  {
+   "id": "6.0001#2",
+   "course": "6.0001",
+   "title": "Lecture 2: Branching and Iteration",
+   "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/resources/lecture-2-branching-and-iteration/",
+   "kind": "video"
+  },
+  {
+   "id": "6.0001#4",
+   "course": "6.0001",
+   "title": "Lecture 4: Decomposition, Abstraction, and Functions",
+   "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/resources/lecture-4-decomposition-abstraction-and-functions/",
+   "kind": "video"
+  },
+  {
+   "id": "6.0001#5",
+   "course": "6.0001",
+   "title": "Lecture 5: Tuples, Lists, Aliasing, Mutability, and Cloning",
+   "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/resources/lecture-5-tuples-lists-aliasing-mutability-and-cloning/",
+   "kind": "video"
+  },
+  {
+   "id": "6.0001#6",
+   "course": "6.0001",
+   "title": "Lecture 6: Recursion and Dictionaries",
+   "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/resources/lecture-6-recursion-and-dictionaries/",
+   "kind": "video"
+  },
+  {
+   "id": "6.0001#7",
+   "course": "6.0001",
+   "title": "Lecture 7: Testing, Debugging, Exceptions, and Assertions",
+   "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/resources/lecture-7-testing-debugging-exceptions-and-assertions/",
+   "kind": "video"
+  },
+  {
+   "id": "6.0001#8",
+   "course": "6.0001",
+   "title": "Lecture 8: Object Oriented Programming",
+   "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/resources/lecture-8-object-oriented-programming/",
+   "kind": "video"
+  },
+  {
+   "id": "6.0001#9",
+   "course": "6.0001",
+   "title": "Lecture 9: Python Classes and Inheritance",
+   "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/resources/lecture-9-python-classes-and-inheritance/",
+   "kind": "video"
+  },
+  {
+   "id": "6.0001#10",
+   "course": "6.0001",
+   "title": "Lecture 10: Understanding Program Efficiency, Part 1",
+   "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/resources/lecture-10-understanding-program-efficiency-part-1/",
+   "kind": "video"
+  },
+  {
+   "id": "6.0001#12",
+   "course": "6.0001",
+   "title": "Lecture 12: Searching and Sorting",
+   "url": "https://ocw.mit.edu/courses/6-0001-introduction-to-computer-science-and-programming-in-python-fall-2016/resources/lecture-12-searching-and-sorting/",
+   "kind": "video"
+  },
+  {
+   "id": "6.830#2",
+   "course": "6.830",
+   "title": "The relational model",
+   "url": "https://ocw.mit.edu/courses/6-830-database-systems-fall-2010/resources/mit6_830f10_lec02/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.830#3",
+   "course": "6.830",
+   "title": "Schema design",
+   "url": "https://ocw.mit.edu/courses/6-830-database-systems-fall-2010/resources/mit6_830f10_lec03/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.830#5",
+   "course": "6.830",
+   "title": "Database operators and query processing",
+   "url": "https://ocw.mit.edu/courses/6-830-database-systems-fall-2010/resources/mit6_830f10_lec05/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.830#6",
+   "course": "6.830",
+   "title": "Indexing and access methods",
+   "url": "https://ocw.mit.edu/courses/6-830-database-systems-fall-2010/resources/mit6_830f10_lec06/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.830#7",
+   "course": "6.830",
+   "title": "Buffer pool design and memory management",
+   "url": "https://ocw.mit.edu/courses/6-830-database-systems-fall-2010/resources/mit6_830f10_lec07/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.830#9",
+   "course": "6.830",
+   "title": "Query optimization",
+   "url": "https://ocw.mit.edu/courses/6-830-database-systems-fall-2010/resources/mit6_830f10_lec09/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.830#10",
+   "course": "6.830",
+   "title": "Transactions and locking",
+   "url": "https://ocw.mit.edu/courses/6-830-database-systems-fall-2010/resources/mit6_830f10_lec10/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.830#11",
+   "course": "6.830",
+   "title": "Optimistic concurrency control",
+   "url": "https://ocw.mit.edu/courses/6-830-database-systems-fall-2010/resources/mit6_830f10_lec11/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.830#12",
+   "course": "6.830",
+   "title": "Recovery",
+   "url": "https://ocw.mit.edu/courses/6-830-database-systems-fall-2010/resources/mit6_830f10_lec12/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.830#13",
+   "course": "6.830",
+   "title": "Recovery",
+   "url": "https://ocw.mit.edu/courses/6-830-database-systems-fall-2010/resources/mit6_830f10_lec13/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.830#17",
+   "course": "6.830",
+   "title": "Parallel databases",
+   "url": "https://ocw.mit.edu/courses/6-830-database-systems-fall-2010/resources/mit6_830f10_lec17/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.830#19",
+   "course": "6.830",
+   "title": "NOSQL",
+   "url": "https://ocw.mit.edu/courses/6-830-database-systems-fall-2010/resources/mit6_830f10_lec19/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.830#20",
+   "course": "6.830",
+   "title": "ORM, DryadLINQ",
+   "url": "https://ocw.mit.edu/courses/6-830-database-systems-fall-2010/resources/mit6_830f10_lec20/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.087#1",
+   "course": "6.087",
+   "title": "Introduction. Writing, compiling, and debugging C programs. Hello world.",
+   "url": "https://ocw.mit.edu/courses/6-087-practical-programming-in-c-january-iap-2010/resources/mit6_087iap10_lec01/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.087#2",
+   "course": "6.087",
+   "title": "Variables and datatypes, operators.",
+   "url": "https://ocw.mit.edu/courses/6-087-practical-programming-in-c-january-iap-2010/resources/mit6_087iap10_lec02/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.087#3",
+   "course": "6.087",
+   "title": "Control flow. Functions and modular programming. Variable scope. Static and global variables.",
+   "url": "https://ocw.mit.edu/courses/6-087-practical-programming-in-c-january-iap-2010/resources/mit6_087iap10_lec03/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.087#4",
+   "course": "6.087",
+   "title": "More control flow. Input and output.",
+   "url": "https://ocw.mit.edu/courses/6-087-practical-programming-in-c-january-iap-2010/resources/mit6_087iap10_lec04/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.087#5",
+   "course": "6.087",
+   "title": "Pointers and memory addressing. Arrays and pointer arithmetic. Strings. Searching and sorting algorithms.",
+   "url": "https://ocw.mit.edu/courses/6-087-practical-programming-in-c-january-iap-2010/resources/mit6_087iap10_lec05/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.087#6",
+   "course": "6.087",
+   "title": "User-defined datatypes, structs, unions, bitfields. Memory allocation. Linked lists, binary trees.",
+   "url": "https://ocw.mit.edu/courses/6-087-practical-programming-in-c-january-iap-2010/resources/mit6_087iap10_lec06/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.087#7",
+   "course": "6.087",
+   "title": "Pointers to pointers, pointer and string arrays, multidimensional arrays. Stacks and queues.",
+   "url": "https://ocw.mit.edu/courses/6-087-practical-programming-in-c-january-iap-2010/resources/mit6_087iap10_lec07/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.087#8",
+   "course": "6.087",
+   "title": "Void and function pointers. Hash tables.",
+   "url": "https://ocw.mit.edu/courses/6-087-practical-programming-in-c-january-iap-2010/resources/mit6_087iap10_lec08/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.087#10",
+   "course": "6.087",
+   "title": "C standard library: stdio.h, ctype.h, stdlib.h, assert.h, stdarg.h, time.h",
+   "url": "https://ocw.mit.edu/courses/6-087-practical-programming-in-c-january-iap-2010/resources/mit6_087iap10_lec10/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.087#11",
+   "course": "6.087",
+   "title": "Dynamic memory allocation, malloc and valgrind, garbage collection.",
+   "url": "https://ocw.mit.edu/courses/6-087-practical-programming-in-c-january-iap-2010/resources/mit6_087iap10_lec11/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.S096#1",
+   "course": "6.S096",
+   "title": "Introduction to C: Welcome to the Memory Jungle",
+   "url": "https://ocw.mit.edu/courses/6-s096-effective-programming-in-c-and-c-january-iap-2014/resources/mit6_s096iap14_lecture1/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.S096#5",
+   "course": "6.S096",
+   "title": "Object-Oriented C++: Abstraction, Inheritance, STL",
+   "url": "https://ocw.mit.edu/courses/6-s096-effective-programming-in-c-and-c-january-iap-2014/resources/mit6_s096iap14_lecture5/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.S096#6",
+   "course": "6.S096",
+   "title": "Design Patterns: Higher-Level Program Design",
+   "url": "https://ocw.mit.edu/courses/6-s096-effective-programming-in-c-and-c-january-iap-2014/resources/mit6_s096iap14_lecture6/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.S096#9",
+   "course": "6.S096",
+   "title": "Visualization: OpenGL, Makefiles, Large Projects",
+   "url": "https://ocw.mit.edu/courses/6-s096-effective-programming-in-c-and-c-january-iap-2014/resources/mit6_s096iap14_lecture9/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.035#2",
+   "course": "6.035",
+   "title": "Specifying languages with regular expressions and context-free grammars",
+   "url": "https://ocw.mit.edu/courses/6-035-computer-language-engineering-spring-2010/resources/mit6_035s10_lec02/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.035#3",
+   "course": "6.035",
+   "title": "Introduction to shift-reduce parsing Parse table construction",
+   "url": "https://ocw.mit.edu/courses/6-035-computer-language-engineering-spring-2010/resources/mit6_035s10_lec03/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.035#4",
+   "course": "6.035",
+   "title": "Top-down parsing",
+   "url": "https://ocw.mit.edu/courses/6-035-computer-language-engineering-spring-2010/resources/mit6_035s10_lec04/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.035#5",
+   "course": "6.035",
+   "title": "Intermediate formats",
+   "url": "https://ocw.mit.edu/courses/6-035-computer-language-engineering-spring-2010/resources/mit6_035s10_lec05/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.035#6",
+   "course": "6.035",
+   "title": "Semantic analysis",
+   "url": "https://ocw.mit.edu/courses/6-035-computer-language-engineering-spring-2010/resources/mit6_035s10_lec06/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.035#7",
+   "course": "6.035",
+   "title": "Unoptimized code generation",
+   "url": "https://ocw.mit.edu/courses/6-035-computer-language-engineering-spring-2010/resources/mit6_035s10_lec07/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.035#8",
+   "course": "6.035",
+   "title": "Unoptimized code generation (cont.)",
+   "url": "https://ocw.mit.edu/courses/6-035-computer-language-engineering-spring-2010/resources/mit6_035s10_lec08/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.035#10",
+   "course": "6.035",
+   "title": "Introduction to dataflow analysis",
+   "url": "https://ocw.mit.edu/courses/6-035-computer-language-engineering-spring-2010/resources/mit6_035s10_lec10/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.035#12",
+   "course": "6.035",
+   "title": "Introduction to code optimization: instruction scheduling",
+   "url": "https://ocw.mit.edu/courses/6-035-computer-language-engineering-spring-2010/resources/mit6_035s10_lec13/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.035#13",
+   "course": "6.035",
+   "title": "Loop optimizations: instruction scheduling",
+   "url": "https://ocw.mit.edu/courses/6-035-computer-language-engineering-spring-2010/resources/mit6_035s10_lec14/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.035#15",
+   "course": "6.035",
+   "title": "Register allocation",
+   "url": "https://ocw.mit.edu/courses/6-035-computer-language-engineering-spring-2010/resources/mit6_035s10_lec16/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#2",
+   "course": "6.005",
+   "title": "Basic Java",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/02-basic-java/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#3",
+   "course": "6.005",
+   "title": "Testing",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/03-testing/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#4",
+   "course": "6.005",
+   "title": "Code Review",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/04-code-review/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#5",
+   "course": "6.005",
+   "title": "Version Control",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/05-version-control/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#6",
+   "course": "6.005",
+   "title": "Specifications",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/06-specifications/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#7",
+   "course": "6.005",
+   "title": "Designing Specifications",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/07-designing-specs/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#8",
+   "course": "6.005",
+   "title": "Avoiding Debugging",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/08-avoiding-debugging/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#9",
+   "course": "6.005",
+   "title": "Mutability and Immutability",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/09-immutability/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#11",
+   "course": "6.005",
+   "title": "Debugging",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/11-debugging/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#12",
+   "course": "6.005",
+   "title": "Abstract Data Types",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/12-abstract-data-types/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#14",
+   "course": "6.005",
+   "title": "Interfaces",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/14-interfaces/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#15",
+   "course": "6.005",
+   "title": "Equality",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/15-equality/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#18",
+   "course": "6.005",
+   "title": "Parser Generators",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/18-parser-generators/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#19",
+   "course": "6.005",
+   "title": "Concurrency",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/19-concurrency/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#20",
+   "course": "6.005",
+   "title": "Thread Saftey",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/20-thread-safety/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#21",
+   "course": "6.005",
+   "title": "Sockets and Networking",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/21-sockets-networking/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#22",
+   "course": "6.005",
+   "title": "Queues and Message-Passing",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/22-queues/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#23",
+   "course": "6.005",
+   "title": "Locks and Synchronization",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/23-locks/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#24",
+   "course": "6.005",
+   "title": "Graphical User Interfaces",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/24-graphical-user-interfaces/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.005#27",
+   "course": "6.005",
+   "title": "Team Version Control",
+   "url": "https://ocw.mit.edu/ans7870/6/6.005/s16/classes/27-team-version-control/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.004#1",
+   "course": "6.004",
+   "title": "Basics of Information",
+   "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c1/c1s2/",
+   "kind": "video"
+  },
+  {
+   "id": "6.004#3",
+   "course": "6.004",
+   "title": "CMOS",
+   "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c3/c3s2/",
+   "kind": "video"
+  },
+  {
+   "id": "6.004#4",
+   "course": "6.004",
+   "title": "Combinational Logic",
+   "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c4/c4s2/",
+   "kind": "video"
+  },
+  {
+   "id": "6.004#5",
+   "course": "6.004",
+   "title": "Sequential Logic",
+   "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c5/c5s2/",
+   "kind": "video"
+  },
+  {
+   "id": "6.004#7",
+   "course": "6.004",
+   "title": "Performance Measures",
+   "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c7/c7s2/",
+   "kind": "video"
+  },
+  {
+   "id": "6.004#9",
+   "course": "6.004",
+   "title": "Designing an Instruction Set",
+   "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c9/c9s2/",
+   "kind": "video"
+  },
+  {
+   "id": "6.004#10",
+   "course": "6.004",
+   "title": "Assembly Language, Models of Computation",
+   "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c10/c10s2/",
+   "kind": "video"
+  },
+  {
+   "id": "6.004#12",
+   "course": "6.004",
+   "title": "Procedures and Stacks",
+   "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c12/c12s2/",
+   "kind": "video"
+  },
+  {
+   "id": "6.004#13",
+   "course": "6.004",
+   "title": "Building the Beta",
+   "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c13/c13s2/",
+   "kind": "video"
+  },
+  {
+   "id": "6.004#14",
+   "course": "6.004",
+   "title": "Caches and the Memory Hierarchy",
+   "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c14/c14s2/",
+   "kind": "video"
+  },
+  {
+   "id": "6.004#15",
+   "course": "6.004",
+   "title": "Pipelining the Beta",
+   "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c15/c15s2/",
+   "kind": "video"
+  },
+  {
+   "id": "6.004#16",
+   "course": "6.004",
+   "title": "Virtual Memory",
+   "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c16/c16s2/",
+   "kind": "video"
+  },
+  {
+   "id": "6.004#18",
+   "course": "6.004",
+   "title": "Devices and Interrupts",
+   "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c18/c18s2/",
+   "kind": "video"
+  },
+  {
+   "id": "6.004#20",
+   "course": "6.004",
+   "title": "System-level Communication",
+   "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c20/c20s2/",
+   "kind": "video"
+  },
+  {
+   "id": "6.004#21",
+   "course": "6.004",
+   "title": "Parallel Processing",
+   "url": "https://ocw.mit.edu/courses/6-004-computation-structures-spring-2017/pages/c21/c21s2/",
+   "kind": "video"
+  },
+  {
+   "id": "6.828#3",
+   "course": "6.828",
+   "title": "Overview of Major Internals, System Call Interface",
+   "url": "https://ocw.mit.edu/courses/6-828-operating-system-engineering-fall-2012/resources/mit6_828f12_lec3_notes/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.828#4",
+   "course": "6.828",
+   "title": "Virtual Memory",
+   "url": "https://ocw.mit.edu/courses/6-828-operating-system-engineering-fall-2012/resources/mit6_828f12_lec4_notes/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.828#5",
+   "course": "6.828",
+   "title": "Interrupts, Exceptions",
+   "url": "https://ocw.mit.edu/courses/6-828-operating-system-engineering-fall-2012/resources/mit6_828f12_lec5_notes/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.828#6",
+   "course": "6.828",
+   "title": "Multiprocessors and Locking",
+   "url": "https://ocw.mit.edu/courses/6-828-operating-system-engineering-fall-2012/resources/mit6_828f12_lec6_notes/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.828#7",
+   "course": "6.828",
+   "title": "Processes and Switching",
+   "url": "https://ocw.mit.edu/courses/6-828-operating-system-engineering-fall-2012/resources/mit6_828f12_lec7_notes/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.828#8",
+   "course": "6.828",
+   "title": "Sleep & Wakeup",
+   "url": "https://ocw.mit.edu/courses/6-828-operating-system-engineering-fall-2012/resources/mit6_828f12_lec8_notes/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.828#9",
+   "course": "6.828",
+   "title": "File Systems",
+   "url": "https://ocw.mit.edu/courses/6-828-operating-system-engineering-fall-2012/resources/mit6_828f12_lec9_notes/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.828#12",
+   "course": "6.828",
+   "title": "OS Organization",
+   "url": "https://ocw.mit.edu/courses/6-828-operating-system-engineering-fall-2012/resources/mit6_828f12_lec13_notes/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.828#16",
+   "course": "6.828",
+   "title": "Virtual Machines",
+   "url": "https://ocw.mit.edu/courses/6-828-operating-system-engineering-fall-2012/resources/mit6_828f12_lec22_notes/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.858#1",
+   "course": "6.858",
+   "title": "Lecture 1: Introduction, Threat Models",
+   "url": "https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/resources/lecture-1-introduction-threat-models/",
+   "kind": "video"
+  },
+  {
+   "id": "6.858#3",
+   "course": "6.858",
+   "title": "Lecture 3: Buffer Overflow Exploits and Defenses",
+   "url": "https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/resources/lecture-3-buffer-overflow-exploits-and-defenses/",
+   "kind": "video"
+  },
+  {
+   "id": "6.858#4",
+   "course": "6.858",
+   "title": "Lecture 4: Privilege Separation",
+   "url": "https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/resources/lecture-4-privilege-separation/",
+   "kind": "video"
+  },
+  {
+   "id": "6.858#5",
+   "course": "6.858",
+   "title": "Lecture 6: Capabilities",
+   "url": "https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/resources/lecture-6-capabilities/",
+   "kind": "video"
+  },
+  {
+   "id": "6.858#7",
+   "course": "6.858",
+   "title": "Lecture 8: Web Security Model",
+   "url": "https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/resources/lecture-8-web-security-model/",
+   "kind": "video"
+  },
+  {
+   "id": "6.858#9",
+   "course": "6.858",
+   "title": "Lecture 10: Symbolic Execution",
+   "url": "https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/resources/lecture-10-symbolic-execution/",
+   "kind": "video"
+  },
+  {
+   "id": "6.858#11",
+   "course": "6.858",
+   "title": "Lecture 12: Network Security",
+   "url": "https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/resources/lecture-12-network-security/",
+   "kind": "video"
+  },
+  {
+   "id": "6.858#12",
+   "course": "6.858",
+   "title": "Lecture 13: Network Protocols",
+   "url": "https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/resources/lecture-13-network-protocols/",
+   "kind": "video"
+  },
+  {
+   "id": "6.858#13",
+   "course": "6.858",
+   "title": "Lecture 14: SSL and HTTPS",
+   "url": "https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/resources/lecture-14-ssl-and-https/",
+   "kind": "video"
+  },
+  {
+   "id": "6.858#16",
+   "course": "6.858",
+   "title": "Lecture 17: User Authentication",
+   "url": "https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/resources/lecture-17-user-authentication/",
+   "kind": "video"
+  },
+  {
+   "id": "6.858#17",
+   "course": "6.858",
+   "title": "Lecture 18: Private Browsing",
+   "url": "https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/resources/lecture-18-private-browsing/",
+   "kind": "video"
+  },
+  {
+   "id": "6.858#20",
+   "course": "6.858",
+   "title": "Lecture 21: Data Tracking",
+   "url": "https://ocw.mit.edu/courses/6-858-computer-systems-security-fall-2014/resources/lecture-21-data-tracking/",
+   "kind": "video"
+  },
+  {
+   "id": "MAS.S62#1",
+   "course": "MAS.S62",
+   "title": "Lecture 1: Signatures, Hashing, Hash Chains, e-cash, and Motivation",
+   "url": "https://ocw.mit.edu/courses/mas-s62-cryptocurrency-engineering-and-design-spring-2018/resources/lec1-signatures-hashing-hash-chains-e-cash-and-motivation/",
+   "kind": "video"
+  },
+  {
+   "id": "MAS.S62#2",
+   "course": "MAS.S62",
+   "title": "Lecture 2: Proof of Work and Mining",
+   "url": "https://ocw.mit.edu/courses/mas-s62-cryptocurrency-engineering-and-design-spring-2018/resources/lec2-proof-of-work-and-mining/",
+   "kind": "video"
+  },
+  {
+   "id": "MAS.S62#3",
+   "course": "MAS.S62",
+   "title": "Lecture 3: Signatures",
+   "url": "https://ocw.mit.edu/courses/mas-s62-cryptocurrency-engineering-and-design-spring-2018/resources/lec3-signatures/",
+   "kind": "video"
+  },
+  {
+   "id": "MAS.S62#4",
+   "course": "MAS.S62",
+   "title": "Lecture 4: Transactions and the UTXO Model",
+   "url": "https://ocw.mit.edu/courses/mas-s62-cryptocurrency-engineering-and-design-spring-2018/resources/lec4-transactions-and-the-utxo-model/",
+   "kind": "video"
+  },
+  {
+   "id": "MAS.S62#6",
+   "course": "MAS.S62",
+   "title": "Lecture 6: SPV and Wallet Types",
+   "url": "https://ocw.mit.edu/courses/mas-s62-cryptocurrency-engineering-and-design-spring-2018/resources/lec6-spv-and-wallet-types/",
+   "kind": "video"
+  },
+  {
+   "id": "MAS.S62#7",
+   "course": "MAS.S62",
+   "title": "Lecture 7: OP_RETURN and Catena",
+   "url": "https://ocw.mit.edu/courses/mas-s62-cryptocurrency-engineering-and-design-spring-2018/resources/lec7-op_return-and-catena/",
+   "kind": "video"
+  },
+  {
+   "id": "MAS.S62#12",
+   "course": "MAS.S62",
+   "title": "Lecture 13: Payment Channels and Lightning Network",
+   "url": "https://ocw.mit.edu/courses/mas-s62-cryptocurrency-engineering-and-design-spring-2018/resources/lec13-payment-channels-and-lightning-network/",
+   "kind": "video"
+  },
+  {
+   "id": "MAS.S62#18",
+   "course": "MAS.S62",
+   "title": "Lecture 22: Alternative Consensus Mechanisms",
+   "url": "https://ocw.mit.edu/courses/mas-s62-cryptocurrency-engineering-and-design-spring-2018/resources/lec22-alternative-consensus-mechanisms/",
+   "kind": "video"
+  },
+  {
+   "id": "6.829#2",
+   "course": "6.829",
+   "title": "The Internetworking Problem The IP/TCP Split Connections Scaling IP",
+   "url": "https://ocw.mit.edu/courses/6-829-computer-networks-fall-2002/resources/l2internetworking/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.829#6",
+   "course": "6.829",
+   "title": "**Part II: Resource Management **End-to-End Congestion Control",
+   "url": "https://ocw.mit.edu/courses/6-829-computer-networks-fall-2002/resources/l8e2ecc/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.033#1",
+   "course": "6.033",
+   "title": "Operating Systems I: Coping with Complexity: Enforced Modularity via Client/server Organization",
+   "url": "https://ocw.mit.edu/courses/6-033-computer-system-engineering-spring-2018/pages/week-1/",
+   "kind": "lesson"
+  },
+  {
+   "id": "6.033#2",
+   "course": "6.033",
+   "title": "Operating Systems II: Naming in Systems; Operating Systems + Virtual Memory",
+   "url": "https://ocw.mit.edu/courses/6-033-computer-system-engineering-spring-2018/pages/week-2/",
+   "kind": "lesson"
+  },
+  {
+   "id": "6.033#3",
+   "course": "6.033",
+   "title": "Operating Systems III: Bounded Buffers + Locks; Threads",
+   "url": "https://ocw.mit.edu/courses/6-033-computer-system-engineering-spring-2018/pages/week-3/",
+   "kind": "lesson"
+  },
+  {
+   "id": "6.033#4",
+   "course": "6.033",
+   "title": "Operating Systems IV: Operating Systems Structure + Virtual Machines; Performance",
+   "url": "https://ocw.mit.edu/courses/6-033-computer-system-engineering-spring-2018/pages/week-4/",
+   "kind": "lesson"
+  },
+  {
+   "id": "6.033#5",
+   "course": "6.033",
+   "title": "Networking I: Introduction to Networking; Routing",
+   "url": "https://ocw.mit.edu/courses/6-033-computer-system-engineering-spring-2018/pages/week-5/",
+   "kind": "lesson"
+  },
+  {
+   "id": "6.033#6",
+   "course": "6.033",
+   "title": "Networking II: Networking: Routing (BGP); Transport Layer",
+   "url": "https://ocw.mit.edu/courses/6-033-computer-system-engineering-spring-2018/pages/week-6/",
+   "kind": "lesson"
+  },
+  {
+   "id": "6.033#7",
+   "course": "6.033",
+   "title": "Networking III: In-Network Resource Management; Networking: P2P Networks + Content Distribution Network (CDN)",
+   "url": "https://ocw.mit.edu/courses/6-033-computer-system-engineering-spring-2018/pages/week-7/",
+   "kind": "lesson"
+  },
+  {
+   "id": "6.033#8",
+   "course": "6.033",
+   "title": "Distributed Systems I: Fault Tolerance: Reliability via Replication; Fault Tolerance: Introduction to Transactions",
+   "url": "https://ocw.mit.edu/courses/6-033-computer-system-engineering-spring-2018/pages/week-8/",
+   "kind": "lesson"
+  },
+  {
+   "id": "6.033#9",
+   "course": "6.033",
+   "title": "Distributed Systems II: Atomicity via Logging; Fault Tolerance: Isolation",
+   "url": "https://ocw.mit.edu/courses/6-033-computer-system-engineering-spring-2018/pages/week-9/",
+   "kind": "lesson"
+  },
+  {
+   "id": "6.033#10",
+   "course": "6.033",
+   "title": "Distributed Systems III: Distributed Transactions",
+   "url": "https://ocw.mit.edu/courses/6-033-computer-system-engineering-spring-2018/pages/week-10/",
+   "kind": "lesson"
+  },
+  {
+   "id": "6.033#11",
+   "course": "6.033",
+   "title": "Security I: Availability via Replication; Introduction to Security",
+   "url": "https://ocw.mit.edu/courses/6-033-computer-system-engineering-spring-2018/pages/week-11/",
+   "kind": "lesson"
+  },
+  {
+   "id": "6.033#12",
+   "course": "6.033",
+   "title": "Security II: Authentication and Passwords; Secure Channels",
+   "url": "https://ocw.mit.edu/courses/6-033-computer-system-engineering-spring-2018/pages/week-12/",
+   "kind": "lesson"
+  },
+  {
+   "id": "6.033#13",
+   "course": "6.033",
+   "title": "Security III: Network Security and Distributed Denial of Service (DDoS) Attacks; Bitcoin",
+   "url": "https://ocw.mit.edu/courses/6-033-computer-system-engineering-spring-2018/pages/week-13/",
+   "kind": "lesson"
+  },
+  {
+   "id": "6.170#2",
+   "course": "6.170",
+   "title": "Routing & Model-View-Controller Design",
+   "url": "https://ocw.mit.edu/courses/6-170-software-studio-spring-2013/resources/mit6_170s13_08-sep-of-conc/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.170#3",
+   "course": "6.170",
+   "title": "Dependency & REST",
+   "url": "https://ocw.mit.edu/courses/6-170-software-studio-spring-2013/resources/mit6_170s13_12-web-frmwks/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.170#4",
+   "course": "6.170",
+   "title": "Introduction to Data & Object Modeling",
+   "url": "https://ocw.mit.edu/courses/6-170-software-studio-spring-2013/resources/mit6_170s13_17-objt-mdl-rtnl/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.170#5",
+   "course": "6.170",
+   "title": "Relational Data Model",
+   "url": "https://ocw.mit.edu/courses/6-170-software-studio-spring-2013/resources/mit6_170s13_23-rails-model/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.170#7",
+   "course": "6.170",
+   "title": "Design & Code Reviews for Project 1",
+   "url": "https://ocw.mit.edu/courses/6-170-software-studio-spring-2013/resources/mit6_170s13_30-p1-des-rw/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.170#8",
+   "course": "6.170",
+   "title": "Intro to JavaScript",
+   "url": "https://ocw.mit.edu/courses/6-170-software-studio-spring-2013/resources/mit6_170s13_32-java-intro/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.170#10",
+   "course": "6.170",
+   "title": "DOM",
+   "url": "https://ocw.mit.edu/courses/6-170-software-studio-spring-2013/resources/mit6_170s13_42-dom-intro/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.170#11",
+   "course": "6.170",
+   "title": "Events & Ajax",
+   "url": "https://ocw.mit.edu/courses/6-170-software-studio-spring-2013/resources/mit6_170s13_47-asyn-intro/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.170#13",
+   "course": "6.170",
+   "title": "Web Security",
+   "url": "https://ocw.mit.edu/courses/6-170-software-studio-spring-2013/resources/mit6_170s13_51-sec-ovrw/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.170#14",
+   "course": "6.170",
+   "title": "Software Development Methods",
+   "url": "https://ocw.mit.edu/courses/6-170-software-studio-spring-2013/resources/mit6_170s13_54-devel-proce/",
+   "kind": "notes"
+  },
+  {
+   "id": "6.170#15",
+   "course": "6.170",
+   "title": "Designing Dependable Software",
+   "url": "https://ocw.mit.edu/courses/6-170-software-studio-spring-2013/resources/mit6_170s13_56-sec-rev/",
+   "kind": "notes"
+  },
+  {
+   "id": "8.01#1",
+   "course": "8.01",
+   "title": "1D Kinematics - Position and Velocity",
+   "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/week-1-kinematics/1-1-coordinate-systems-and-unit-vectors-in-1d-position-vector-in-1d/",
+   "kind": "lesson"
+  },
+  {
+   "id": "8.01#2",
+   "course": "8.01",
+   "title": "1D Kinematics - Acceleration",
+   "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/week-1-kinematics/2-1-introduction-to-acceleration/",
+   "kind": "lesson"
+  },
+  {
+   "id": "8.01#3",
+   "course": "8.01",
+   "title": "2D Kinematics",
+   "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/week-1-kinematics/3-1-coordinate-system-and-position-vector-in-2d/",
+   "kind": "lesson"
+  },
+  {
+   "id": "8.01#4",
+   "course": "8.01",
+   "title": "Newton's Laws of Motion",
+   "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/week-2-newtons-laws/4-1-newtons-first-and-second-laws/",
+   "kind": "lesson"
+  },
+  {
+   "id": "8.01#6",
+   "course": "8.01",
+   "title": "Contact Forces",
+   "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/week-2-newtons-laws/6-1-contact-forces/",
+   "kind": "lesson"
+  },
+  {
+   "id": "8.01#9",
+   "course": "8.01",
+   "title": "Uniform Circular Motion",
+   "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/week-3-circular-motion/9-1-uniform-circular-motion/",
+   "kind": "lesson"
+  },
+  {
+   "id": "8.01#15",
+   "course": "8.01",
+   "title": "Momentum and Impulse",
+   "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/week-5-momentum-and-impulse/15-1-momentum-and-impulse/",
+   "kind": "lesson"
+  },
+  {
+   "id": "8.01#20",
+   "course": "8.01",
+   "title": "Kinetic Energy and Work in 1D",
+   "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/week-7-kinetic-energy-and-work/20-1-kinetic-energy/",
+   "kind": "lesson"
+  },
+  {
+   "id": "8.01#21",
+   "course": "8.01",
+   "title": "Kinetic Energy and Work in 2D and 3D",
+   "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/week-7-kinetic-energy-and-work/21-1-scalar-product-properties/",
+   "kind": "lesson"
+  },
+  {
+   "id": "8.01#24",
+   "course": "8.01",
+   "title": "Conservation of Energy",
+   "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/week-8-potential-energy-and-energy-conservation/24-1-mechanical-energy-and-energy-conservation/",
+   "kind": "lesson"
+  },
+  {
+   "id": "8.01#26",
+   "course": "8.01",
+   "title": "Types of Collision",
+   "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/week-9-collision-theory/26-1-momentum-in-collisions/",
+   "kind": "lesson"
+  },
+  {
+   "id": "8.01#28",
+   "course": "8.01",
+   "title": "Motion of a Rigid Body",
+   "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/week-10-rotational-motion/28-1-rigid-bodies/",
+   "kind": "lesson"
+  },
+  {
+   "id": "8.01#29",
+   "course": "8.01",
+   "title": "Moment of Inertia",
+   "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/week-10-rotational-motion/29-1-kinetic-energy-of-rotation/",
+   "kind": "lesson"
+  },
+  {
+   "id": "8.01#30",
+   "course": "8.01",
+   "title": "Torque",
+   "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/week-10-rotational-motion/30-1-introduction-to-torque-and-rotational-dynamics/",
+   "kind": "lesson"
+  },
+  {
+   "id": "8.01#33",
+   "course": "8.01",
+   "title": "Angular Momentum of a Rigid Body",
+   "url": "https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/pages/week-11-angular-momentum/33-1-worked-example-angular-momentum-of-2-rotating-point-particles/",
+   "kind": "lesson"
+  },
+  {
+   "id": "6.002#2",
+   "course": "6.002",
+   "title": "Lecture 2: Basic Circuit Analysis Method",
+   "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/resources/lecture-2/",
+   "kind": "video"
+  },
+  {
+   "id": "6.002#3",
+   "course": "6.002",
+   "title": "Lecture 3: Superposition, Thévenin and Norton",
+   "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/resources/lecture-3/",
+   "kind": "video"
+  },
+  {
+   "id": "6.002#4",
+   "course": "6.002",
+   "title": "Lecture 4: The Digital Abstraction",
+   "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/resources/lecture-4/",
+   "kind": "video"
+  },
+  {
+   "id": "6.002#5",
+   "course": "6.002",
+   "title": "Lecture 5: Inside the Digital Gate",
+   "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/resources/lecture-5/",
+   "kind": "video"
+  },
+  {
+   "id": "6.002#6",
+   "course": "6.002",
+   "title": "Lecture 6: Nonlinear Analysis",
+   "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/resources/lecture-6/",
+   "kind": "video"
+  },
+  {
+   "id": "6.002#9",
+   "course": "6.002",
+   "title": "Lecture 9: Mosfet Amplifier Large Signal Analysis (part 1)",
+   "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/resources/lecture-9-part-1/",
+   "kind": "video"
+  },
+  {
+   "id": "6.002#10",
+   "course": "6.002",
+   "title": "Lecture 9: Mosfet Amplifier Large Signal Analysis (part 2)",
+   "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/resources/lecture-9-part-2/",
+   "kind": "video"
+  },
+  {
+   "id": "6.002#13",
+   "course": "6.002",
+   "title": "Lecture 12: Capacitors and First-Order Systems",
+   "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/resources/lecture-12/",
+   "kind": "video"
+  },
+  {
+   "id": "6.002#18",
+   "course": "6.002",
+   "title": "Lecture 16: Sinusoidal Steady State",
+   "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/resources/lecture-16/",
+   "kind": "video"
+  },
+  {
+   "id": "6.002#19",
+   "course": "6.002",
+   "title": "Lecture 17: The Impedance Model",
+   "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/resources/lecture-17/",
+   "kind": "video"
+  },
+  {
+   "id": "6.002#20",
+   "course": "6.002",
+   "title": "Lecture 18: Filters",
+   "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/resources/lecture-18/",
+   "kind": "video"
+  },
+  {
+   "id": "6.002#21",
+   "course": "6.002",
+   "title": "Lecture 19: The Operational Amplifier Abstraction",
+   "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/resources/lecture-19/",
+   "kind": "video"
+  },
+  {
+   "id": "6.002#22",
+   "course": "6.002",
+   "title": "Lecture 20: Operational Amplifier Circuits",
+   "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/resources/lecture-20/",
+   "kind": "video"
+  },
+  {
+   "id": "6.002#24",
+   "course": "6.002",
+   "title": "Lecture 22: Energy and Power",
+   "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/resources/lecture-22/",
+   "kind": "video"
+  },
+  {
+   "id": "6.002#25",
+   "course": "6.002",
+   "title": "Lecture 23: Energy, CMOS",
+   "url": "https://ocw.mit.edu/courses/6-002-circuits-and-electronics-spring-2007/resources/lecture-23/",
+   "kind": "video"
+  },
+  {
+   "id": "6.003#1",
+   "course": "6.003",
+   "title": "Lecture 1: Signals and Systems",
+   "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-1-signals-and-systems/",
+   "kind": "video"
+  },
+  {
+   "id": "6.003#2",
+   "course": "6.003",
+   "title": "Lecture 2: Discrete-Time (DT) Systems",
+   "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-2-discrete-time-dt-systems/",
+   "kind": "video"
+  },
+  {
+   "id": "6.003#5",
+   "course": "6.003",
+   "title": "Lecture 5: Z Transform",
+   "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-5-z-transform/",
+   "kind": "video"
+  },
+  {
+   "id": "6.003#8",
+   "course": "6.003",
+   "title": "Lecture 8: Convolution",
+   "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-8-convolution/",
+   "kind": "video"
+  },
+  {
+   "id": "6.003#9",
+   "course": "6.003",
+   "title": "Lecture 9: Frequency Response",
+   "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-9-frequency-response/",
+   "kind": "video"
+  },
+  {
+   "id": "6.003#15",
+   "course": "6.003",
+   "title": "Lecture 15: Fourier Series",
+   "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-15-fourier-series/",
+   "kind": "video"
+  },
+  {
+   "id": "6.003#16",
+   "course": "6.003",
+   "title": "Lecture 16: Fourier Transform",
+   "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-16-fourier-transform/",
+   "kind": "video"
+  },
+  {
+   "id": "6.003#18",
+   "course": "6.003",
+   "title": "Lecture 18: Discrete-Time (DT) Fourier Representations",
+   "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-18-discrete-time-dt-fourier-representations/",
+   "kind": "video"
+  },
+  {
+   "id": "6.003#20",
+   "course": "6.003",
+   "title": "Lecture 20: Applications of Fourier Transforms",
+   "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-20-applications-of-fourier-transforms/",
+   "kind": "video"
+  },
+  {
+   "id": "6.003#21",
+   "course": "6.003",
+   "title": "Lecture 21: Sampling",
+   "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-21-sampling/",
+   "kind": "video"
+  },
+  {
+   "id": "6.003#22",
+   "course": "6.003",
+   "title": "Lecture 22: Sampling and Quantization",
+   "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-22-sampling-and-quantization/",
+   "kind": "video"
+  },
+  {
+   "id": "6.003#25",
+   "course": "6.003",
+   "title": "Lecture 25: Audio CD",
+   "url": "https://ocw.mit.edu/courses/6-003-signals-and-systems-fall-2011/resources/lecture-25-audio-cd/",
+   "kind": "video"
+  },
+  {
+   "id": "6.02#1",
+   "course": "6.02",
+   "title": "Lecture 1: Overview: Information and Entropy",
+   "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/resources/lecture-1-overview-information-and-entropy/",
+   "kind": "video"
+  },
+  {
+   "id": "6.02#3",
+   "course": "6.02",
+   "title": "Lecture 3: Errors, Channel Codes",
+   "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/resources/lecture-3-errors-channel-codes/",
+   "kind": "video"
+  },
+  {
+   "id": "6.02#4",
+   "course": "6.02",
+   "title": "Lecture 4: Linear Block Codes, Parity Relations",
+   "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/resources/lecture-4-linear-block-codes-parity-relations/",
+   "kind": "video"
+  },
+  {
+   "id": "6.02#8",
+   "course": "6.02",
+   "title": "Lecture 8: Noise",
+   "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/resources/lecture-8-noise/",
+   "kind": "video"
+  },
+  {
+   "id": "6.02#9",
+   "course": "6.02",
+   "title": "Lecture 9: Transmitting on a Physical Channel",
+   "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/resources/lecture-9-transmitting-on-a-physical-channel/",
+   "kind": "video"
+  },
+  {
+   "id": "6.02#12",
+   "course": "6.02",
+   "title": "Lecture 12: Filters and Composition",
+   "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/resources/lecture-12-filters-and-composition/",
+   "kind": "video"
+  },
+  {
+   "id": "6.02#14",
+   "course": "6.02",
+   "title": "Lecture 14: Spectral Representation of Signals",
+   "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/resources/lecture-14-spectral-representation-of-signals/",
+   "kind": "video"
+  },
+  {
+   "id": "6.02#15",
+   "course": "6.02",
+   "title": "Lecture 15: Modulation/Demodulation",
+   "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/resources/lecture-15-modulation-demodulation/",
+   "kind": "video"
+  },
+  {
+   "id": "6.02#16",
+   "course": "6.02",
+   "title": "Lecture 16: More on Modulation/Demodulation",
+   "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/resources/lecture-16-more-on-modulation-demodulation/",
+   "kind": "video"
+  },
+  {
+   "id": "6.02#17",
+   "course": "6.02",
+   "title": "Lecture 17: Packet Switching",
+   "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/resources/lecture-17-packet-switching/",
+   "kind": "video"
+  },
+  {
+   "id": "6.02#18",
+   "course": "6.02",
+   "title": "Lecture 18: MAC Protocols",
+   "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/resources/lecture-18-mac-protocols/",
+   "kind": "video"
+  },
+  {
+   "id": "6.02#19",
+   "course": "6.02",
+   "title": "Lecture 19: Network Routing (without failures)",
+   "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/resources/lecture-19-network-routing-without-failures/",
+   "kind": "video"
+  },
+  {
+   "id": "6.02#20",
+   "course": "6.02",
+   "title": "Lecture 20: Network Routing (with failures)",
+   "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/resources/lecture-20-network-routing-with-failures/",
+   "kind": "video"
+  },
+  {
+   "id": "6.02#21",
+   "course": "6.02",
+   "title": "Lecture 21: Reliable Transport",
+   "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/resources/lecture-21-reliable-transport/",
+   "kind": "video"
+  },
+  {
+   "id": "6.02#22",
+   "course": "6.02",
+   "title": "Lecture 22: Sliding Window Analysis, Little's Law",
+   "url": "https://ocw.mit.edu/courses/6-02-introduction-to-eecs-ii-digital-communication-systems-fall-2012/resources/lecture-22-sliding-window-analysis-littles-law/",
+   "kind": "video"
+  }
+ ],
+ "topics": {
+  "calc1:limits-and-one-sided-limits": [
+   "18.01#2"
+  ],
+  "calc1:continuity": [
+   "18.01#2"
+  ],
+  "calc1:limits-at-infinity-and-asymptotes": [
+   "18.01#2"
+  ],
+  "calc1:definition-of-the-derivative": [
+   "18.01#1",
+   "18.01#3"
+  ],
+  "calc1:differentiation-rules": [
+   "18.01#3"
+  ],
+  "calc1:chain-rule": [
+   "18.01#4"
+  ],
+  "calc1:implicit-differentiation": [
+   "18.01#5"
+  ],
+  "calc1:derivatives-of-exponential-log-and-trig-functions": [
+   "18.01#6"
+  ],
+  "calc1:related-rates": [
+   "18.01#11"
+  ],
+  "calc1:extrema-and-critical-points": [
+   "18.01#10",
+   "18.01#9"
+  ],
+  "calc1:optimization-problems": [
+   "18.01#10"
+  ],
+  "calc1:curve-sketching": [
+   "18.01#9"
+  ],
+  "calc1:l-h-pital-s-rule": [
+   "18.01#31"
+  ],
+  "calc1:antiderivatives": [
+   "18.01#14"
+  ],
+  "calc1:riemann-sums-and-the-definite-integral": [
+   "18.01#16"
+  ],
+  "calc1:fundamental-theorem-of-calculus": [
+   "18.01#17",
+   "18.01#18"
+  ],
+  "calc1:integration-by-substitution": [
+   "18.01#14"
+  ],
+  "calc1:area-between-curves": [
+   "18.01#19"
+  ],
+  "calc1:volumes-of-revolution": [
+   "18.01#20"
+  ],
+  "calc1:average-value-of-a-function": [
+   "18.01#21"
+  ],
+  "calc2:integration-by-parts": [
+   "18.01#27"
+  ],
+  "calc2:trigonometric-integrals-and-substitution": [
+   "18.01#24",
+   "18.01#25"
+  ],
+  "calc2:partial-fractions": [
+   "18.01#26"
+  ],
+  "calc2:improper-integrals": [
+   "18.01#32"
+  ],
+  "calc2:numerical-integration": [
+   "18.01#22"
+  ],
+  "calc2:sequences-and-convergence": [
+   "18.01#33"
+  ],
+  "calc2:convergence-tests": [
+   "18.01#33"
+  ],
+  "calc2:power-series": [
+   "18.01#33",
+   "18.01#34"
+  ],
+  "calc2:taylor-and-maclaurin-series": [
+   "18.01#34"
+  ],
+  "calc2:parametric-equations": [
+   "18.01#28",
+   "18.02#5"
+  ],
+  "calc2:polar-coordinates": [
+   "18.01#29",
+   "18.02#17"
+  ],
+  "calc2:arc-length-and-surface-area": [
+   "18.01#28"
+  ],
+  "calc2:functions-of-several-variables": [
+   "18.02#8"
+  ],
+  "calc2:partial-derivatives": [
+   "18.02#8"
+  ],
+  "calc2:gradient-and-directional-derivatives": [
+   "18.02#12"
+  ],
+  "calc2:double-integrals": [
+   "18.02#16"
+  ],
+  "de:separable-equations": [
+   "18.01#15",
+   "18.03#1"
+  ],
+  "de:linear-first-order-equations": [
+   "18.03#3",
+   "18.03#7"
+  ],
+  "de:modelling-with-differential-equations": [
+   "18.03#1"
+  ],
+  "de:homogeneous-equations-with-constant-coefficients": [
+   "18.03#9",
+   "18.03#10"
+  ],
+  "de:undetermined-coefficients": [
+   "18.03#13"
+  ],
+  "de:variation-of-parameters": [
+   "18.03#12"
+  ],
+  "de:oscillations-and-resonance": [
+   "18.03#14"
+  ],
+  "de:linear-systems-and-eigenvalues": [
+   "18.03#24",
+   "18.03#23"
+  ],
+  "de:phase-portraits": [
+   "18.03#26"
+  ],
+  "de:stability-of-equilibria": [
+   "18.03#30",
+   "18.03#5"
+  ],
+  "de:fourier-series": [
+   "18.03#15"
+  ],
+  "de:convergence-of-fourier-series": [
+   "18.03#15"
+  ],
+  "de:laplace-transform-and-its-inverse": [
+   "18.03#18"
+  ],
+  "de:solving-initial-value-problems": [
+   "18.03#21"
+  ],
+  "de:step-and-impulse-functions": [
+   "18.03#22"
+  ],
+  "linalg:systems-of-linear-equations": [
+   "18.06#1"
+  ],
+  "linalg:gaussian-elimination-and-row-echelon-form": [
+   "18.06#2",
+   "18.06#8"
+  ],
+  "linalg:matrix-operations": [
+   "18.06#3"
+  ],
+  "linalg:matrix-multiplication": [
+   "18.06#3"
+  ],
+  "linalg:inverse-matrices": [
+   "18.06#3"
+  ],
+  "linalg:vectors-and-linear-combinations": [
+   "18.06#1"
+  ],
+  "linalg:span-and-linear-independence": [
+   "18.06#9"
+  ],
+  "linalg:basis-and-dimension": [
+   "18.06#9"
+  ],
+  "linalg:column-space-and-null-space": [
+   "18.06#6"
+  ],
+  "linalg:rank": [
+   "18.06#7",
+   "18.06#8"
+  ],
+  "linalg:linear-maps-as-matrices": [
+   "18.06#31"
+  ],
+  "linalg:change-of-basis": [
+   "18.06#32"
+  ],
+  "linalg:determinants": [
+   "18.06#18"
+  ],
+  "linalg:dot-product-and-norms": [
+   "18.065#8"
+  ],
+  "linalg:orthogonal-projections": [
+   "18.06#15"
+  ],
+  "linalg:gram-schmidt-and-qr": [
+   "18.06#17"
+  ],
+  "linalg:least-squares": [
+   "18.06#16"
+  ],
+  "linalg:eigenvalues-and-eigenvectors": [
+   "18.06#21",
+   "18.065#4"
+  ],
+  "linalg:diagonalization": [
+   "18.06#22"
+  ],
+  "linalg:symmetric-matrices-and-the-spectral-theorem": [
+   "18.06#26"
+  ],
+  "linalg:positive-definite-matrices": [
+   "18.06#28"
+  ],
+  "linalg:lu-decomposition": [
+   "18.06#4"
+  ],
+  "linalg:singular-value-decomposition-svd": [
+   "18.06#30",
+   "18.065#6"
+  ],
+  "linalg:principal-component-analysis-pca": [
+   "18.065#7",
+   "18.06#30"
+  ],
+  "mvc:vectors-in-3d": [
+   "18.02#1"
+  ],
+  "mvc:dot-and-cross-products": [
+   "18.02#1"
+  ],
+  "mvc:lines-and-planes": [
+   "18.02#4",
+   "18.02#5"
+  ],
+  "mvc:partial-derivatives": [
+   "18.02#8"
+  ],
+  "mvc:gradient": [
+   "18.02#12"
+  ],
+  "mvc:multivariable-chain-rule": [
+   "18.02#11"
+  ],
+  "mvc:second-derivative-test": [
+   "18.02#10"
+  ],
+  "mvc:lagrange-multipliers": [
+   "18.02#13"
+  ],
+  "mvc:double-integrals": [
+   "18.02#16"
+  ],
+  "mvc:triple-integrals": [
+   "18.02#25"
+  ],
+  "mvc:change-of-variables-and-jacobians": [
+   "18.02#18"
+  ],
+  "mvc:line-integrals": [
+   "18.02#30"
+  ],
+  "mvc:green-s-theorem": [
+   "18.02#22"
+  ],
+  "mvc:divergence-and-curl": [
+   "18.02#28",
+   "18.02#31"
+  ],
+  "mvc:stokes-theorem": [
+   "18.02#32",
+   "18.02#31"
+  ],
+  "opt:svd-and-low-rank-approximation": [
+   "18.065#7",
+   "18.065#6"
+  ],
+  "opt:eigenvalues-of-symmetric-matrices": [
+   "18.065#4"
+  ],
+  "opt:vector-and-matrix-norms": [
+   "18.065#8"
+  ],
+  "opt:least-squares-and-the-normal-equations": [
+   "18.065#9"
+  ],
+  "opt:regularization-ridge-regression": [
+   "18.065#9"
+  ],
+  "opt:pseudoinverse": [
+   "18.065#9"
+  ],
+  "opt:convex-sets-and-functions": [
+   "18.065#21"
+  ],
+  "opt:gradient-descent": [
+   "18.065#22"
+  ],
+  "opt:stochastic-gradient-descent": [
+   "18.065#25"
+  ],
+  "opt:momentum-and-adam": [
+   "18.065#23"
+  ],
+  "opt:constrained-optimization": [
+   "18.065#11",
+   "18.065#24"
+  ],
+  "opt:backpropagation-as-the-chain-rule": [
+   "18.065#27"
+  ],
+  "opt:structure-of-neural-networks": [
+   "18.065#26"
+  ],
+  "opt:dimensionality-reduction-with-pca": [
+   "18.065#7"
+  ],
+  "discrete:propositional-logic": [
+   "6.042#1"
+  ],
+  "discrete:predicates-and-quantifiers": [
+   "6.042#1"
+  ],
+  "discrete:proof-techniques": [
+   "6.042#1"
+  ],
+  "discrete:mathematical-induction": [
+   "6.042#2"
+  ],
+  "discrete:equivalence-relations-and-partial-orders": [
+   "6.042#11"
+  ],
+  "discrete:sum-and-product-rules": [
+   "6.042#16"
+  ],
+  "discrete:permutations-and-combinations": [
+   "6.042#16",
+   "6.042#17"
+  ],
+  "discrete:pigeonhole-principle": [
+   "6.042#17"
+  ],
+  "discrete:inclusion-exclusion": [
+   "6.042#17"
+  ],
+  "discrete:recurrence-relations": [
+   "6.042#15",
+   "6.042#14"
+  ],
+  "discrete:divisibility-and-modular-arithmetic": [
+   "6.042#5",
+   "6.042#4"
+  ],
+  "discrete:gcd-and-euclid-s-algorithm": [
+   "6.042#4"
+  ],
+  "discrete:primes": [
+   "6.042#4"
+  ],
+  "discrete:rsa-basics": [
+   "6.042#5"
+  ],
+  "discrete:graph-terminology": [
+   "6.042#6"
+  ],
+  "discrete:paths-cycles-and-connectivity": [
+   "6.042#10"
+  ],
+  "discrete:trees": [
+   "6.042#8"
+  ],
+  "discrete:graph-coloring": [
+   "6.042#6"
+  ],
+  "discrete:euler-and-hamilton-paths": [
+   "6.042#10"
+  ],
+  "discrete:boolean-functions": [
+   "6.004#4"
+  ],
+  "discrete:logic-gates": [
+   "6.004#4"
+  ],
+  "discrete:karnaugh-maps": [
+   "6.004#4"
+  ],
+  "prob:sample-spaces-and-events": [
+   "6.041#1"
+  ],
+  "prob:axioms-of-probability": [
+   "6.041#1"
+  ],
+  "prob:conditional-probability": [
+   "6.041#2"
+  ],
+  "prob:bayes-rule": [
+   "6.041#2"
+  ],
+  "prob:independence": [
+   "6.041#3"
+  ],
+  "prob:discrete-random-variables": [
+   "6.041#5"
+  ],
+  "prob:continuous-random-variables": [
+   "6.041#8"
+  ],
+  "prob:expectation-and-variance": [
+   "6.041#5",
+   "6.041#6"
+  ],
+  "prob:joint-distributions": [
+   "6.041#6",
+   "6.041#9"
+  ],
+  "prob:covariance-and-correlation": [
+   "6.041#11"
+  ],
+  "prob:bernoulli-and-binomial": [
+   "6.041#13"
+  ],
+  "prob:poisson": [
+   "6.041#14",
+   "6.041#15"
+  ],
+  "prob:normal-gaussian-distribution": [
+   "6.041#8"
+  ],
+  "prob:exponential-and-uniform": [
+   "6.041#8"
+  ],
+  "prob:law-of-large-numbers": [
+   "6.041#19"
+  ],
+  "prob:central-limit-theorem": [
+   "6.041#20"
+  ],
+  "prob:sampling-distributions": [
+   "6.041#23"
+  ],
+  "prob:maximum-likelihood-estimation": [
+   "6.041#23"
+  ],
+  "prob:confidence-intervals": [
+   "6.041#24"
+  ],
+  "prob:hypothesis-testing": [
+   "6.041#25"
+  ],
+  "prob:linear-regression": [
+   "6.041#24"
+  ],
+  "toc:deterministic-finite-automata": [
+   "18.404#1"
+  ],
+  "toc:nondeterministic-finite-automata": [
+   "18.404#2"
+  ],
+  "toc:regular-expressions": [
+   "18.404#1",
+   "18.404#2"
+  ],
+  "toc:pumping-lemma-for-regular-languages": [
+   "18.404#3"
+  ],
+  "toc:context-free-grammars": [
+   "18.404#4"
+  ],
+  "toc:pushdown-automata": [
+   "18.404#4"
+  ],
+  "toc:pumping-lemma-for-context-free-languages": [
+   "18.404#5"
+  ],
+  "toc:turing-machines": [
+   "18.404#5"
+  ],
+  "toc:church-turing-thesis": [
+   "18.404#6"
+  ],
+  "toc:decidability": [
+   "18.404#7"
+  ],
+  "toc:the-halting-problem": [
+   "18.404#8"
+  ],
+  "toc:reductions": [
+   "18.404#9"
+  ],
+  "toc:time-complexity-and-the-class-p": [
+   "18.404#12",
+   "18.404#13"
+  ],
+  "toc:np-and-np-completeness": [
+   "18.404#14"
+  ],
+  "toc:cook-levin-theorem": [
+   "18.404#15"
+  ],
+  "toc:space-complexity": [
+   "18.404#16"
+  ],
+  "daa:asymptotic-analysis": [
+   "6.006#1"
+  ],
+  "daa:recurrences-and-the-master-theorem": [
+   "6.042#14",
+   "6.046#2"
+  ],
+  "daa:amortized-analysis": [
+   "6.046#5"
+  ],
+  "daa:divide-and-conquer": [
+   "6.046#2",
+   "6.046#3"
+  ],
+  "daa:greedy-algorithms": [
+   "6.046#12"
+  ],
+  "daa:dynamic-programming": [
+   "6.006#23",
+   "6.046#10"
+  ],
+  "daa:minimum-spanning-trees": [
+   "6.046#12"
+  ],
+  "daa:shortest-paths-dijkstra-bellman-ford": [
+   "6.006#19",
+   "6.006#18"
+  ],
+  "daa:network-flow": [
+   "6.046#13"
+  ],
+  "daa:randomized-algorithms": [
+   "6.046#7",
+   "6.046#6"
+  ],
+  "daa:linear-programming": [
+   "6.046#15"
+  ],
+  "daa:np-completeness-and-reductions": [
+   "6.046#16"
+  ],
+  "daa:approximation-algorithms": [
+   "6.046#17"
+  ],
+  "ai:what-ai-is-and-its-history": [
+   "6.034#1",
+   "CS50#9"
+  ],
+  "ai:intelligent-agents-and-environments": [
+   "CS50#9"
+  ],
+  "ai:uninformed-search-bfs-dfs-uniform-cost": [
+   "6.034#4",
+   "6.034#5"
+  ],
+  "ai:heuristic-search-and-a": [
+   "6.034#5"
+  ],
+  "ai:local-search-and-hill-climbing": [
+   "6.034#4"
+  ],
+  "ai:adversarial-search-and-minimax": [
+   "6.034#6"
+  ],
+  "ai:alpha-beta-pruning": [
+   "6.034#6"
+  ],
+  "ai:formulating-csps": [
+   "6.034#8",
+   "6.034#7"
+  ],
+  "ai:backtracking-and-forward-checking": [
+   "6.034#8"
+  ],
+  "ai:arc-consistency": [
+   "6.034#8"
+  ],
+  "ai:planning": [
+   "6.034#2"
+  ],
+  "ai:bayesian-networks": [
+   "6.034#21",
+   "6.034#22"
+  ],
+  "ai:markov-decision-processes": [
+   "6.S191#5"
+  ],
+  "ai:reinforcement-learning-basics": [
+   "6.S191#5"
+  ],
+  "ai:decision-trees": [
+   "6.034#11"
+  ],
+  "ai:introduction-to-neural-networks": [
+   "6.034#12",
+   "6.034#13"
+  ],
+  "ml:supervised-vs-unsupervised-learning": [
+   "6.034#10"
+  ],
+  "ml:training-validation-and-test-sets": [
+   "6.867#9"
+  ],
+  "ml:bias-variance-trade-off": [
+   "6.867#5"
+  ],
+  "ml:overfitting-and-regularization": [
+   "6.867#4"
+  ],
+  "ml:linear-regression": [
+   "6.867#5"
+  ],
+  "ml:polynomial-regression": [
+   "6.867#6"
+  ],
+  "ml:gradient-descent": [
+   "18.065#22"
+  ],
+  "ml:logistic-regression": [
+   "6.867#4"
+  ],
+  "ml:k-nearest-neighbours": [
+   "6.034#10"
+  ],
+  "ml:support-vector-machines": [
+   "6.867#8",
+   "6.034#17"
+  ],
+  "ml:decision-trees-and-random-forests": [
+   "6.034#11"
+  ],
+  "ml:gradient-boosting": [
+   "6.867#12"
+  ],
+  "ml:cross-validation": [
+   "6.867#9"
+  ],
+  "ml:k-means-clustering": [
+   "6.867#17"
+  ],
+  "ml:hierarchical-clustering": [
+   "6.867#17"
+  ],
+  "ml:pca": [
+   "18.065#7"
+  ],
+  "ml:feature-engineering": [
+   "6.867#11"
+  ],
+  "dl:perceptrons-and-multilayer-networks": [
+   "6.S191#1",
+   "6.034#12"
+  ],
+  "dl:activation-functions": [
+   "6.S191#1"
+  ],
+  "dl:backpropagation": [
+   "6.S191#1",
+   "18.065#27"
+  ],
+  "dl:loss-functions": [
+   "6.S191#1"
+  ],
+  "dl:optimizers-sgd-adam": [
+   "6.S191#1",
+   "18.065#23"
+  ],
+  "dl:dropout-and-regularization": [
+   "6.S191#1"
+  ],
+  "dl:convolution-and-pooling": [
+   "6.S191#3"
+  ],
+  "dl:cnn-architectures-lenet-to-resnet": [
+   "6.S191#3",
+   "18.065#30"
+  ],
+  "dl:recurrent-networks-and-lstms": [
+   "6.S191#2"
+  ],
+  "dl:attention": [
+   "6.S191#2"
+  ],
+  "dl:transformers": [
+   "6.S191#2"
+  ],
+  "dl:training-on-gpus": [
+   "6.S191#9"
+  ],
+  "genai:generative-vs-discriminative-models": [
+   "6.S191#4"
+  ],
+  "genai:autoencoders": [
+   "6.S191#4"
+  ],
+  "genai:variational-autoencoders": [
+   "6.S191#4"
+  ],
+  "genai:gan-training": [
+   "6.S191#4"
+  ],
+  "genai:mode-collapse-and-stability": [
+   "6.S191#4"
+  ],
+  "genai:conditional-gans": [
+   "6.S191#4"
+  ],
+  "genai:denoising-diffusion": [
+   "6.S191#4"
+  ],
+  "genai:text-to-image-generation": [
+   "6.S191#4"
+  ],
+  "genai:tokenization-and-embeddings": [
+   "6.S191#2"
+  ],
+  "genai:transformer-language-models": [
+   "6.S191#2"
+  ],
+  "genai:evaluating-generative-models": [
+   "6.S191#4"
+  ],
+  "gfx:vectors-and-matrices-for-graphics": [
+   "6.837#4"
+  ],
+  "gfx:homogeneous-coordinates-and-transforms": [
+   "6.837#4"
+  ],
+  "gfx:quaternions-and-rotations": [
+   "6.801#17"
+  ],
+  "gfx:rasterization": [
+   "6.837#20",
+   "6.837#21"
+  ],
+  "gfx:cameras-and-projection": [
+   "6.837#12"
+  ],
+  "gfx:clipping-and-depth-buffering": [
+   "6.837#20"
+  ],
+  "gfx:lighting-models-phong": [
+   "6.837#16"
+  ],
+  "gfx:textures-and-mapping": [
+   "6.837#17"
+  ],
+  "gfx:shaders-glsl": [
+   "6.837#16",
+   "6.837#17"
+  ],
+  "gfx:ray-object-intersection": [
+   "6.837#14"
+  ],
+  "gfx:reflections-and-shadows": [
+   "6.837#14"
+  ],
+  "gfx:global-illumination-basics": [
+   "6.837#19"
+  ],
+  "gfx:keyframes-and-interpolation": [
+   "6.837#2",
+   "6.837#7"
+  ],
+  "gfx:skeletal-animation": [
+   "6.837#7"
+  ],
+  "gfx:physics-based-animation": [
+   "6.837#8",
+   "6.837#11"
+  ],
+  "cv:cameras-and-projection": [
+   "6.801#1"
+  ],
+  "cv:image-representation-and-color": [
+   "6.801#1"
+  ],
+  "cv:filtering-and-convolution": [
+   "6.801#15"
+  ],
+  "cv:edge-detection": [
+   "6.801#10"
+  ],
+  "cv:camera-calibration": [
+   "6.801#4"
+  ],
+  "cv:stereo-and-depth": [
+   "6.801#19"
+  ],
+  "cv:optical-flow": [
+   "6.801#3"
+  ],
+  "cv:cnns-for-image-classification": [
+   "6.S191#3"
+  ],
+  "cv:object-detection-yolo-r-cnn": [
+   "6.S191#3"
+  ],
+  "cv:semantic-segmentation": [
+   "6.S191#3"
+  ],
+  "cv:vision-transformers": [
+   "6.S191#3"
+  ],
+  "cv:generative-models-for-images": [
+   "6.S191#4"
+  ],
+  "sci:errors-and-conditioning": [
+   "18.065#10"
+  ],
+  "sci:direct-solvers-lu": [
+   "18.06#4"
+  ],
+  "sci:bisection-and-newton-s-method": [
+   "18.01#12"
+  ],
+  "sci:optimization-basics": [
+   "6.0002#2",
+   "6.0002#1"
+  ],
+  "sci:splines": [
+   "6.837#2"
+  ],
+  "sci:numerical-integration": [
+   "18.01#22"
+  ],
+  "sci:euler-and-runge-kutta-methods": [
+   "18.03#2"
+  ],
+  "sci:simulation": [
+   "6.0002#6"
+  ],
+  "ds:exploratory-data-analysis": [
+   "6.0002#9"
+  ],
+  "ds:descriptive-statistics": [
+   "6.0002#8"
+  ],
+  "ds:fitting-models-with-scikit-learn": [
+   "6.0002#11"
+  ],
+  "ds:evaluating-models": [
+   "6.0002#13"
+  ],
+  "ds:correlation-vs-causation": [
+   "6.0002#14"
+  ],
+  "ds:communicating-results": [
+   "6.0002#15"
+  ],
+  "db:relations-keys-and-constraints": [
+   "6.830#2"
+  ],
+  "db:relational-algebra": [
+   "6.830#2"
+  ],
+  "db:select-filtering-and-sorting": [
+   "CS50#8"
+  ],
+  "db:joins": [
+   "CS50#8"
+  ],
+  "db:aggregation-and-group-by": [
+   "CS50#8"
+  ],
+  "db:subqueries": [
+   "CS50#8"
+  ],
+  "db:views": [
+   "CS50#8"
+  ],
+  "db:entity-relationship-modelling": [
+   "6.830#3"
+  ],
+  "db:functional-dependencies": [
+   "6.830#3"
+  ],
+  "db:normalization-1nf-to-bcnf": [
+   "6.830#3"
+  ],
+  "db:indexes-and-b-trees": [
+   "6.830#6"
+  ],
+  "db:query-processing-and-optimization": [
+   "6.830#9",
+   "6.830#5"
+  ],
+  "db:acid-properties": [
+   "6.830#10"
+  ],
+  "db:concurrency-control": [
+   "6.830#11"
+  ],
+  "db:recovery": [
+   "6.830#13",
+   "6.830#12"
+  ],
+  "dblab:creating-schemas-and-tables": [
+   "6.830#3"
+  ],
+  "dblab:data-definition-ddl": [
+   "CS50#8"
+  ],
+  "dblab:data-manipulation-dml": [
+   "CS50#8"
+  ],
+  "dblab:complex-queries-and-joins": [
+   "CS50#8"
+  ],
+  "dblab:connecting-from-application-code": [
+   "6.830#20",
+   "CS50#11"
+  ],
+  "dblab:designing-a-database-for-an-application": [
+   "6.830#3"
+  ],
+  "dbadmin:physical-design": [
+   "6.830#6"
+  ],
+  "dbadmin:denormalization-trade-offs": [
+   "6.830#3"
+  ],
+  "dbadmin:partitioning": [
+   "6.830#17"
+  ],
+  "dbadmin:index-tuning": [
+   "6.830#6"
+  ],
+  "dbadmin:reading-query-plans-explain": [
+   "6.830#9"
+  ],
+  "dbadmin:caching": [
+   "6.830#7"
+  ],
+  "dbadmin:nosql-databases": [
+   "6.830#19"
+  ],
+  "cintro:compiling-and-running-c-programs": [
+   "CS50#2",
+   "6.087#1"
+  ],
+  "cintro:variables-and-data-types": [
+   "6.087#2",
+   "CS50#2"
+  ],
+  "cintro:input-and-output-printf-scanf": [
+   "6.087#4"
+  ],
+  "cintro:operators-and-expressions": [
+   "6.087#2"
+  ],
+  "cintro:conditionals": [
+   "CS50#2",
+   "6.087#3"
+  ],
+  "cintro:loops": [
+   "CS50#2",
+   "6.087#3"
+  ],
+  "cintro:defining-and-calling-functions": [
+   "6.087#3",
+   "CS50#2"
+  ],
+  "cintro:scope-and-lifetime": [
+   "6.087#3"
+  ],
+  "cintro:arrays": [
+   "CS50#3"
+  ],
+  "cintro:strings-as-character-arrays": [
+   "CS50#3"
+  ],
+  "cintro:reading-compiler-errors": [
+   "CS50#2"
+  ],
+  "cintro:debugging-with-gdb": [
+   "6.087#1"
+  ],
+  "clang:pointers-and-addresses": [
+   "6.087#5"
+  ],
+  "clang:pointer-arithmetic": [
+   "6.087#5"
+  ],
+  "clang:pointers-and-arrays": [
+   "6.087#7"
+  ],
+  "clang:function-pointers": [
+   "6.087#8",
+   "6.087#7"
+  ],
+  "clang:stack-vs-heap": [
+   "CS50#5",
+   "6.S096#1"
+  ],
+  "clang:dynamic-memory-malloc-free": [
+   "6.087#11"
+  ],
+  "clang:memory-leaks-and-valgrind": [
+   "6.087#11",
+   "CS50#5"
+  ],
+  "clang:structs-and-unions": [
+   "6.087#6"
+  ],
+  "clang:linked-structures": [
+   "CS50#6",
+   "6.087#6"
+  ],
+  "clang:typedef-and-enums": [
+   "6.087#6"
+  ],
+  "clang:file-input-and-output": [
+   "6.087#10",
+   "CS50#5"
+  ],
+  "clang:command-line-arguments": [
+   "CS50#3"
+  ],
+  "clang:header-files-and-multiple-source-files": [
+   "6.087#3"
+  ],
+  "clang:makefiles": [
+   "6.S096#9"
+  ],
+  "dsa:big-o-notation": [
+   "6.006#1",
+   "6.0001#10"
+  ],
+  "dsa:analysing-loops-and-recursion": [
+   "6.0001#10"
+  ],
+  "dsa:arrays-and-dynamic-arrays": [
+   "6.006#2"
+  ],
+  "dsa:linked-lists": [
+   "6.006#2",
+   "CS50#6"
+  ],
+  "dsa:stacks-and-queues": [
+   "CS50#6",
+   "6.006#2"
+  ],
+  "dsa:binary-trees-and-traversals": [
+   "6.006#9"
+  ],
+  "dsa:binary-search-trees": [
+   "6.006#9"
+  ],
+  "dsa:balanced-trees-avl-red-black": [
+   "6.006#10"
+  ],
+  "dsa:heaps-and-priority-queues": [
+   "6.006#12"
+  ],
+  "dsa:hash-tables": [
+   "6.006#5"
+  ],
+  "dsa:collision-resolution": [
+   "6.006#5"
+  ],
+  "dsa:binary-search": [
+   "6.0001#12",
+   "CS50#4"
+  ],
+  "dsa:merge-sort-and-quicksort": [
+   "6.006#4",
+   "6.046#6"
+  ],
+  "dsa:heap-sort-and-the-sorting-lower-bound": [
+   "6.006#12",
+   "6.006#7"
+  ],
+  "dsa:counting-and-radix-sort": [
+   "6.006#7"
+  ],
+  "dsa:graph-representations": [
+   "6.006#13"
+  ],
+  "dsa:bfs-and-dfs": [
+   "6.006#13",
+   "6.006#15"
+  ],
+  "dsa:topological-sort": [
+   "6.006#15"
+  ],
+  "dsa:shortest-paths-dijkstra": [
+   "6.006#19",
+   "6.006#16"
+  ],
+  "dsa:minimum-spanning-trees": [
+   "6.046#12"
+  ],
+  "dsa:recursion-and-divide-and-conquer": [
+   "6.006#4",
+   "CS50#4"
+  ],
+  "dsa:greedy-algorithms": [
+   "6.046#12"
+  ],
+  "dsa:dynamic-programming": [
+   "6.006#23",
+   "6.006#24"
+  ],
+  "compilers:syntax-and-semantics": [
+   "6.035#2"
+  ],
+  "compilers:type-systems": [
+   "6.035#6"
+  ],
+  "compilers:lexical-analysis": [
+   "6.035#2"
+  ],
+  "compilers:parsing-ll-and-lr": [
+   "6.035#4",
+   "6.035#3"
+  ],
+  "compilers:abstract-syntax-trees": [
+   "6.035#5"
+  ],
+  "compilers:symbol-tables-and-scope": [
+   "6.035#6"
+  ],
+  "compilers:type-checking": [
+   "6.035#6"
+  ],
+  "compilers:intermediate-representations": [
+   "6.035#5"
+  ],
+  "compilers:code-generation": [
+   "6.035#8",
+   "6.035#7"
+  ],
+  "compilers:register-allocation": [
+   "6.035#15"
+  ],
+  "compilers:data-flow-analysis": [
+   "6.035#10"
+  ],
+  "compilers:common-optimizations": [
+   "6.035#12",
+   "6.035#13"
+  ],
+  "python:variables-types-and-expressions": [
+   "6.0001#1"
+  ],
+  "python:conditionals-and-loops": [
+   "6.0001#2"
+  ],
+  "python:functions": [
+   "6.0001#4"
+  ],
+  "python:lists-and-tuples": [
+   "6.0001#5"
+  ],
+  "python:dictionaries-and-sets": [
+   "6.0001#6"
+  ],
+  "python:list-comprehensions": [
+   "CS50#7"
+  ],
+  "python:modules-and-packages": [
+   "CS50#7"
+  ],
+  "python:exceptions": [
+   "6.0001#7"
+  ],
+  "python:classes-and-objects": [
+   "6.0001#8",
+   "6.0001#9"
+  ],
+  "python:recursion": [
+   "6.0001#6"
+  ],
+  "python:searching-and-sorting": [
+   "6.0001#12"
+  ],
+  "python:complexity": [
+   "6.0001#10"
+  ],
+  "oop:classes-and-objects": [
+   "6.0001#8",
+   "6.0001#9"
+  ],
+  "oop:encapsulation": [
+   "6.0001#8",
+   "6.S096#5"
+  ],
+  "oop:constructors-and-destructors": [
+   "6.S096#5",
+   "6.0001#8"
+  ],
+  "oop:inheritance": [
+   "6.0001#9"
+  ],
+  "oop:method-overriding": [
+   "6.0001#9"
+  ],
+  "oop:polymorphism-and-dynamic-dispatch": [
+   "6.S096#5",
+   "6.0001#9"
+  ],
+  "oop:abstract-classes-and-interfaces": [
+   "6.005#14"
+  ],
+  "oop:exceptions": [
+   "6.0001#7"
+  ],
+  "oop:collections": [
+   "6.005#2"
+  ],
+  "oop:design-patterns": [
+   "6.S096#6"
+  ],
+  "oop:unit-testing": [
+   "6.005#3"
+  ],
+  "oop:refactoring": [
+   "6.005#4"
+  ],
+  "swc:specifications": [
+   "6.005#7",
+   "6.005#6"
+  ],
+  "swc:testing-and-test-first-programming": [
+   "6.005#3"
+  ],
+  "swc:abstract-data-types": [
+   "6.005#12"
+  ],
+  "swc:immutability": [
+   "6.005#9"
+  ],
+  "swc:interfaces-and-subtyping": [
+   "6.005#14"
+  ],
+  "swc:equality": [
+   "6.005#15"
+  ],
+  "swc:systematic-debugging": [
+   "6.005#11",
+   "6.005#8"
+  ],
+  "swc:assertions-and-defensive-programming": [
+   "6.005#8"
+  ],
+  "swc:threads-and-shared-memory": [
+   "6.005#19",
+   "6.005#20"
+  ],
+  "swc:locks-and-synchronization": [
+   "6.005#23"
+  ],
+  "swc:message-passing": [
+   "6.005#22"
+  ],
+  "swc:version-control-with-git": [
+   "6.005#5",
+   "6.005#27"
+  ],
+  "swc:grammars-and-parsers": [
+   "6.005#18"
+  ],
+  "ict:number-systems-binary-hex": [
+   "CS50#1",
+   "6.004#1"
+  ],
+  "ict:data-representation": [
+   "CS50#1",
+   "6.004#1"
+  ],
+  "ict:operating-systems-overview": [
+   "6.033#1"
+  ],
+  "ict:how-the-internet-works": [
+   "6.033#5",
+   "CS50#10"
+  ],
+  "ict:the-web-and-email": [
+   "CS50#10"
+  ],
+  "ict:information-security-basics": [
+   "6.033#11"
+  ],
+  "arch:logic-gates-and-boolean-algebra": [
+   "6.004#4",
+   "6.004#3"
+  ],
+  "arch:combinational-circuits": [
+   "6.004#4"
+  ],
+  "arch:sequential-circuits-and-flip-flops": [
+   "6.004#5"
+  ],
+  "arch:integers-and-two-s-complement": [
+   "6.004#1"
+  ],
+  "arch:instruction-formats": [
+   "6.004#9"
+  ],
+  "arch:assembly-language-risc-v-or-mips": [
+   "6.004#10"
+  ],
+  "arch:procedure-calls-and-the-stack": [
+   "6.004#12"
+  ],
+  "arch:datapath-and-control": [
+   "6.004#13"
+  ],
+  "arch:pipelining": [
+   "6.004#15"
+  ],
+  "arch:hazards-and-forwarding": [
+   "6.004#15"
+  ],
+  "arch:caches": [
+   "6.004#14"
+  ],
+  "arch:virtual-memory": [
+   "6.004#16"
+  ],
+  "arch:i-o-and-buses": [
+   "6.004#18",
+   "6.004#20"
+  ],
+  "arch:performance-metrics": [
+   "6.004#7"
+  ],
+  "arch:parallelism-and-multicore": [
+   "6.004#21"
+  ],
+  "archlab:building-combinational-circuits": [
+   "6.004#4"
+  ],
+  "archlab:alu-design": [
+   "6.004#13"
+  ],
+  "archlab:register-file": [
+   "6.004#13"
+  ],
+  "archlab:single-cycle-processor": [
+   "6.004#13"
+  ],
+  "archlab:writing-assembly-programs": [
+   "6.004#10"
+  ],
+  "archlab:cache-simulation": [
+   "6.004#14"
+  ],
+  "os:os-structure-and-system-calls": [
+   "6.828#3",
+   "6.828#12"
+  ],
+  "os:processes": [
+   "6.828#7"
+  ],
+  "os:threads": [
+   "6.033#3",
+   "6.828#7"
+  ],
+  "os:cpu-scheduling-algorithms": [
+   "6.828#7"
+  ],
+  "os:multicore-scheduling": [
+   "6.828#6"
+  ],
+  "os:race-conditions-and-critical-sections": [
+   "6.828#6",
+   "6.033#3"
+  ],
+  "os:locks-semaphores-and-monitors": [
+   "6.828#6",
+   "6.828#8"
+  ],
+  "os:deadlocks": [
+   "6.828#6"
+  ],
+  "os:address-spaces": [
+   "6.828#4",
+   "6.033#2"
+  ],
+  "os:paging": [
+   "6.828#4"
+  ],
+  "os:virtual-memory-and-page-replacement": [
+   "6.828#4"
+  ],
+  "os:file-systems": [
+   "6.828#9"
+  ],
+  "os:i-o-systems": [
+   "6.828#5"
+  ],
+  "os:protection-and-security": [
+   "6.033#11"
+  ],
+  "os:virtualization-and-containers": [
+   "6.828#16",
+   "6.033#4"
+  ],
+  "net:network-models-osi-tcp-ip": [
+   "6.033#5"
+  ],
+  "net:delay-loss-and-throughput": [
+   "6.02#22"
+  ],
+  "net:http-and-the-web": [
+   "CS50#10"
+  ],
+  "net:dns": [
+   "6.033#2"
+  ],
+  "net:socket-programming": [
+   "6.005#21"
+  ],
+  "net:udp": [
+   "6.033#6"
+  ],
+  "net:tcp-and-reliable-delivery": [
+   "6.02#21",
+   "6.033#6"
+  ],
+  "net:congestion-control": [
+   "6.033#7",
+   "6.829#6"
+  ],
+  "net:ip-addressing-and-subnetting": [
+   "6.829#2"
+  ],
+  "net:routing-algorithms": [
+   "6.02#19",
+   "6.02#20"
+  ],
+  "net:ethernet-and-switching": [
+   "6.02#17"
+  ],
+  "net:wireless-networks": [
+   "6.02#18"
+  ],
+  "net:tls": [
+   "6.858#13",
+   "6.033#12"
+  ],
+  "net:firewalls": [
+   "6.858#11"
+  ],
+  "sec:security-goals-confidentiality-integrity-availability": [
+   "6.033#11",
+   "6.858#1"
+  ],
+  "sec:threat-modelling": [
+   "6.858#1"
+  ],
+  "sec:symmetric-encryption": [
+   "6.046#22"
+  ],
+  "sec:public-key-cryptography": [
+   "6.046#22",
+   "6.042#5"
+  ],
+  "sec:hash-functions-and-macs": [
+   "6.046#21"
+  ],
+  "sec:digital-signatures-and-certificates": [
+   "MAS.S62#3",
+   "6.858#13"
+  ],
+  "sec:authentication-and-passwords": [
+   "6.858#16",
+   "6.033#12"
+  ],
+  "sec:access-control": [
+   "6.858#4",
+   "6.858#5"
+  ],
+  "sec:buffer-overflows-and-memory-safety": [
+   "6.858#3"
+  ],
+  "sec:malware": [
+   "6.033#13"
+  ],
+  "sec:network-attacks": [
+   "6.858#11"
+  ],
+  "sec:web-vulnerabilities-xss-sql-injection": [
+   "6.858#7"
+  ],
+  "sec:secure-protocols": [
+   "6.858#12"
+  ],
+  "sec:security-testing": [
+   "6.858#9"
+  ],
+  "sec:privacy-and-law": [
+   "6.858#17",
+   "6.858#20"
+  ],
+  "chain:cryptographic-hashing": [
+   "MAS.S62#1"
+  ],
+  "chain:digital-signatures": [
+   "MAS.S62#3"
+  ],
+  "chain:merkle-trees": [
+   "MAS.S62#6"
+  ],
+  "chain:blocks-and-chains": [
+   "MAS.S62#1",
+   "MAS.S62#2"
+  ],
+  "chain:consensus-proof-of-work-proof-of-stake": [
+   "MAS.S62#2",
+   "MAS.S62#18"
+  ],
+  "chain:bitcoin-transactions": [
+   "MAS.S62#4"
+  ],
+  "chain:scalability": [
+   "MAS.S62#12"
+  ],
+  "chain:applications-beyond-currency": [
+   "MAS.S62#7"
+  ],
+  "csys:complexity-and-modularity": [
+   "6.033#1"
+  ],
+  "csys:naming-and-layering": [
+   "6.033#2",
+   "6.033#5"
+  ],
+  "csys:client-server-organization": [
+   "6.033#1"
+  ],
+  "csys:virtualization": [
+   "6.033#2",
+   "6.033#4"
+  ],
+  "csys:performance": [
+   "6.033#4"
+  ],
+  "csys:network-layers": [
+   "6.033#5"
+  ],
+  "csys:the-end-to-end-argument": [
+   "6.033#6"
+  ],
+  "csys:fault-tolerance": [
+   "6.033#8"
+  ],
+  "csys:atomicity-and-logging": [
+   "6.033#9"
+  ],
+  "csys:replication-and-consistency": [
+   "6.033#8",
+   "6.033#11"
+  ],
+  "csys:distributed-transactions": [
+   "6.033#10"
+  ],
+  "csys:consensus": [
+   "6.033#10",
+   "6.033#11"
+  ],
+  "csys:security": [
+   "6.033#11"
+  ],
+  "se:software-life-cycle": [
+   "6.170#14"
+  ],
+  "se:waterfall-and-other-models": [
+   "6.170#14"
+  ],
+  "se:agile-and-scrum": [
+   "6.170#14"
+  ],
+  "se:architecture-styles": [
+   "6.170#2"
+  ],
+  "se:modelling-with-uml": [
+   "6.170#4"
+  ],
+  "se:levels-of-testing": [
+   "6.005#3"
+  ],
+  "se:code-review": [
+   "6.005#4",
+   "6.170#7"
+  ],
+  "se:version-control-with-git": [
+   "6.005#5",
+   "6.005#27"
+  ],
+  "sad:entity-relationship-diagrams": [
+   "6.170#4",
+   "6.170#5"
+  ],
+  "sad:system-architecture-design": [
+   "6.170#2"
+  ],
+  "sad:user-interface-design": [
+   "6.005#24"
+  ],
+  "sad:database-design": [
+   "6.170#5",
+   "6.830#3"
+  ],
+  "sdm:configuration-management": [
+   "6.005#27"
+  ],
+  "sdm:quality-assurance": [
+   "6.170#15"
+  ],
+  "web:html": [
+   "CS50#10"
+  ],
+  "web:css-and-layout": [
+   "CS50#10"
+  ],
+  "web:javascript": [
+   "6.170#8",
+   "CS50#10"
+  ],
+  "web:the-dom-and-events": [
+   "6.170#10",
+   "6.170#11"
+  ],
+  "web:http-and-rest-apis": [
+   "6.170#3"
+  ],
+  "web:server-frameworks": [
+   "CS50#11",
+   "6.170#2"
+  ],
+  "web:authentication": [
+   "6.858#16"
+  ],
+  "web:databases-for-web-apps": [
+   "CS50#8",
+   "6.170#5"
+  ],
+  "web:json-web-services": [
+   "6.170#11",
+   "6.170#3"
+  ],
+  "web:web-security": [
+   "6.170#13",
+   "6.858#7"
+  ],
+  "phys1:motion-in-one-dimension": [
+   "8.01#1",
+   "8.01#2"
+  ],
+  "phys1:vectors-and-motion-in-two-dimensions": [
+   "8.01#3"
+  ],
+  "phys1:newton-s-laws": [
+   "8.01#4"
+  ],
+  "phys1:friction-and-circular-motion": [
+   "8.01#6",
+   "8.01#9"
+  ],
+  "phys1:work-and-kinetic-energy": [
+   "8.01#20",
+   "8.01#21"
+  ],
+  "phys1:conservation-of-energy": [
+   "8.01#24"
+  ],
+  "phys1:momentum-and-collisions": [
+   "8.01#15",
+   "8.01#26"
+  ],
+  "phys1:rotational-kinematics": [
+   "8.01#28",
+   "8.01#29"
+  ],
+  "phys1:torque-and-angular-momentum": [
+   "8.01#30",
+   "8.01#33"
+  ],
+  "elec:voltage-current-and-resistance": [
+   "6.002#2"
+  ],
+  "elec:ohm-s-and-kirchhoff-s-laws": [
+   "6.002#2"
+  ],
+  "elec:series-and-parallel-circuits": [
+   "6.002#2"
+  ],
+  "elec:thevenin-and-norton-equivalents": [
+   "6.002#3"
+  ],
+  "elec:capacitors-and-inductors": [
+   "6.002#13"
+  ],
+  "elec:rc-and-rl-circuits": [
+   "6.002#13"
+  ],
+  "elec:ac-analysis": [
+   "6.002#18",
+   "6.002#19"
+  ],
+  "elec:diodes": [
+   "6.002#6"
+  ],
+  "elec:transistors-bjt-mosfet": [
+   "6.002#10",
+   "6.002#9"
+  ],
+  "elec:amplifiers": [
+   "6.002#21",
+   "6.002#22"
+  ],
+  "elec:logic-families": [
+   "6.002#5",
+   "6.002#25"
+  ],
+  "elec:operational-amplifiers": [
+   "6.002#21",
+   "6.002#22"
+  ],
+  "elec:analog-to-digital-conversion": [
+   "6.002#4"
+  ],
+  "eleclab:verifying-ohm-s-and-kirchhoff-s-laws": [
+   "6.002#2"
+  ],
+  "eleclab:rc-circuits": [
+   "6.002#13"
+  ],
+  "eleclab:diode-and-transistor-circuits": [
+   "6.002#6",
+   "6.002#9"
+  ],
+  "eleclab:logic-circuits": [
+   "6.002#5"
+  ],
+  "dsp:continuous-and-discrete-signals": [
+   "6.003#1"
+  ],
+  "dsp:linear-time-invariant-systems": [
+   "6.003#1",
+   "6.003#2"
+  ],
+  "dsp:convolution": [
+   "6.003#8"
+  ],
+  "dsp:fourier-series": [
+   "6.003#15"
+  ],
+  "dsp:fourier-transform": [
+   "6.003#16",
+   "6.003#20"
+  ],
+  "dsp:discrete-fourier-transform-and-fft": [
+   "6.003#18",
+   "18.06#27"
+  ],
+  "dsp:sampling-theorem": [
+   "6.003#21"
+  ],
+  "dsp:aliasing": [
+   "6.003#21"
+  ],
+  "dsp:quantization": [
+   "6.003#22"
+  ],
+  "dsp:z-transform": [
+   "6.003#5"
+  ],
+  "dsp:fir-and-iir-filters": [
+   "6.003#9"
+  ],
+  "dsp:filter-design": [
+   "6.002#20",
+   "6.02#12"
+  ],
+  "dsp:audio-processing": [
+   "6.003#25"
+  ],
+  "comm:communication-system-model": [
+   "6.02#9"
+  ],
+  "comm:signals-and-spectra": [
+   "6.02#14"
+  ],
+  "comm:amplitude-modulation": [
+   "6.02#15",
+   "6.02#16"
+  ],
+  "comm:pulse-code-modulation": [
+   "6.003#22"
+  ],
+  "comm:digital-modulation-ask-fsk-psk-qam": [
+   "6.02#15"
+  ],
+  "comm:noise-and-bit-error-rate": [
+   "6.02#8"
+  ],
+  "comm:entropy-and-information": [
+   "6.02#1"
+  ],
+  "comm:channel-capacity": [
+   "6.02#3"
+  ],
+  "comm:error-correcting-codes": [
+   "6.02#3",
+   "6.02#4"
+  ],
+  "comm:multiplexing": [
+   "6.02#18"
+  ],
+  "embedded:interrupts": [
+   "6.004#18"
+  ],
+  "embedded:serial-communication-uart-spi-i2c": [
+   "6.004#20"
+  ],
+  "embedded:power-management": [
+   "6.002#24"
+  ],
+  "iot:wireless-technologies-wi-fi-ble-lora": [
+   "6.02#18"
+  ]
+ }
+}

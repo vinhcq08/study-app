@@ -1,0 +1,1187 @@
+{
+ "_about": "Hand corrections to the automatic lecture matching. Per subject, a topic name maps to the lectures it should link to, each written as \"COURSE|part of the lecture title\". An empty list means the topic gets no lecture.",
+ "calc1": {
+  "Functions and their graphs": [],
+  "Definition of the derivative": [
+   "18.01|Rate of Change",
+   "18.01|Derivatives"
+  ],
+  "Extrema and critical points": [
+   "18.01|Max-min",
+   "18.01|Curve Sketching"
+  ],
+  "Optimization problems": [
+   "18.01|Max-min"
+  ],
+  "L'Hôpital's rule": [
+   "18.01|Indeterminate Forms"
+  ],
+  "Integration by substitution": [
+   "18.01|Antiderivatives"
+  ],
+  "Area between curves": [
+   "18.01|Applications to Logarithms"
+  ],
+  "Average value of a function": [
+   "18.01|Work, Probability"
+  ]
+ },
+ "calc2": {
+  "Trigonometric integrals and substitution": [
+   "18.01|Trig Integrals",
+   "18.01|Inverse Substitution"
+  ],
+  "Sequences and convergence": [
+   "18.01|Infinite Series"
+  ],
+  "Convergence tests": [
+   "18.01|Infinite Series"
+  ],
+  "Functions of several variables": [
+   "18.02|Partial Derivatives"
+  ],
+  "Gradient and directional derivatives": [
+   "18.02|Gradient"
+  ],
+  "Arc length and surface area": [
+   "18.01|Parametric Equations"
+  ]
+ },
+ "de": {
+  "Separable equations": [
+   "18.01|Differential Equations",
+   "18.03|The Geometrical View"
+  ],
+  "Exact equations": [],
+  "Modelling with differential equations": [
+   "18.03|The Geometrical View"
+  ],
+  "Homogeneous equations with constant coefficients": [
+   "18.03|Solving Second-order Linear ODE",
+   "18.03|Complex Characteristic Root"
+  ],
+  "Undetermined coefficients": [
+   "18.03|Finding Particular Solutions to Inhomogen"
+  ],
+  "Variation of parameters": [
+   "18.03|General Theory for Inhomoge"
+  ],
+  "Oscillations and resonance": [
+   "18.03|Interpretation of the Exceptional Case"
+  ],
+  "Linear systems and eigenvalues": [
+   "18.03|Homogeneous Linear Systems",
+   "18.03|Introduction to First-order Systems"
+  ],
+  "Phase portraits": [
+   "18.03|Sketching Solutions of 2x2"
+  ],
+  "Stability of equilibria": [
+   "18.03|Non-linear Autonomous Systems",
+   "18.03|First-order Autonomous ODEs"
+  ],
+  "Power series solutions": [],
+  "Solving initial value problems": [
+   "18.03|Using Laplace Transform to Solve"
+  ],
+  "Step and impulse functions": [
+   "18.03|Use with Impulse Inputs"
+  ]
+ },
+ "linalg": {
+  "Matrix operations": [
+   "18.06|Multiplication and inverse"
+  ],
+  "Vectors and linear combinations": [
+   "18.06|The geometry of linear equations"
+  ],
+  "Rank": [
+   "18.06|Solving Ax = 0",
+   "18.06|Solving Ax = b"
+  ],
+  "Orthogonal projections": [
+   "18.06|Projections onto subspaces"
+  ],
+  "LU decomposition": [
+   "18.06|Factorization into A = LU"
+  ],
+  "Principal component analysis (PCA)": [
+   "18.065|Eckart-Young",
+   "18.06|Singular value decomposition"
+  ],
+  "Gaussian elimination and row echelon form": [
+   "18.06|Elimination with matrices",
+   "18.06|Solving Ax = b"
+  ]
+ },
+ "mvc": {
+  "Vectors in 3D": [
+   "18.02|Dot Product"
+  ],
+  "Lines and planes": [
+   "18.02|Square Systems",
+   "18.02|Parametric Equations"
+  ],
+  "Divergence and curl": [
+   "18.02|Divergence Theorem",
+   "18.02|Stokes' Theorem"
+  ]
+ },
+ "opt": {
+  "SVD and low-rank approximation": [
+   "18.065|Eckart-Young",
+   "18.065|Singular Value Decomposition"
+  ],
+  "Convex sets and functions": [
+   "18.065|Minimizing a Function Step by Step"
+  ],
+  "Gradient descent": [
+   "18.065|Gradient Descent: Downhill"
+  ],
+  "Constrained optimization": [
+   "18.065|Minimizing ‖x‖",
+   "18.065|Linear Programming"
+  ],
+  "Dimensionality reduction with PCA": [
+   "18.065|Eckart-Young"
+  ],
+  "Regularization (ridge regression)": [
+   "18.065|Four Ways to Solve Least Squares"
+  ]
+ },
+ "discrete": {
+  "Sets and set operations": [],
+  "Functions": [],
+  "Cardinality": [],
+  "Sum and product rules": [
+   "6.042|Counting Rules I"
+  ],
+  "Pigeonhole principle": [
+   "6.042|Counting Rules II"
+  ],
+  "Inclusion-exclusion": [
+   "6.042|Counting Rules II"
+  ],
+  "Recurrence relations": [
+   "6.042|Linear Recurrences",
+   "6.042|Divide and Conquer Recurrences"
+  ],
+  "GCD and Euclid's algorithm": [
+   "6.042|Number Theory I"
+  ],
+  "Primes": [
+   "6.042|Number Theory I"
+  ],
+  "RSA basics": [
+   "6.042|Number Theory II"
+  ],
+  "Graph terminology": [
+   "6.042|Graph Theory and Coloring"
+  ],
+  "Trees": [
+   "6.042|Minimum Spanning Trees"
+  ],
+  "Boolean functions": [
+   "6.004|Combinational Logic"
+  ],
+  "Logic gates": [
+   "6.004|Combinational Logic"
+  ],
+  "Karnaugh maps": [
+   "6.004|Combinational Logic"
+  ]
+ },
+ "prob": {
+  "Sample spaces and events": [
+   "6.041|Probability Models and Axioms"
+  ],
+  "Conditional probability": [
+   "6.041|Conditioning and Bayes"
+  ],
+  "Discrete random variables": [
+   "6.041|Discrete Random Variables; Probability"
+  ],
+  "Expectation and variance": [
+   "6.041|Discrete Random Variables; Probability",
+   "6.041|Discrete Random Variable Examples"
+  ],
+  "Joint distributions": [
+   "6.041|Discrete Random Variable Examples",
+   "6.041|Multiple Continuous Random Variables"
+  ],
+  "Normal (Gaussian) distribution": [
+   "6.041|Lecture 8: Continuous Random Variables"
+  ],
+  "Exponential and uniform": [
+   "6.041|Lecture 8: Continuous Random Variables"
+  ],
+  "Sampling distributions": [
+   "6.041|Classical Statistical Inference I"
+  ],
+  "Maximum likelihood estimation": [
+   "6.041|Classical Statistical Inference I"
+  ],
+  "Confidence intervals": [
+   "6.041|Classical Inference II"
+  ],
+  "Hypothesis testing": [
+   "6.041|Classical Inference III"
+  ],
+  "Linear regression": [
+   "6.041|Classical Inference II"
+  ]
+ },
+ "toc": {
+  "Nondeterministic finite automata": [
+   "18.404|Nondeterminism"
+  ],
+  "Regular expressions": [
+   "18.404|Introduction, Finite Automata",
+   "18.404|Nondeterminism"
+  ],
+  "Context-free grammars": [
+   "18.404|Pushdown Automata, CFG"
+  ],
+  "Pumping lemma for context-free languages": [
+   "18.404|CF Pumping Lemma"
+  ],
+  "Decidability": [
+   "18.404|Decision Problems for Automata"
+  ],
+  "The halting problem": [
+   "18.404|Undecidability"
+  ],
+  "Reductions": [
+   "18.404|Reducibility"
+  ],
+  "Time complexity and the class P": [
+   "18.404|Time Complexity",
+   "18.404|P and NP, SAT"
+  ],
+  "Space complexity": [
+   "18.404|Space Complexity"
+  ]
+ },
+ "daa": {
+  "Asymptotic analysis": [
+   "6.006|Algorithms and Computation"
+  ],
+  "Recurrences and the master theorem": [
+   "6.042|Divide and Conquer Recurrences",
+   "6.046|Convex Hull"
+  ],
+  "Divide and conquer": [
+   "6.046|Convex Hull",
+   "6.046|FFT"
+  ],
+  "Dynamic programming": [
+   "6.006|Dynamic Programming, Part 1",
+   "6.046|Advanced DP"
+  ],
+  "Shortest paths (Dijkstra, Bellman-Ford)": [
+   "6.006|Dijkstra",
+   "6.006|Bellman-Ford"
+  ],
+  "Linear programming": [
+   "6.046|Linear Programming"
+  ]
+ },
+ "ai": {
+  "What AI is and its history": [
+   "6.034|Introduction and Scope",
+   "CS50|Artificial Intelligence"
+  ],
+  "Intelligent agents and environments": [
+   "CS50|Artificial Intelligence"
+  ],
+  "Uninformed search (BFS, DFS, uniform cost)": [
+   "6.034|Search: Depth-First",
+   "6.034|Search: Optimal"
+  ],
+  "Heuristic search and A*": [
+   "6.034|Search: Optimal"
+  ],
+  "Formulating CSPs": [
+   "6.034|Constraints: Search",
+   "6.034|Interpreting Line Drawings"
+  ],
+  "Backtracking and forward checking": [
+   "6.034|Constraints: Search"
+  ],
+  "Arc consistency": [
+   "6.034|Constraints: Search"
+  ],
+  "Propositional and first-order logic": [],
+  "Inference and resolution": [],
+  "Bayesian networks": [
+   "6.034|Probabilistic Inference I",
+   "6.034|Probabilistic Inference II"
+  ],
+  "Markov decision processes": [
+   "6.S191|Deep Reinforcement Learning"
+  ],
+  "Reinforcement learning basics": [
+   "6.S191|Deep Reinforcement Learning"
+  ]
+ },
+ "ml": {
+  "Supervised vs unsupervised learning": [
+   "6.034|Introduction to Learning"
+  ],
+  "Training, validation and test sets": [
+   "6.867|Model selection"
+  ],
+  "Overfitting and regularization": [
+   "6.867|Classification errors, regularization"
+  ],
+  "Linear regression": [
+   "6.867|Linear regression, estimator bias"
+  ],
+  "Polynomial regression": [
+   "6.867|non-linear predictions"
+  ],
+  "Gradient descent": [
+   "18.065|Gradient Descent: Downhill"
+  ],
+  "Naive Bayes": [],
+  "Decision trees and random forests": [
+   "6.034|Identification Trees"
+  ],
+  "Support vector machines": [
+   "6.867|Support vector machine",
+   "6.034|Support Vector Machines"
+  ],
+  "Accuracy, precision, recall and F1": [],
+  "ROC curves and AUC": [],
+  "Cross-validation": [
+   "6.867|Model selection"
+  ],
+  "PCA": [
+   "18.065|Eckart-Young"
+  ],
+  "Hierarchical clustering": [
+   "6.867|Clustering"
+  ],
+  "Association rules (Apriori)": [],
+  "Anomaly detection": []
+ },
+ "dl": {
+  "Perceptrons and multilayer networks": [
+   "6.S191|Intro to Deep Learning",
+   "6.034|Neural Nets"
+  ],
+  "Activation functions": [
+   "6.S191|Intro to Deep Learning"
+  ],
+  "Backpropagation": [
+   "6.S191|Intro to Deep Learning",
+   "18.065|Backpropagation"
+  ],
+  "Loss functions": [
+   "6.S191|Intro to Deep Learning"
+  ],
+  "Optimizers (SGD, Adam)": [
+   "6.S191|Intro to Deep Learning",
+   "18.065|Accelerating Gradient Descent"
+  ],
+  "Weight initialization": [],
+  "Batch normalization": [],
+  "Dropout and regularization": [
+   "6.S191|Intro to Deep Learning"
+  ],
+  "Hyperparameter tuning": [],
+  "Convolution and pooling": [
+   "6.S191|Deep Computer Vision"
+  ],
+  "CNN architectures (LeNet to ResNet)": [
+   "6.S191|Deep Computer Vision",
+   "18.065|ImageNet is a Convolutional"
+  ],
+  "Transfer learning": [],
+  "PyTorch fundamentals": [],
+  "Experiment tracking": []
+ },
+ "genai": {
+  "Autoencoders": [
+   "6.S191|Deep Generative Modeling"
+  ],
+  "Variational autoencoders": [
+   "6.S191|Deep Generative Modeling"
+  ],
+  "GAN training": [
+   "6.S191|Deep Generative Modeling"
+  ],
+  "Tokenization and embeddings": [
+   "6.S191|Deep Sequence Modeling"
+  ],
+  "Transformer language models": [
+   "6.S191|Deep Sequence Modeling"
+  ],
+  "Pretraining and fine-tuning": [],
+  "Prompt engineering": [],
+  "RLHF and alignment": [],
+  "Retrieval-augmented generation (RAG)": [],
+  "Ethics, bias and safety": []
+ },
+ "gfx": {
+  "Vectors and matrices for graphics": [
+   "6.837|Coordinates and Transformations"
+  ],
+  "Quaternions and rotations": [
+   "6.801|Unit Quaternions"
+  ],
+  "Clipping and depth buffering": [
+   "6.837|Graphics Pipeline and Rasterization"
+  ],
+  "Lighting models (Phong)": [
+   "6.837|Shading and Material Appearance"
+  ],
+  "Keyframes and interpolation": [
+   "6.837|Bezier Curves and Splines",
+   "6.837|Basics of Computer Animation"
+  ],
+  "Physics-based animation": [
+   "6.837|Particle Systems and ODEs",
+   "6.837|Collision Detection and Response"
+  ]
+ },
+ "cv": {
+  "Filtering and convolution": [
+   "6.801|Fast Convolution"
+  ],
+  "Feature detection (Harris, SIFT)": [],
+  "Camera calibration": [
+   "6.801|TTC and FOR"
+  ],
+  "Stereo and depth": [
+   "6.801|Binocular Stereo"
+  ],
+  "CNNs for image classification": [
+   "6.S191|Deep Computer Vision"
+  ],
+  "Object detection (YOLO, R-CNN)": [
+   "6.S191|Deep Computer Vision"
+  ],
+  "Semantic segmentation": [
+   "6.S191|Deep Computer Vision"
+  ],
+  "Self-supervised learning": []
+ },
+ "sci": {
+  "Floating-point arithmetic": [],
+  "Errors and conditioning": [
+   "18.065|Survey of Difficulties with Ax = b"
+  ],
+  "Direct solvers (LU)": [
+   "18.06|Factorization into A = LU"
+  ],
+  "Iterative solvers": [],
+  "Matrix computations with NumPy": [],
+  "Bisection and Newton's method": [
+   "18.01|Newton's Method"
+  ],
+  "Numerical integration": [
+   "18.01|Numerical Integration"
+  ],
+  "Euler and Runge-Kutta methods": [
+   "18.03|Euler's Numerical Method"
+  ],
+  "Splines": [
+   "6.837|Bezier Curves and Splines"
+  ]
+ },
+ "ds": {
+  "pandas DataFrames": [],
+  "Data cleaning and missing values": [],
+  "Joining and reshaping data": [],
+  "Exploratory data analysis": [
+   "6.0002|Understanding Experimental Data"
+  ],
+  "Descriptive statistics": [
+   "6.0002|Sampling and Standard Error"
+  ],
+  "Evaluating models": [
+   "6.0002|Lecture 13: Classification"
+  ],
+  "Correlation vs causation": [
+   "6.0002|Classification and Statistical Sins"
+  ],
+  "Communicating results": [
+   "6.0002|Statistical Sins and Wrap Up"
+  ],
+  "Data ethics and privacy": []
+ },
+ "db": {
+  "Entity-relationship modelling": [
+   "6.830|Schema design"
+  ],
+  "Functional dependencies": [
+   "6.830|Schema design"
+  ],
+  "Normalization (1NF to BCNF)": [
+   "6.830|Schema design"
+  ],
+  "ACID properties": [
+   "6.830|Transactions and locking"
+  ]
+ },
+ "dblab": {
+  "Installing a database server": [],
+  "Complex queries and joins": [
+   "CS50|SQL"
+  ],
+  "Stored procedures and triggers": [],
+  "Connecting from application code": [
+   "6.830|ORM",
+   "CS50|Flask"
+  ],
+  "Designing a database for an application": [
+   "6.830|Schema design"
+  ]
+ },
+ "dbadmin": {
+  "Partitioning": [
+   "6.830|Parallel databases"
+  ],
+  "Caching": [
+   "6.830|Buffer pool design"
+  ],
+  "Physical design": [
+   "6.830|Indexing and access methods"
+  ]
+ },
+ "cintro": {
+  "Compiling and running C programs": [
+   "CS50|C",
+   "6.087|Introduction. Writing"
+  ],
+  "Variables and data types": [
+   "6.087|Variables and datatypes",
+   "CS50|C"
+  ],
+  "Conditionals": [
+   "CS50|C",
+   "6.087|Control flow. Functions"
+  ],
+  "Loops": [
+   "CS50|C",
+   "6.087|Control flow. Functions"
+  ],
+  "Defining and calling functions": [
+   "6.087|Control flow. Functions",
+   "CS50|C"
+  ],
+  "Reading compiler errors": [
+   "CS50|C"
+  ]
+ },
+ "clang": {
+  "Stack vs heap": [
+   "CS50|Memory",
+   "6.S096|Memory Jungle"
+  ],
+  "Linked structures": [
+   "CS50|Data Structures",
+   "6.087|User-defined datatypes"
+  ],
+  "typedef and enums": [
+   "6.087|User-defined datatypes"
+  ],
+  "File input and output": [
+   "6.087|C standard library",
+   "CS50|Memory"
+  ],
+  "Command-line arguments": [
+   "CS50|Arrays"
+  ],
+  "Header files and multiple source files": [
+   "6.087|Functions and modular programming"
+  ],
+  "The preprocessor": []
+ },
+ "dsa": {
+  "Big-O notation": [
+   "6.006|Algorithms and Computation",
+   "6.0001|Understanding Program Efficiency"
+  ],
+  "Analysing loops and recursion": [
+   "6.0001|Understanding Program Efficiency"
+  ],
+  "Linked lists": [
+   "6.006|Data Structures and Dynamic Arrays",
+   "CS50|Data Structures"
+  ],
+  "Stacks and queues": [
+   "CS50|Data Structures",
+   "6.006|Data Structures and Dynamic Arrays"
+  ],
+  "Binary search": [
+   "6.0001|Searching and Sorting",
+   "CS50|Algorithms"
+  ],
+  "Merge sort and quicksort": [
+   "6.006|Sets and Sorting",
+   "6.046|Quicksort"
+  ],
+  "Heap sort and the sorting lower bound": [
+   "6.006|Binary Heaps",
+   "6.006|Linear Sorting"
+  ],
+  "Graph representations": [
+   "6.006|Breadth-First Search"
+  ],
+  "BFS and DFS": [
+   "6.006|Breadth-First Search",
+   "6.006|Depth-First Search"
+  ],
+  "Topological sort": [
+   "6.006|Depth-First Search"
+  ],
+  "Minimum spanning trees": [
+   "6.046|Greedy Algorithms: Minimum Spanning"
+  ],
+  "Recursion and divide and conquer": [
+   "6.006|Sets and Sorting",
+   "CS50|Algorithms"
+  ],
+  "Greedy algorithms": [
+   "6.046|Greedy Algorithms"
+  ],
+  "Dynamic programming": [
+   "6.006|Dynamic Programming, Part 1",
+   "6.006|Dynamic Programming, Part 2"
+  ]
+ },
+ "compilers": {
+  "Syntax and semantics": [
+   "6.035|Specifying languages"
+  ],
+  "Programming paradigms": [],
+  "Type systems": [
+   "6.035|Semantic analysis"
+  ],
+  "Lexical analysis": [
+   "6.035|Specifying languages"
+  ],
+  "Parsing (LL and LR)": [
+   "6.035|Top-down parsing",
+   "6.035|shift-reduce parsing"
+  ],
+  "Abstract syntax trees": [
+   "6.035|Intermediate formats"
+  ],
+  "Data-flow analysis": [
+   "6.035|Introduction to dataflow analysis"
+  ],
+  "Common optimizations": [
+   "6.035|Introduction to code optimization",
+   "6.035|Loop optimizations"
+  ],
+  "Garbage collection": []
+ },
+ "python": {
+  "Variables, types and expressions": [
+   "6.0001|What is Computation"
+  ],
+  "List comprehensions": [
+   "CS50|Python"
+  ],
+  "Modules and packages": [
+   "CS50|Python"
+  ],
+  "Recursion": [
+   "6.0001|Recursion and Dictionaries"
+  ],
+  "Complexity": [
+   "6.0001|Understanding Program Efficiency"
+  ],
+  "NumPy arrays": [],
+  "Plotting with Matplotlib": [],
+  "Virtual environments and pip": []
+ },
+ "oop": {
+  "Classes and objects": [
+   "6.0001|Object Oriented Programming",
+   "6.0001|Python Classes and Inheritance"
+  ],
+  "Encapsulation": [
+   "6.0001|Object Oriented Programming",
+   "6.S096|Object-Oriented C++"
+  ],
+  "Constructors and destructors": [
+   "6.S096|Object-Oriented C++",
+   "6.0001|Object Oriented Programming"
+  ],
+  "Polymorphism and dynamic dispatch": [
+   "6.S096|Object-Oriented C++",
+   "6.0001|Python Classes and Inheritance"
+  ],
+  "Abstract classes and interfaces": [
+   "6.005|Interfaces"
+  ],
+  "Generics and templates": [],
+  "Collections": [
+   "6.005|Basic Java"
+  ],
+  "SOLID principles": [],
+  "Design patterns": [
+   "6.S096|Design Patterns"
+  ],
+  "UML class diagrams": [],
+  "Refactoring": [
+   "6.005|Code Review"
+  ]
+ },
+ "swc": {
+  "Assertions and defensive programming": [
+   "6.005|Avoiding Debugging"
+  ],
+  "Threads and shared memory": [
+   "6.005|Concurrency",
+   "6.005|Thread Saftey"
+  ]
+ },
+ "ict": {
+  "Computer hardware components": [],
+  "Number systems (binary, hex)": [
+   "CS50|Scratch",
+   "6.004|Basics of Information"
+  ],
+  "Data representation": [
+   "CS50|Scratch",
+   "6.004|Basics of Information"
+  ],
+  "Operating systems overview": [
+   "6.033|Operating Systems I"
+  ],
+  "How the internet works": [
+   "6.033|Networking I",
+   "CS50|HTML, CSS, JavaScript"
+  ],
+  "Cloud computing": [],
+  "Information security basics": [
+   "6.033|Security I"
+  ],
+  "Ethics and digital citizenship": []
+ },
+ "arch": {
+  "Logic gates and Boolean algebra": [
+   "6.004|Combinational Logic",
+   "6.004|CMOS"
+  ],
+  "Integers and two's complement": [
+   "6.004|Basics of Information"
+  ],
+  "Floating point (IEEE 754)": [],
+  "Procedure calls and the stack": [
+   "6.004|Procedures and Stacks"
+  ],
+  "Datapath and control": [
+   "6.004|Building the Beta"
+  ],
+  "Hazards and forwarding": [
+   "6.004|Pipelining the Beta"
+  ],
+  "I/O and buses": [
+   "6.004|Devices and Interrupts",
+   "6.004|System-level Communication"
+  ],
+  "Parallelism and multicore": [
+   "6.004|Parallel Processing"
+  ]
+ },
+ "archlab": {
+  "Simulation with an HDL (Verilog or VHDL)": [],
+  "ALU design": [
+   "6.004|Building the Beta"
+  ],
+  "Register file": [
+   "6.004|Building the Beta"
+  ],
+  "Single-cycle processor": [
+   "6.004|Building the Beta"
+  ],
+  "Using a simulator": []
+ },
+ "os": {
+  "OS structure and system calls": [
+   "6.828|System Call Inter",
+   "6.828|OS Organization"
+  ],
+  "Threads": [
+   "6.033|Operating Systems III",
+   "6.828|Processes and Switching"
+  ],
+  "CPU scheduling algorithms": [
+   "6.828|Processes and Switching"
+  ],
+  "Multicore scheduling": [
+   "6.828|Multiprocessors and Locking"
+  ],
+  "Race conditions and critical sections": [
+   "6.828|Multiprocessors and Locking",
+   "6.033|Operating Systems III"
+  ],
+  "Locks, semaphores and monitors": [
+   "6.828|Multiprocessors and Locking",
+   "6.828|Sleep & Wakeup"
+  ],
+  "Deadlocks": [
+   "6.828|Multiprocessors and Locking"
+  ],
+  "Address spaces": [
+   "6.828|Virtual Memory",
+   "6.033|Operating Systems II"
+  ],
+  "Disk scheduling": [],
+  "I/O systems": [
+   "6.828|Interrupts, Exceptions"
+  ],
+  "Protection and security": [
+   "6.033|Security I"
+  ],
+  "Virtualization and containers": [
+   "6.828|Virtual Machines",
+   "6.033|Operating Systems IV"
+  ]
+ },
+ "net": {
+  "Network models (OSI, TCP/IP)": [
+   "6.033|Networking I"
+  ],
+  "Delay, loss and throughput": [
+   "6.02|Sliding Window Analysis"
+  ],
+  "HTTP and the web": [
+   "CS50|HTML, CSS, JavaScript"
+  ],
+  "DNS": [
+   "6.033|Operating Systems II"
+  ],
+  "Socket programming": [
+   "6.005|Sockets and Networking"
+  ],
+  "UDP": [
+   "6.033|Networking II"
+  ],
+  "TCP and reliable delivery": [
+   "6.02|Reliable Transport",
+   "6.033|Networking II"
+  ],
+  "Congestion control": [
+   "6.033|Networking III",
+   "6.829|End-to-End Co"
+  ],
+  "IP addressing and subnetting": [
+   "6.829|Scaling IP"
+  ],
+  "Routing algorithms": [
+   "6.02|Network Routing (without failures)",
+   "6.02|Network Routing (with failures)"
+  ],
+  "NAT and IPv6": [],
+  "Ethernet and switching": [
+   "6.02|Packet Switching"
+  ],
+  "Wireless networks": [
+   "6.02|MAC Protocols"
+  ],
+  "TLS": [
+   "6.858|SSL and HTTPS",
+   "6.033|Security II"
+  ],
+  "Firewalls": [
+   "6.858|Network Security"
+  ]
+ },
+ "sec": {
+  "Security goals (confidentiality, integrity, availability)": [
+   "6.033|Security I",
+   "6.858|Introduction, Threat Models"
+  ],
+  "Symmetric encryption": [
+   "6.046|Cryptography: Encryption"
+  ],
+  "Public-key cryptography": [
+   "6.046|Cryptography: Encryption",
+   "6.042|Number Theory II"
+  ],
+  "Hash functions and MACs": [
+   "6.046|Cryptography: Hash Functions"
+  ],
+  "Digital signatures and certificates": [
+   "MAS.S62|Lecture 3: Signatures",
+   "6.858|SSL and HTTPS"
+  ],
+  "Access control": [
+   "6.858|Privilege Separation",
+   "6.858|Capabilities"
+  ],
+  "Malware": [
+   "6.033|Security III"
+  ],
+  "Security testing": [
+   "6.858|Symbolic Execution"
+  ],
+  "Privacy and law": [
+   "6.858|Private Browsing",
+   "6.858|Data Tracking"
+  ]
+ },
+ "chain": {
+  "Cryptographic hashing": [
+   "MAS.S62|Signatures, Hashing, Hash Chains"
+  ],
+  "Merkle trees": [
+   "MAS.S62|SPV and Wallet"
+  ],
+  "Blocks and chains": [
+   "MAS.S62|Signatures, Hashing, Hash Chains",
+   "MAS.S62|Proof of Work and Mining"
+  ],
+  "Consensus (proof of work, proof of stake)": [
+   "MAS.S62|Proof of Work and Mining",
+   "MAS.S62|Alternative Consensus"
+  ],
+  "Bitcoin transactions": [
+   "MAS.S62|Transactions and the UTXO"
+  ],
+  "Ethereum": [],
+  "Solidity basics": [],
+  "Decentralized applications": [],
+  "Scalability": [
+   "MAS.S62|Payment Channels and Lightning"
+  ],
+  "Security attacks": [],
+  "Applications beyond currency": [
+   "MAS.S62|OP_RETURN and Catena"
+  ]
+ },
+ "csys": {
+  "Complexity and modularity": [
+   "6.033|Operating Systems I"
+  ],
+  "Naming and layering": [
+   "6.033|Operating Systems II",
+   "6.033|Networking I"
+  ],
+  "Client/server organization": [
+   "6.033|Operating Systems I"
+  ],
+  "Virtualization": [
+   "6.033|Operating Systems II",
+   "6.033|Operating Systems IV"
+  ],
+  "Performance": [
+   "6.033|Operating Systems IV"
+  ],
+  "Network layers": [
+   "6.033|Networking I"
+  ],
+  "The end-to-end argument": [
+   "6.033|Networking II"
+  ],
+  "Fault tolerance": [
+   "6.033|Distributed Systems I"
+  ],
+  "Atomicity and logging": [
+   "6.033|Distributed Systems II"
+  ],
+  "Replication and consistency": [
+   "6.033|Distributed Systems I",
+   "6.033|Security I"
+  ],
+  "Distributed transactions": [
+   "6.033|Distributed Systems III"
+  ],
+  "Consensus": [
+   "6.033|Distributed Systems III",
+   "6.033|Security I"
+  ],
+  "Security": [
+   "6.033|Security I"
+  ]
+ },
+ "se": {
+  "Waterfall and other models": [
+   "6.170|Software Development Methods"
+  ],
+  "Agile and Scrum": [
+   "6.170|Software Development Methods"
+  ],
+  "User stories and use cases": [],
+  "Architecture styles": [
+   "6.170|Routing & Model-View-Controller"
+  ],
+  "Modelling with UML": [
+   "6.170|Introduction to Data & Object Modeling"
+  ],
+  "Code review": [
+   "6.005|Code Review",
+   "6.170|Design & Code Reviews"
+  ]
+ },
+ "sad": {
+  "Entity-relationship diagrams": [
+   "6.170|Introduction to Data & Object Modeling",
+   "6.170|Relational Data Model"
+  ],
+  "System architecture design": [
+   "6.170|Routing & Model-View-Controller"
+  ],
+  "User interface design": [
+   "6.005|Graphical User Interfaces"
+  ],
+  "Database design": [
+   "6.170|Relational Data Model",
+   "6.830|Schema design"
+  ]
+ },
+ "sdm": {
+  "Team organization": [],
+  "Quality assurance": [
+   "6.170|Designing Dependable Software"
+  ],
+  "Configuration management": [
+   "6.005|Team Version Control"
+  ]
+ },
+ "web": {
+  "HTML": [
+   "CS50|HTML, CSS, JavaScript"
+  ],
+  "CSS and layout": [
+   "CS50|HTML, CSS, JavaScript"
+  ],
+  "JavaScript": [
+   "6.170|Intro to JavaScript",
+   "CS50|HTML, CSS, JavaScript"
+  ],
+  "The DOM and events": [
+   "6.170|DOM",
+   "6.170|Events & Ajax"
+  ],
+  "Server frameworks": [
+   "CS50|Flask",
+   "6.170|Routing & Model-View-Controller"
+  ],
+  "Authentication": [
+   "6.858|User Authentication"
+  ],
+  "Databases for web apps": [
+   "CS50|SQL",
+   "6.170|Relational Data Model"
+  ],
+  "JSON web services": [
+   "6.170|Events & Ajax",
+   "6.170|Dependency & REST"
+  ],
+  "Cloud deployment": [],
+  "Web security": [
+   "6.170|Web Security",
+   "6.858|Web Security Model"
+  ]
+ },
+ "phys1": {
+  "Motion in one dimension": [
+   "8.01|1D Kinematics - Position and Velocity",
+   "8.01|1D Kinematics - Acceleration"
+  ],
+  "Vectors and motion in two dimensions": [
+   "8.01|2D Kinematics"
+  ],
+  "Friction and circular motion": [
+   "8.01|Contact Forces",
+   "8.01|Uniform Circular Motion"
+  ],
+  "Momentum and collisions": [
+   "8.01|Momentum and Impulse",
+   "8.01|Types of Collision"
+  ],
+  "Rotational kinematics": [
+   "8.01|Motion of a Rigid Body",
+   "8.01|Moment of Inertia"
+  ],
+  "Torque and angular momentum": [
+   "8.01|Torque",
+   "8.01|Angular Momentum of a Rigid Body"
+  ],
+  "Simple harmonic motion": []
+ },
+ "elec": {
+  "Series and parallel circuits": [
+   "6.002|Basic Circuit Analysis Method"
+  ],
+  "RC and RL circuits": [
+   "6.002|Capacitors and First-Order Systems"
+  ],
+  "AC analysis": [
+   "6.002|Sinusoidal Steady State",
+   "6.002|The Impedance Model"
+  ],
+  "Diodes": [
+   "6.002|Nonlinear Analysis"
+  ],
+  "Logic families": [
+   "6.002|Inside the Digital Gate",
+   "6.002|Energy, CMOS"
+  ]
+ },
+ "eleclab": {
+  "Verifying Ohm's and Kirchhoff's laws": [
+   "6.002|Basic Circuit Analysis Method"
+  ],
+  "RC circuits": [
+   "6.002|Capacitors and First-Order Systems"
+  ],
+  "Diode and transistor circuits": [
+   "6.002|Nonlinear Analysis",
+   "6.002|Mosfet Amplifier Large Signal"
+  ],
+  "Logic circuits": [
+   "6.002|Inside the Digital Gate"
+  ]
+ },
+ "dsp": {
+  "Linear time-invariant systems": [
+   "6.003|Signals and Systems",
+   "6.003|Discrete-Time (DT) Systems"
+  ],
+  "Discrete Fourier transform and FFT": [
+   "6.003|Discrete-Time (DT) Fourier Representati",
+   "18.06|fast fourier transform"
+  ],
+  "FIR and IIR filters": [
+   "6.003|Lecture 9: Frequency Response"
+  ],
+  "Filter design": [
+   "6.002|Filters",
+   "6.02|Filters and Composition"
+  ]
+ },
+ "comm": {
+  "Communication system model": [
+   "6.02|Transmitting on a Physical Channel"
+  ],
+  "Frequency and phase modulation": [],
+  "Pulse code modulation": [
+   "6.003|Sampling and Quantization"
+  ],
+  "Digital modulation (ASK, FSK, PSK, QAM)": [
+   "6.02|Lecture 15: Modulation"
+  ],
+  "Error-correcting codes": [
+   "6.02|Errors, Channel Codes",
+   "6.02|Linear Block Codes"
+  ],
+  "Multiplexing": [
+   "6.02|MAC Protocols"
+  ]
+ },
+ "iot": {
+  "IoT protocols (MQTT, CoAP)": [],
+  "Wireless technologies (Wi-Fi, BLE, LoRa)": [
+   "6.02|MAC Protocols"
+  ]
+ }
+}

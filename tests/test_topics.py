@@ -153,3 +153,26 @@ def test_review_session_list_and_rating(client, clock):
     assert [t["id"] for t in client.get("/api/subjects/linalg/review").json()["topics"]] == ["linalg:determinants"]
     recent = dashboard(client)["activity"]["recent"]
     assert recent[0]["kind"] == "review"
+
+
+def test_topics_link_open_lectures(client):
+    d = client.get("/api/subjects/linalg/dashboard").json()
+    rank = next(t for u in d["units"] for t in u["topics"] if t["id"] == "linalg:rank")
+    assert rank["lectures"] and rank["lectures"][0]["url"].startswith("https://ocw.mit.edu/courses/18-06")
+    assert rank["lectures"][0]["course_title"].startswith("MIT 18.06")
+    assert d["courses"][0]["code"] == "18.06"
+    assert all(t["lectures"] == [] or t["lectures"][0]["title"] for u in d["units"] for t in u["topics"])
+
+
+def test_lecture_data_is_consistent():
+    import json
+    from app import db
+    data = json.loads((db.ROOT / "data" / "lectures.json").read_text(encoding="utf-8"))
+    ids = {lec["id"] for lec in data["lectures"]}
+    known = {f"{sid}:{db.slugify(n.lstrip('*').strip())}" for sid, units in db.load_topics().items() for _, names in units for n in names}
+    for topic_id, refs in data["topics"].items():
+        assert topic_id in known, topic_id
+        assert refs and set(refs) <= ids, topic_id
+    for lec in data["lectures"]:
+        assert lec["url"].startswith("https://") and lec["course"] in data["courses"]
+    assert len(data["topics"]) > 500

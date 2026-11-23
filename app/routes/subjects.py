@@ -5,7 +5,7 @@ from datetime import date
 from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel, Field
 
-from .. import clock, dashboard, db, logic, study_store
+from .. import clock, dashboard, db, lectures, logic, study_store
 from .. import today as plan
 
 router = APIRouter(prefix="/api")
@@ -107,7 +107,7 @@ def review_list(subject_id: str):
         items = [{
             "id": t["id"], "name": t["name"], "unit_name": t["unit_name"], "mastery": t["mastery"],
             "days_overdue": -t["days_until_review"], "notes": db.fetch_topic(conn, t["id"])["notes"],
-            "has_cards": t["id"] in cards,
+            "has_cards": t["id"] in cards, "lectures": lectures.for_topic(t["id"])[:2],
         } for t in due]
     return {"subject_id": subject_id, "subject_name": subject["short_name"],
             "labels": logic.MASTERY_LABELS, "topics": items}

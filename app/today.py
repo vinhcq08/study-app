@@ -8,7 +8,7 @@ off the past paper, practise the cards), or when you tick it, which does that ac
 from collections import defaultdict
 from datetime import date, timedelta
 
-from . import dashboard, db, logic, services, study_store
+from . import dashboard, db, lectures, logic, services, study_store
 
 TOPIC_KINDS = {"exam_prep", "attention", "new"}
 
@@ -227,6 +227,9 @@ def rebuild(conn, now: date) -> None:
 def build_today(conn, now: date) -> dict:
     today = now.isoformat()
     plan = evaluate(conn, todays_plan(conn, now), now)
+    for item in plan:          # the first lecture for the item's topic, looked up fresh each time
+        found = lectures.for_topic(item["topic_id"]) if item.get("topic_id") else []
+        item["lecture"] = found[0] if found else None
 
     sessions_today = [s for s in study_store.fetch_sessions(conn, None, today) if s["studied_on"] == today]
     week_start = logic.week_start(now)

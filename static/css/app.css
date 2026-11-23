@@ -316,3 +316,5 @@ dialog .linkbtn { background: none; border: 0; padding: 4px 0; color: var(--info
 .pr-actions { display: flex; justify-content: flex-end; gap: 10px; }
 .pr-actions .btn { min-width: 88px; }
 @media (max-width: 560px) { dialog.paper-result[open] { justify-content: center; } }
+.rv-lecture { margin: 10px 0 0; font-size: 14px; }
+.rv-lecture small { color: var(--muted); }

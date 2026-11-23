@@ -3,7 +3,7 @@
 from collections import defaultdict
 from datetime import date, timedelta
 
-from . import db, logic, study_store
+from . import db, lectures, logic, study_store
 
 ACTIVITY_WEEKS = 12
 MARK_DOWN_WINDOW = timedelta(days=60)
@@ -98,6 +98,7 @@ def build_dashboard(conn, subject_id: str, now: date) -> dict:
             "links_in": links_in[t["id"]],
             "links_out": links_out[t["id"]],
             "minutes": minutes.get(t["id"], 0),
+            "lectures": lectures.for_topic(t["id"]),
         })
         topics.append(v)
 
@@ -207,6 +208,7 @@ def build_dashboard(conn, subject_id: str, now: date) -> dict:
             for s in sorted(subjects.values(), key=lambda s: (lanes[s["lane_id"]]["sort_order"], s["tier"], s["grid_row"]))
         ],
         "lanes": list(lanes.values()),
+        "courses": lectures.for_subject(subject_id),
     }
 
 

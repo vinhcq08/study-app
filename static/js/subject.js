@@ -63,6 +63,14 @@ function segbar(counts, label) {
   return `<div class="segbar" role="img" aria-label="${esc(label)}: ${summary || "no topics"} of ${total}">${parts}</div>`;
 }
 const meter = (pct, label) => `<div class="meter" role="img" aria-label="${esc(label)}: ${pct}%"><i style="width:${pct}%"></i></div>`;
+const LECTURE_KIND = { video: "Video", notes: "Lecture notes", lesson: "Lesson" };
+const PLAY = '<svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4l13 8-13 8z"></path></svg>';
+function lectureButton(t) {
+  const l = t.lectures[0];
+  if (!l) return "";
+  return `<a class="mini lec" href="${esc(l.url)}" target="_blank" rel="noopener" title="${esc(l.course_title)}: ${esc(l.title)}"
+    aria-label="${l.kind === "video" ? "Watch" : "Read"} the lecture on ${esc(t.name)} (opens in a new tab)">${l.kind === "video" ? `${PLAY} Lecture` : "Lecture notes"}</a>`;
+}
 const studyButton = (t, text = "Study") =>
   `<button class="mini" data-study="${esc(t.id)}" data-key="st:${esc(t.id)}"${activeTopic() === t.id ? " disabled" : ""}>${activeTopic() === t.id ? "Studying…" : text}</button>`;
 
@@ -94,6 +102,7 @@ function renderHead() {
     <div class="eyebrow" style="--c:${color}">${esc(s.lane_name.toUpperCase())} · TIER ${s.tier + 1}${s.kind === "gap_filler" ? " · MIT GAP-FILLER" : ""}${s.mit_code ? ` · MIT ${esc(s.mit_code)}` : ""}</div>
     <div class="title-row"><span class="lvl" title="Level ${m.level} of 5"><small>LV</small><b>${m.level}</b></span><h1>${esc(s.name)}</h1></div>
     <p class="none">${m.next_level_at ? `${m.next_level_at - m.mastery_pct}% more topic mastery to reach level ${m.level + 1}` : "Top level reached"} · <a href="tree.html#${encodeURIComponent(s.id)}">Show in skill tree</a></p>
+    ${data.courses.length ? `<p class="none head-courses">Lectures from ${data.courses.map((c) => `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.title)}</a>`).join(" and ")}</p>` : ""}
     <div class="head-edit" style="--c:${color}">
       <div class="seg status-seg" role="group" aria-label="Subject status">
         ${[["not_started", "Not started"], ["in_progress", "In progress"], ["done", "Done"]].map(([v, l]) =>
@@ -243,6 +252,13 @@ function topicDetails(t) {
     </div>
     <div class="dcol">
     <section>
+      <h4>Lectures</h4>
+      ${t.lectures.length ? `<ul class="lectures">${t.lectures.map((l) => `<li>
+        <span class="kind">${LECTURE_KIND[l.kind] ?? "Lecture"}</span>
+        <span><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.title)}</a><small>${esc(l.course_title)}</small></span></li>`).join("")}</ul>`
+        : `<p class="empty">No open lecture covers this topic closely.${data.courses.length ? ` Browse <a href="${esc(data.courses[0].url)}" target="_blank" rel="noopener">${esc(data.courses[0].title)}</a>, or add your own course's lecture under Resources.` : " Add your own course's lecture under Resources."}</p>`}
+    </section>
+    <section>
       <h4>Flashcards <span class="none">${t.cards.length}</span></h4>
       ${t.cards.length ? `<ul class="cards">${t.cards.map((c) => `<li>
         <div><b>${esc(c.front)}</b><span>${esc(c.back)}</span><small>Box ${c.box} of 4</small></div>
@@ -304,6 +320,7 @@ function renderTopics() {
             `<button data-level="${i}" aria-pressed="${t.mastery === i}" style="--lvc:var(--lv${i});--lvink:var(--lv${i}-ink)" data-key="lv:${esc(t.id)}:${i}">${l}</button>`).join("")}</div>
           <div class="acts">
             ${studyButton(t)}
+            ${lectureButton(t)}
             <button class="mini" data-act="details" aria-expanded="${open}" data-key="dt:${esc(t.id)}">Details</button>
           </div>
           ${open ? topicDetails(t) : ""}

@@ -59,7 +59,10 @@ def build(pyodide_dir: Path, out: Path) -> None:
     # The app's Python code and data
     py = out / "py"
     files = []
-    for src in sorted((ROOT / "app").rglob("*.py")) + sorted((ROOT / "data").glob("*.json")):
+    # The lecture catalog and hand overrides only feed scripts/match_lectures.py; the app reads lectures.json.
+    build_only = {"lecture_catalog.json", "lecture_overrides.json"}
+    data_files = [p for p in sorted((ROOT / "data").glob("*.json")) if p.name not in build_only]
+    for src in sorted((ROOT / "app").rglob("*.py")) + data_files:
         rel = src.relative_to(ROOT).as_posix()
         (py / rel).parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(src, py / rel)

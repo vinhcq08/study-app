@@ -134,7 +134,7 @@
 .lv button:hover { color: var(--ink); }
 .lv button[aria-pressed="true"] { background: var(--lvc); color: var(--lvink); font-weight: 600; }
 .lv button:focus-visible, .mini:focus-visible, .topic textarea:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
-.acts { display: flex; gap: 6px; justify-content: flex-end; width: 160px; }
+.acts { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; width: 250px; }
 .mini { font: 500 12.5px/1 var(--f-body); padding: 8px 10px; border-radius: var(--r-ctl); border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; white-space: nowrap; }
 .mini:hover { border-color: var(--muted); }
 .mini[aria-expanded="true"] { background: var(--surface-2); }
@@ -236,3 +236,15 @@
 
 .pe-result { color: var(--ink) !important; }
 .pe-links .linkbtn { align-self: flex-end; }
+
+/* Open lectures for a topic */
+a.mini { display: inline-flex; align-items: center; gap: 5px; text-decoration: none; }
+.mini.lec { color: var(--ink); }
+.mini.lec svg { color: var(--accent); }
+.lectures { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.lectures li { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; }
+.lectures li > span:last-child { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
+.lectures a { overflow-wrap: anywhere; }
+.lectures small { color: var(--muted); font-size: 12px; }
+.lectures .kind { flex: none; margin-top: 2px; }
+.head-courses a { font-weight: 600; }
